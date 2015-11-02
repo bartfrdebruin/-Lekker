@@ -11,9 +11,18 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate>
+{
+    CLLocationManager *locationManager;
+}
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) CLLocationManager *locationManager;
+
+
+@property (nonatomic, strong) UIImagePickerController *imagePicker;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
+
+
+
 
 
 @end

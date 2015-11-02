@@ -38,6 +38,33 @@
 }
 */
 
+#pragma mark image Picker
+
+- (IBAction)takePicture:(id)sender {
+    
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    
+    // If the device has a camera, take a picture, otherwise,
+    // just pick from photo library
+    
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    self.imagePicker.allowsEditing = YES;
+    self.imagePicker.delegate = self;
+    
+    // Place image picker on the screen
+    [self presentViewController:self.imagePicker animated:YES completion: NULL];
+    
+    
+}
+
+
+
+
 #pragma mark Location Manager
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -47,28 +74,27 @@
         
        
         // Create location manager object
-        self.locationManager = [[CLLocationManager alloc] init];
+        locationManager = [[CLLocationManager alloc] init];
         
-        // There will be a warning from this line of code; ignore it for now
-        [self.locationManager setDelegate:self];
+        [locationManager setDelegate:self];
         
         // And we want it to be as accurate as possible
         // regardless of how much time/power it takes
-        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
                 
-        [self.locationManager requestWhenInUseAuthorization];
-        [self.locationManager requestAlwaysAuthorization];
+        [locationManager requestWhenInUseAuthorization];
+        [locationManager requestAlwaysAuthorization];
         
         CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];
         
         if (
             authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
             authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
-            [self.locationManager startUpdatingLocation];
+            [locationManager startUpdatingLocation];
         }
         
                 // Tell our manager to start looking for its location immediately
-                [self.locationManager startUpdatingLocation];
+                [locationManager startUpdatingLocation];
     }
     return self;
 }

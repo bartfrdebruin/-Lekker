@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController">
             <connections>
+                <outlet property="cameraButton" destination="8qR-xg-pCk" id="7Dr-GI-Aot"/>
                 <outlet property="mapView" destination="18t-dL-c3h" id="JLl-ix-RF6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,7 +28,11 @@
                     <animations/>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="7zd-NE-x7x"/>
-                        <barButtonItem systemItem="camera" id="8qR-xg-pCk"/>
+                        <barButtonItem systemItem="camera" id="8qR-xg-pCk">
+                            <connections>
+                                <action selector="takePicture:" destination="-1" id="k0z-Gg-XWb"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
                 <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sHj-ZS-ypq">
