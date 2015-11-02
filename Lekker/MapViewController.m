@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "ListViewController.h"
 
 @interface MapViewController ()
 
@@ -17,6 +18,12 @@
 #pragma mark goToList
 
 - (IBAction)goToList:(id)sender {
+
+    ListViewController *listViewController = [[ListViewController alloc] init];
+    
+    [self presentViewController: listViewController animated:YES completion:nil];
+
+    
     
    }
 
