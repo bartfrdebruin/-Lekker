@@ -39,7 +39,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <animations/>
                     <items>
-                        <navigationItem title="Title" id="FnH-Ds-GNJ"/>
+                        <navigationItem title="Title" id="FnH-Ds-GNJ">
+                            <barButtonItem key="rightBarButtonItem" title="List" id="vLI-te-hRi">
+                                <connections>
+                                    <action selector="goToList:" destination="-1" id="PkC-Pu-qGG"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
                     </items>
                 </navigationBar>
             </subviews>

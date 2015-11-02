@@ -80,10 +80,10 @@
 			children = (
 				1DD8D15E1BE7736A00E6607D /* AppDelegate.h */,
 				1DD8D15F1BE7736A00E6607D /* AppDelegate.m */,
-				1DD8D16C1BE786EB00E6607D /* MapViewController.h */,
 				1DD8D17C1BE7BFCF00E6607D /* ListViewController.h */,
 				1DD8D17D1BE7BFCF00E6607D /* ListViewController.m */,
 				1DD8D17E1BE7BFCF00E6607D /* ListViewController.xib */,
+				1DD8D16C1BE786EB00E6607D /* MapViewController.h */,
 				1DD8D16D1BE786EB00E6607D /* MapViewController.m */,
 				1DD8D16E1BE786EB00E6607D /* MapViewController.xib */,
 				F23585E21BE79A490001EA39 /* WelcomeViewController.h */,

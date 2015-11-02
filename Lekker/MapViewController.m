@@ -14,6 +14,13 @@
 
 @implementation MapViewController
 
+#pragma mark goToList
+
+- (IBAction)goToList:(id)sender {
+    
+   }
+
+
 #pragma mark viewDidLoad
 
 - (void)viewDidLoad {
@@ -63,8 +70,6 @@
 }
 
 
-
-
 #pragma mark Location Manager
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -98,7 +103,6 @@
     }
     return self;
 }
-
 
 
 @end
