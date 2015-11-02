@@ -15,6 +15,8 @@
 		1DD8D1701BE786EB00E6607D /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DD8D16E1BE786EB00E6607D /* MapViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		1DD8D1721BE7951700E6607D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8D1711BE7951700E6607D /* MapKit.framework */; };
 		1DD8D1761BE7A9B300E6607D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8D1751BE7A9B300E6607D /* CoreLocation.framework */; };
+		1DD8D17F1BE7BFCF00E6607D /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8D17D1BE7BFCF00E6607D /* ListViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1DD8D1801BE7BFCF00E6607D /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DD8D17E1BE7BFCF00E6607D /* ListViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F23585E51BE79A490001EA39 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F23585E31BE79A490001EA39 /* WelcomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F23585E61BE79A490001EA39 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F23585E41BE79A490001EA39 /* WelcomeViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F23585E81BE7B24B0001EA39 /* logo_lekker.png in Resources */ = {isa = PBXBuildFile; fileRef = F23585E71BE7B24B0001EA39 /* logo_lekker.png */; settings = {ASSET_TAGS = (); }; };
@@ -33,6 +35,9 @@
 		1DD8D16E1BE786EB00E6607D /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		1DD8D1711BE7951700E6607D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1DD8D1751BE7A9B300E6607D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1DD8D17C1BE7BFCF00E6607D /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		1DD8D17D1BE7BFCF00E6607D /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		1DD8D17E1BE7BFCF00E6607D /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		F23585E21BE79A490001EA39 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		F23585E31BE79A490001EA39 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		F23585E41BE79A490001EA39 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -76,6 +81,9 @@
 				1DD8D15E1BE7736A00E6607D /* AppDelegate.h */,
 				1DD8D15F1BE7736A00E6607D /* AppDelegate.m */,
 				1DD8D16C1BE786EB00E6607D /* MapViewController.h */,
+				1DD8D17C1BE7BFCF00E6607D /* ListViewController.h */,
+				1DD8D17D1BE7BFCF00E6607D /* ListViewController.m */,
+				1DD8D17E1BE7BFCF00E6607D /* ListViewController.xib */,
 				1DD8D16D1BE786EB00E6607D /* MapViewController.m */,
 				1DD8D16E1BE786EB00E6607D /* MapViewController.xib */,
 				F23585E21BE79A490001EA39 /* WelcomeViewController.h */,
@@ -158,6 +166,7 @@
 			files = (
 				1DD8D1621BE7736A00E6607D /* Assets.xcassets in Resources */,
 				F23585E61BE79A490001EA39 /* WelcomeViewController.xib in Resources */,
+				1DD8D1801BE7BFCF00E6607D /* ListViewController.xib in Resources */,
 				F23585E81BE7B24B0001EA39 /* logo_lekker.png in Resources */,
 				1DD8D1701BE786EB00E6607D /* MapViewController.xib in Resources */,
 				1DD8D1651BE7736A00E6607D /* LaunchScreen.storyboard in Resources */,
@@ -171,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD8D17F1BE7BFCF00E6607D /* ListViewController.m in Sources */,
 				1DD8D16F1BE786EB00E6607D /* MapViewController.m in Sources */,
 				F23585E51BE79A490001EA39 /* WelcomeViewController.m in Sources */,
 				1DD8D1601BE7736A00E6607D /* AppDelegate.m in Sources */,
