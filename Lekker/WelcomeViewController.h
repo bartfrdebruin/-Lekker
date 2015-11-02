@@ -10,4 +10,6 @@
 
 @interface WelcomeViewController : UIViewController
 
+- (IBAction)goButton:(id)sender;
+
 @end
