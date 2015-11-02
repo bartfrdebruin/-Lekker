@@ -38,4 +38,41 @@
 }
 */
 
+#pragma mark Location Manager
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(self) {
+        
+       
+        // Create location manager object
+        self.locationManager = [[CLLocationManager alloc] init];
+        
+        // There will be a warning from this line of code; ignore it for now
+        [self.locationManager setDelegate:self];
+        
+        // And we want it to be as accurate as possible
+        // regardless of how much time/power it takes
+        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+                
+        [self.locationManager requestWhenInUseAuthorization];
+        [self.locationManager requestAlwaysAuthorization];
+        
+        CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];
+        
+        if (
+            authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
+            authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
+            [self.locationManager startUpdatingLocation];
+        }
+        
+                // Tell our manager to start looking for its location immediately
+                [self.locationManager startUpdatingLocation];
+    }
+    return self;
+}
+
+
+
 @end
