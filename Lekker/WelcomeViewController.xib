@@ -26,6 +26,7 @@
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7l-TQ-Jhs">
                     <rect key="frame" x="180" y="111" width="240" height="128"/>
+                    <animations/>
                 </imageView>
             </subviews>
             <animations/>
