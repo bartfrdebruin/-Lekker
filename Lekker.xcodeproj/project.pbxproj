@@ -14,6 +14,7 @@
 		1DD8D16F1BE786EB00E6607D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8D16D1BE786EB00E6607D /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1DD8D1701BE786EB00E6607D /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DD8D16E1BE786EB00E6607D /* MapViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		1DD8D1721BE7951700E6607D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8D1711BE7951700E6607D /* MapKit.framework */; };
+		1DD8D1761BE7A9B300E6607D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8D1751BE7A9B300E6607D /* CoreLocation.framework */; };
 		F23585E51BE79A490001EA39 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F23585E31BE79A490001EA39 /* WelcomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F23585E61BE79A490001EA39 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F23585E41BE79A490001EA39 /* WelcomeViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		1DD8D16D1BE786EB00E6607D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		1DD8D16E1BE786EB00E6607D /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		1DD8D1711BE7951700E6607D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1DD8D1751BE7A9B300E6607D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F23585E21BE79A490001EA39 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		F23585E31BE79A490001EA39 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		F23585E41BE79A490001EA39 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD8D1761BE7A9B300E6607D /* CoreLocation.framework in Frameworks */,
 				1DD8D1721BE7951700E6607D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +53,7 @@
 		1DD8D14F1BE7736A00E6607D = {
 			isa = PBXGroup;
 			children = (
+				1DD8D1751BE7A9B300E6607D /* CoreLocation.framework */,
 				1DD8D1711BE7951700E6607D /* MapKit.framework */,
 				1DD8D15A1BE7736A00E6607D /* Lekker */,
 				1DD8D1591BE7736A00E6607D /* Products */,
