@@ -28,21 +28,8 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
-                <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sHj-ZS-ypq">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                    <animations/>
-                    <items>
-                        <navigationItem title="#Lekker" id="FnH-Ds-GNJ">
-                            <barButtonItem key="rightBarButtonItem" title="List" id="vLI-te-hRi">
-                                <connections>
-                                    <action selector="selectList:" destination="-1" id="vMh-W5-3Yj"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="18t-dL-c3h">
-                    <rect key="frame" x="-8" y="44" width="617" height="512"/>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="18t-dL-c3h">
+                    <rect key="frame" x="-8" y="-16" width="617" height="572"/>
                     <animations/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="dYt-71-OT5"/>
@@ -52,16 +39,13 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="18t-dL-c3h" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-8" id="0cL-1u-f7T"/>
-                <constraint firstAttribute="bottom" secondItem="ptG-5d-mc7" secondAttribute="bottom" id="BV5-0u-8Dy"/>
-                <constraint firstItem="18t-dL-c3h" firstAttribute="top" secondItem="sHj-ZS-ypq" secondAttribute="bottom" id="FKH-Hq-nPk"/>
-                <constraint firstItem="sHj-ZS-ypq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="19" id="GIE-aE-IO7"/>
-                <constraint firstItem="18t-dL-c3h" firstAttribute="centerX" secondItem="sHj-ZS-ypq" secondAttribute="centerX" id="Lvq-Ln-bm9"/>
-                <constraint firstAttribute="trailing" secondItem="ptG-5d-mc7" secondAttribute="trailing" id="RWW-LY-Tpa"/>
-                <constraint firstItem="sHj-ZS-ypq" firstAttribute="trailing" secondItem="ptG-5d-mc7" secondAttribute="trailing" id="cep-34-gdH"/>
-                <constraint firstItem="sHj-ZS-ypq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kDt-Or-Vis"/>
-                <constraint firstItem="ptG-5d-mc7" firstAttribute="top" secondItem="18t-dL-c3h" secondAttribute="bottom" id="uZE-UC-vBm"/>
-                <constraint firstItem="sHj-ZS-ypq" firstAttribute="leading" secondItem="ptG-5d-mc7" secondAttribute="leading" id="ycx-gu-HQz"/>
+                <constraint firstItem="18t-dL-c3h" firstAttribute="centerX" secondItem="ptG-5d-mc7" secondAttribute="centerX" id="PNg-0u-eR8"/>
+                <constraint firstItem="ptG-5d-mc7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="URe-MF-FIl"/>
+                <constraint firstItem="ptG-5d-mc7" firstAttribute="top" secondItem="18t-dL-c3h" secondAttribute="bottom" id="aEA-cZ-Sqk"/>
+                <constraint firstAttribute="trailing" secondItem="ptG-5d-mc7" secondAttribute="trailing" id="dgb-A8-cfK"/>
+                <constraint firstItem="18t-dL-c3h" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-8" id="nCX-tn-ipt"/>
+                <constraint firstItem="18t-dL-c3h" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-16" id="rHc-jc-HgT"/>
+                <constraint firstAttribute="bottom" secondItem="ptG-5d-mc7" secondAttribute="bottom" id="y0g-94-qgt"/>
             </constraints>
             <point key="canvasLocation" x="410" y="413"/>
         </view>

@@ -19,7 +19,9 @@
 - (IBAction)goButton:(id)sender {
     
     MapViewController *map = [[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
-    [self presentViewController:map animated:YES completion:nil];
+    [self.navigationController pushViewController:map animated:YES];
+    
+    
     
 }
 

@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface MapViewController : UIViewController <CLLocationManagerDelegate> {
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate> {
     CLLocationManager *locationManager;
 }
 
@@ -21,7 +21,6 @@
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
-- (IBAction)selectList:(id)sender;
 
 
 

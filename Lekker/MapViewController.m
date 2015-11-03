@@ -21,7 +21,7 @@
 
     ListViewController *listViewController = [[ListViewController alloc] init];
     
-    [self presentViewController: listViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:listViewController animated:YES];
    
    }
 
@@ -70,6 +70,7 @@
     
     // Place image picker on the screen
     [self presentViewController:self.imagePicker animated:YES completion: NULL];
+    
 }
 
 

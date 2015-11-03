@@ -14,23 +14,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl0-aa-LbW">
-                    <rect key="frame" x="245" y="371" width="111" height="101"/>
-                    <animations/>
-                    <color key="backgroundColor" red="0.1782400586" green="1" blue="0.2570236246" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="101" id="GGD-hq-cUu"/>
-                        <constraint firstAttribute="width" constant="111" id="I9b-nU-uaJ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="45"/>
-                    <state key="normal" title="GO!">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="goButton:" destination="-1" eventType="touchUpInside" id="LYO-VY-Ekf"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_lekker.png" translatesAutoresizingMaskIntoConstraints="NO" id="I7l-TQ-Jhs">
                     <rect key="frame" x="176" y="41" width="249" height="238"/>
                     <animations/>
@@ -50,6 +33,20 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl0-aa-LbW">
+                    <rect key="frame" x="238" y="369" width="128" height="100"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.1782400586" green="1" blue="0.2570236246" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="101" id="GGD-hq-cUu"/>
+                        <constraint firstAttribute="width" constant="111" id="I9b-nU-uaJ"/>
+                    </constraints>
+                    <state key="normal" title="GO!"/>
+                    <connections>
+                        <action selector="goButton:" destination="-1" eventType="touchUpInside" id="LYO-VY-Ekf"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

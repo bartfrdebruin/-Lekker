@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I6g-WY-oap">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6g-WY-oap">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <animations/>
                     <items>
@@ -22,7 +22,7 @@
                         <barButtonItem systemItem="camera" id="8wk-Rs-7Ge"/>
                     </items>
                 </toolbar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D1c-QL-Fob">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D1c-QL-Fob">
                     <rect key="frame" x="0.0" y="44" width="600" height="505"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,10 +31,13 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="I6g-WY-oap" firstAttribute="trailing" secondItem="D1c-QL-Fob" secondAttribute="trailing" id="GCX-Gj-ecu"/>
-                <constraint firstItem="I6g-WY-oap" firstAttribute="leading" secondItem="D1c-QL-Fob" secondAttribute="leading" id="S4F-AR-nkX"/>
-                <constraint firstItem="I6g-WY-oap" firstAttribute="top" secondItem="D1c-QL-Fob" secondAttribute="bottom" constant="7" id="l63-St-kk9"/>
-                <constraint firstAttribute="bottom" secondItem="I6g-WY-oap" secondAttribute="bottom" id="mVQ-xp-vsn"/>
+                <constraint firstItem="I6g-WY-oap" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7UY-QA-18A"/>
+                <constraint firstItem="D1c-QL-Fob" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="9QU-T9-LsA"/>
+                <constraint firstAttribute="bottom" secondItem="I6g-WY-oap" secondAttribute="bottom" id="MUR-1z-iCO"/>
+                <constraint firstItem="I6g-WY-oap" firstAttribute="top" secondItem="D1c-QL-Fob" secondAttribute="bottom" constant="7" id="aec-J1-SXa"/>
+                <constraint firstItem="D1c-QL-Fob" firstAttribute="trailing" secondItem="I6g-WY-oap" secondAttribute="trailing" id="daj-Zd-EOy"/>
+                <constraint firstItem="D1c-QL-Fob" firstAttribute="leading" secondItem="I6g-WY-oap" secondAttribute="leading" id="sUY-Dt-dyc"/>
+                <constraint firstAttribute="trailing" secondItem="I6g-WY-oap" secondAttribute="trailing" id="uWR-8L-yg6"/>
             </constraints>
         </view>
     </objects>

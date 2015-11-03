@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
 
-@interface ListViewController : UIViewController
-
-@property (nonatomic, strong) UINavigationBar *navBar;
+@interface ListViewController : UIViewController 
 
 @end
