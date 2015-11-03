@@ -50,7 +50,7 @@
 }
 */
 
-#pragma mark image Picker
+#pragma mark Image Picker
 
 - (IBAction)takePicture:(id)sender {
     
