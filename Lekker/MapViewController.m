@@ -8,8 +8,11 @@
 
 #import "MapViewController.h"
 #import "ListViewController.h"
+#import "AddLekkerViewController.h"
 
 @interface MapViewController ()
+
+@property (strong, nonatomic) AddLekkerViewController *imageView;
 
 @end
 
@@ -62,7 +65,6 @@
     [self presentViewController:self.imagePicker animated:YES completion: NULL];
     
 }
-
 
 #pragma mark Location Manager
 
