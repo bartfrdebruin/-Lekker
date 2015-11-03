@@ -107,5 +107,18 @@
     return self;
 }
 
+// Zooming in to our location
+- (void)mapView:(MKMapView * _Nonnull)mapView
+didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
+    
+    CLLocationCoordinate2D loc = [userLocation coordinate];
+    MKCoordinateRegion region =
+    
+    MKCoordinateRegionMakeWithDistance(loc, 500, 500);
+    [mapView setRegion:region animated:YES];
+    
+
+}
+
 
 @end
