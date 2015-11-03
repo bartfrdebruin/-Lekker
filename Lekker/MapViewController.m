@@ -17,14 +17,12 @@
 
 #pragma mark goToList
 
-- (IBAction)goToList:(id)sender {
+- (IBAction)selectList:(id)sender {
 
     ListViewController *listViewController = [[ListViewController alloc] init];
     
     [self presentViewController: listViewController animated:YES completion:nil];
-
-    
-    
+   
    }
 
 
@@ -72,15 +70,13 @@
     
     // Place image picker on the screen
     [self presentViewController:self.imagePicker animated:YES completion: NULL];
-    
-    
 }
 
 
 #pragma mark Location Manager
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self) {
         
@@ -109,6 +105,19 @@
                 [locationManager startUpdatingLocation];
     }
     return self;
+}
+
+// Zooming in to our location
+- (void)mapView:(MKMapView * _Nonnull)mapView
+didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
+    
+    CLLocationCoordinate2D loc = [userLocation coordinate];
+    MKCoordinateRegion region =
+    
+    MKCoordinateRegionMakeWithDistance(loc, 500, 500);
+    [mapView setRegion:region animated:YES];
+    
+
 }
 
 
