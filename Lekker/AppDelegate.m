@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MapViewController.h"
+#import "WelcomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,8 +21,8 @@
     // Override point for customization after application launch.
     
     // Setting the map as rootViewController
-    MapViewController *viewController = [[MapViewController alloc] init];
-    self.window.rootViewController = viewController;
+    WelcomeViewController *wvc = [[WelcomeViewController alloc] init];
+    self.window.rootViewController = wvc;
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

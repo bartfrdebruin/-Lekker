@@ -16,6 +16,7 @@
 @implementation WelcomeViewController
 
 - (IBAction)goButton:(id)sender {
+    
     MapViewController *map = [[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
     [self presentViewController:map animated:YES completion:nil];
     
