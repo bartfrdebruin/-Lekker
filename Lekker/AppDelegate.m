@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WelcomeViewController.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -20,6 +21,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"1ymSMB1ghp1MTVs37FuWybP1ycLdrfG8qMdJaT8m"
+                  clientKey:@"1M3kf0riYjzHVjXMoBxwvgKwcw3cpywUmVHcIM4r"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+ 
     // Setting the map as rootViewController
     WelcomeViewController *wvc = [[WelcomeViewController alloc] init];
     self.window.rootViewController = wvc;

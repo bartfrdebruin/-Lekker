@@ -8,6 +8,7 @@
 
 #import "WelcomeViewController.h"
 #import "MapViewController.h"
+#import <Parse/Parse.h>
 
 @interface WelcomeViewController ()
 
@@ -25,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning {
