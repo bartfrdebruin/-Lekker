@@ -18,13 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    CGRect screenBounds = [UIScreen mainScreen].bounds;
-    
-    UINavigationBar *navbar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, screenBounds.size.width, 60)];
-    
-    navbar.backgroundColor = [UIColor redColor];
-    
-    [self.view addSubview:navbar];
+
 }
 
 - (void)didReceiveMemoryWarning {

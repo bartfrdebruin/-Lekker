@@ -31,9 +31,14 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
  
-    // Setting the map as rootViewController
+    // Initializing the wvc WelcomeViewController
     WelcomeViewController *wvc = [[WelcomeViewController alloc] init];
-    self.window.rootViewController = wvc;
+    
+    // Place navigation controller's view in the window hierarchy
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:wvc];
+
+    
+    self.window.rootViewController = navigationController;
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
