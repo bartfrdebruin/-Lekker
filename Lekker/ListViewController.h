@@ -11,7 +11,6 @@
 
 @interface ListViewController : UIViewController
 
-
-
+@property (nonatomic, strong) UINavigationBar *navBar;
 
 @end
