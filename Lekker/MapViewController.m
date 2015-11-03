@@ -72,13 +72,6 @@
     [self presentViewController:self.imagePicker animated:YES completion: NULL];
 }
 
-- (void)imagePickerController: (UIImagePickerController *)picker
-didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
-    self.imageView.image = image;
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
 
 #pragma mark Location Manager
 

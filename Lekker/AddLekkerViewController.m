@@ -10,6 +10,10 @@
 
 @interface AddLekkerViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (weak, nonatomic) IBOutlet UITextField *lekkertextField;
+
 @end
 
 @implementation AddLekkerViewController
