@@ -76,15 +76,6 @@
     
 }
 
-- (void)imagePickerController: (UIImagePickerController *)picker
-didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
-    _imageView.image = image;
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-
 #pragma mark Location Manager
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

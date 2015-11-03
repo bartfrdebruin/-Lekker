@@ -20,9 +20,6 @@
     
     MapViewController *map = [[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
     [self.navigationController pushViewController:map animated:YES];
-    
-    
-    
 }
 
 - (void)viewDidLoad {
