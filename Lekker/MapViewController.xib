@@ -32,7 +32,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <animations/>
                     <items>
-                        <navigationItem title="Title" id="FnH-Ds-GNJ">
+                        <navigationItem title="#Lekker" id="FnH-Ds-GNJ">
                             <barButtonItem key="rightBarButtonItem" title="List" id="vLI-te-hRi">
                                 <connections>
                                     <action selector="selectList:" destination="-1" id="vMh-W5-3Yj"/>
