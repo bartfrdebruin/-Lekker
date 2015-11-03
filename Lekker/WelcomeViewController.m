@@ -22,6 +22,8 @@
     [self.navigationController pushViewController:map animated:YES];
     [self.navigationController setNavigationBarHidden:NO];
     
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -18,9 +18,19 @@
 
 @implementation MapViewController
 
+#pragma mark GoToList
+
+-(IBAction)goToList:(id)sender {
+    
+    ListViewController *listView = [[ListViewController alloc]init];
+    
+    [self.navigationController pushViewController:listView animated:YES];
+    
+    
+}
+
 
 #pragma mark viewDidLoad
-
 
 
 - (void)viewDidLoad {
@@ -30,8 +40,15 @@
     [self.mapView setShowsUserLocation:YES];
     
     [self.navigationItem setHidesBackButton:YES];
-
+    
+    UINavigationItem *mapNavigation = self.navigationItem;
+    mapNavigation.title = @"#Lekker";
+    
+    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target:self action:@selector(goToList:)];
+    
+    mapNavigation.rightBarButtonItem = list;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
