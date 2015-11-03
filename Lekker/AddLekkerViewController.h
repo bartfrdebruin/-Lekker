@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddLekkerViewController : UIViewController
+@interface AddLekkerViewController : UIViewController <UINavigationControllerDelegate>
 
 @end
