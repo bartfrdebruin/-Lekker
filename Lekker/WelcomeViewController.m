@@ -22,14 +22,17 @@
     [self.navigationController pushViewController:map animated:YES];
     [self.navigationController setNavigationBarHidden:NO];
     
-    //
-    [self.navigationItem setHidesBackButton:YES animated:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:YES];
     [self.navigationController setNavigationBarHidden:YES];
+    
+//    UINavigationItem *navigation = self.navigationItem;
+//    navigation.title = @"#LekkerMap";
+    
+    
 
 }
 
