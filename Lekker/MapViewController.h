@@ -21,7 +21,7 @@
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
-- (IBAction)goToList:(id)sender;
+- (IBAction)selectList:(id)sender;
 
 
 
