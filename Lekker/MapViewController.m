@@ -15,16 +15,6 @@
 
 @implementation MapViewController
 
-#pragma mark goToList
-
-- (IBAction)selectList:(id)sender {
-
-    ListViewController *listViewController = [[ListViewController alloc] init];
-    
-    [self.navigationController pushViewController:listViewController animated:YES];
-   
-   }
-
 
 #pragma mark viewDidLoad
 

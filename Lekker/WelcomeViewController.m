@@ -20,22 +20,27 @@
     
     MapViewController *map = [[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
     [self.navigationController pushViewController:map animated:YES];
+    [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationItem setHidesBackButton:YES animated:NO];    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     
-    
-    
+    [super viewWillAppear:YES];
+    [self.navigationController setNavigationBarHidden:YES];
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
