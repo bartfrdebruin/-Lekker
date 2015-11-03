@@ -21,8 +21,8 @@
     // Override point for customization after application launch.
     
     // Setting the map as rootViewController
-    MapViewController *viewController = [[MapViewController alloc] init];
-    self.window.rootViewController = viewController;
+    MapViewController *mvc = [[MapViewController alloc] init];
+    self.window.rootViewController = mvc;
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
