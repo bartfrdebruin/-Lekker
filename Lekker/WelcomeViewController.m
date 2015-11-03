@@ -21,7 +21,9 @@
     MapViewController *map = [[MapViewController alloc]initWithNibName:@"MapViewController" bundle:nil];
     [self.navigationController pushViewController:map animated:YES];
     [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationItem setHidesBackButton:YES animated:NO];    
+    
+    //
+    [self.navigationItem setHidesBackButton:YES animated:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
