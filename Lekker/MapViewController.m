@@ -8,8 +8,11 @@
 
 #import "MapViewController.h"
 #import "ListViewController.h"
+#import "AddLekkerViewController.h"
 
 @interface MapViewController ()
+
+@property (strong, nonatomic) AddLekkerViewController *imageView;
 
 @end
 
@@ -71,6 +74,14 @@
     // Place image picker on the screen
     [self presentViewController:self.imagePicker animated:YES completion: NULL];
     
+}
+
+- (void)imagePickerController: (UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    _imageView.image = image;
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 
