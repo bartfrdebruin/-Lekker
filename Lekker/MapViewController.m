@@ -18,14 +18,35 @@
 
 @implementation MapViewController
 
+#pragma mark GoToList
+
+-(IBAction)goToList:(id)sender {
+    
+    ListViewController *listView = [[ListViewController alloc]init];
+    
+    [self.navigationController pushViewController:listView animated:YES];
+    
+    
+}
+
 
 #pragma mark viewDidLoad
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     [self.mapView setShowsUserLocation:YES];
+    
+    [self.navigationItem setHidesBackButton:YES];
+    
+    UINavigationItem *mapNavigation = self.navigationItem;
+    mapNavigation.title = @"#Lekker";
+    
+    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target:self action:@selector(goToList:)];
+    
+    mapNavigation.rightBarButtonItem = list;
 }
 
 #pragma mark Image Picker
@@ -94,8 +115,6 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     
     MKCoordinateRegionMakeWithDistance(loc, 500, 500);
     [mapView setRegion:region animated:YES];
-    
-
 }
 
 

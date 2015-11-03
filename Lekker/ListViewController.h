@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
 
-@interface ListViewController : UIViewController 
+@interface ListViewController : UIViewController <UINavigationControllerDelegate>
+
+- (IBAction)takePicture:(id)sender;
+
 
 @end
