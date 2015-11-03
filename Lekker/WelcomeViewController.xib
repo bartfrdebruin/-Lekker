@@ -14,10 +14,14 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl0-aa-LbW">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl0-aa-LbW">
                     <rect key="frame" x="245" y="371" width="111" height="101"/>
                     <animations/>
                     <color key="backgroundColor" red="0.1782400586" green="1" blue="0.2570236246" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="101" id="GGD-hq-cUu"/>
+                        <constraint firstAttribute="width" constant="111" id="I9b-nU-uaJ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="45"/>
                     <state key="normal" title="GO!">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,13 +31,21 @@
                         <action selector="goButton:" destination="-1" eventType="touchUpInside" id="LYO-VY-Ekf"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_lekker.png" translatesAutoresizingMaskIntoConstraints="NO" id="I7l-TQ-Jhs">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_lekker.png" translatesAutoresizingMaskIntoConstraints="NO" id="I7l-TQ-Jhs">
                     <rect key="frame" x="176" y="41" width="249" height="238"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="249" id="b29-hq-Ncl"/>
+                        <constraint firstAttribute="height" constant="238" id="k2T-CS-DmY"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Discover or post #Lekker." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW0-Ja-uLg">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover or post #Lekker." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW0-Ja-uLg">
                     <rect key="frame" x="203" y="287" width="217" height="30"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="217" id="8DM-Og-x91"/>
+                        <constraint firstAttribute="height" constant="30" id="UGr-cS-L2k"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -41,6 +53,14 @@
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="I7l-TQ-Jhs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BxB-lk-kG7"/>
+                <constraint firstItem="Hl0-aa-LbW" firstAttribute="centerX" secondItem="I7l-TQ-Jhs" secondAttribute="centerX" id="IgV-Ev-fyG"/>
+                <constraint firstItem="ZW0-Ja-uLg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="203" id="abe-14-Ds7"/>
+                <constraint firstItem="ZW0-Ja-uLg" firstAttribute="top" secondItem="I7l-TQ-Jhs" secondAttribute="bottom" constant="8" symbolic="YES" id="cHi-TO-M2o"/>
+                <constraint firstItem="Hl0-aa-LbW" firstAttribute="top" secondItem="ZW0-Ja-uLg" secondAttribute="bottom" constant="54" id="qPx-Jh-Oua"/>
+                <constraint firstItem="I7l-TQ-Jhs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="41" id="sIp-Rw-iBB"/>
+            </constraints>
             <point key="canvasLocation" x="75" y="404"/>
         </view>
     </objects>
