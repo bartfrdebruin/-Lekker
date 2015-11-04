@@ -72,7 +72,6 @@
 }
 
 
-
 #pragma mark Location Manager
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

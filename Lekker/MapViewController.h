@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate> {
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     CLLocationManager *locationManager;
 }
 
