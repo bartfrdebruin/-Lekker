@@ -10,7 +10,6 @@
 #import "MapViewController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <Parse/Parse.h>
-#import "MBProgressHUD.h"
 
 @interface AddLekkerViewController ()
 
@@ -36,25 +35,18 @@
 - (IBAction)save:(id)sender {
     // Create PFObject with recipe information
     PFObject *lekker = [PFObject objectWithClassName:@"Lekker"];
-    [recipe setObject:_lekkerTextField.text forKey:@"description"];
-    [receipt setObject:_titleTextField.text forKey:@"title"];
+    [lekker setObject:_lekkerTextField.text forKey:@"description"];
+    [lekker setObject:_titleTextField.text forKey:@"title"];
     
     // Recipe image
     NSData *imageData = UIImageJPEGRepresentation(_imageView.image, 0.8);
     NSString *filename = [NSString stringWithFormat:@"%@.png", _titleTextField.text];
     PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
-    [recipe setObject:imageFile forKey:@"imageFile"];
-    
-    // Show progress
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeIndeterminate;
-    hud.labelText = @"Uploading";
-    [hud show:YES];
+    [lekker setObject:imageFile forKey:@"imageFile"];
     
     // Upload recipe to Parse
-    [lekker saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [hud hide:YES];
-        
+    [lekker saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+{
         if (!error) {
             // Show success message
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved the #Lekker" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -73,6 +65,13 @@
         }
         
     }];
+}
+
+- (void)viewDidUnload {
+    [self setImageView:nil];
+    [self setLekkerTextField:nil];
+    [self setTitleTextField:nil];
+    [super viewDidUnload];
 }
 
 #pragma mark - Textfield delegate
