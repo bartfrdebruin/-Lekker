@@ -74,9 +74,10 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    //why am I instantiating UIImage?
     
     AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
+    
+    addLekkerViewController.imageView.image = image;
     
     //Get picked image from info dictionary...where is this info dictionary?
     //    self.imageView.image = image;
