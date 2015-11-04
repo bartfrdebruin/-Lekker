@@ -8,11 +8,9 @@
 
 #import "MapViewController.h"
 #import "ListViewController.h"
-#import "AddLekkerViewController.h"
+
 
 @interface MapViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-
-@property (strong, nonatomic) AddLekkerViewController *imageView;
 
 @end
 
@@ -72,16 +70,7 @@
     
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
-{
-    
-    AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
-    
-    [self dismissViewControllerAnimated:YES completion:NULL];
-   
-    [self.navigationController presentViewController:addLekkerViewController animated:YES completion:NULL];
-   
-}
+
 
 #pragma mark Location Manager
 
