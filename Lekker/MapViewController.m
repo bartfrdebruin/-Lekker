@@ -73,7 +73,11 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
+    AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
     
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+    [self presentViewController:addLekkerViewController animated:YES completion: NULL];
 }
 
 
