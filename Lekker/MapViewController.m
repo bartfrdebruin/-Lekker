@@ -13,6 +13,8 @@
 
 @interface MapViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+@property AddLekkerViewController *imageView;
+
 @end
 
 @implementation MapViewController
@@ -73,6 +75,9 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    //why am I instantiating UIImage?
+    
     AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
     
     [self dismissViewControllerAnimated:YES completion:NULL];
