@@ -10,9 +10,10 @@
 #import "ListViewController.h"
 #import "AddLekkerViewController.h"
 
-@interface MapViewController ()
 
-@property (strong, nonatomic) AddLekkerViewController *imageView;
+@interface MapViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+@property AddLekkerViewController *imageView;
 
 @end
 
@@ -25,6 +26,7 @@
     ListViewController *listView = [[ListViewController alloc]init];
     
     [self.navigationController pushViewController:listView animated:YES];
+    
     
 }
 
@@ -48,14 +50,7 @@
     mapNavigation.rightBarButtonItem = list;
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-#pragma mark ImagePicker
+#pragma mark Image Picker
 
 - (IBAction)takePicture:(id)sender {
     
@@ -78,9 +73,20 @@
     
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    //why am I instantiating UIImage?
+    
+    AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+    [self presentViewController:addLekkerViewController animated:YES completion: NULL];
+}
 
 
-#pragma mark Map
+#pragma mark Location Manager
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     

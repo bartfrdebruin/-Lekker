@@ -25,25 +25,25 @@
 		1D1F79161BE8C1C9004E9EB0 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1F790F1BE8C1C9004E9EB0 /* ParseFacebookUtilsV4.framework */; };
 		1D1F79171BE8C1C9004E9EB0 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1F79101BE8C1C9004E9EB0 /* ParseTwitterUtils.framework */; };
 		1D1F79181BE8C1C9004E9EB0 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1F79111BE8C1C9004E9EB0 /* ParseUI.framework */; };
-		1D1F791A1BE8D21B004E9EB0 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F79191BE8D21B004E9EB0 /* ListViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		1D1F791D1BE90812004E9EB0 /* #Lekker_groot.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791B1BE90812004E9EB0 /* #Lekker_groot.pdf */; settings = {ASSET_TAGS = (); }; };
-		1D1F791E1BE90812004E9EB0 /* #Lekker_klein.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791C1BE90812004E9EB0 /* #Lekker_klein.png */; settings = {ASSET_TAGS = (); }; };
-		1D1F79201BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791F1BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png */; settings = {ASSET_TAGS = (); }; };
+		1D1F791A1BE8D21B004E9EB0 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F79191BE8D21B004E9EB0 /* ListViewController.xib */; };
+		1D1F791D1BE90812004E9EB0 /* #Lekker_groot.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791B1BE90812004E9EB0 /* #Lekker_groot.pdf */; };
+		1D1F791E1BE90812004E9EB0 /* #Lekker_klein.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791C1BE90812004E9EB0 /* #Lekker_klein.png */; };
+		1D1F79201BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791F1BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png */; };
 		1DD8D15D1BE7736A00E6607D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8D15C1BE7736A00E6607D /* main.m */; };
 		1DD8D1601BE7736A00E6607D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8D15F1BE7736A00E6607D /* AppDelegate.m */; };
 		1DD8D1621BE7736A00E6607D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DD8D1611BE7736A00E6607D /* Assets.xcassets */; };
 		1DD8D1651BE7736A00E6607D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD8D1631BE7736A00E6607D /* LaunchScreen.storyboard */; };
-		1DD8D16F1BE786EB00E6607D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8D16D1BE786EB00E6607D /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
-		1DD8D1701BE786EB00E6607D /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DD8D16E1BE786EB00E6607D /* MapViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		1DD8D16F1BE786EB00E6607D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8D16D1BE786EB00E6607D /* MapViewController.m */; };
+		1DD8D1701BE786EB00E6607D /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DD8D16E1BE786EB00E6607D /* MapViewController.xib */; };
 		1DD8D1721BE7951700E6607D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8D1711BE7951700E6607D /* MapKit.framework */; };
 		1DD8D1761BE7A9B300E6607D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8D1751BE7A9B300E6607D /* CoreLocation.framework */; };
-		1DD8D17F1BE7BFCF00E6607D /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8D17D1BE7BFCF00E6607D /* ListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F220D2291BE8E8530060B76D /* LekkerImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F220D2281BE8E8530060B76D /* LekkerImageStore.m */; settings = {ASSET_TAGS = (); }; };
-		F220D22D1BE8F1530060B76D /* AddLekkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F220D22B1BE8F1530060B76D /* AddLekkerViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F220D22E1BE8F1530060B76D /* AddLekkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F220D22C1BE8F1530060B76D /* AddLekkerViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F23585E51BE79A490001EA39 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F23585E31BE79A490001EA39 /* WelcomeViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F23585E61BE79A490001EA39 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F23585E41BE79A490001EA39 /* WelcomeViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F23585E81BE7B24B0001EA39 /* logo_lekker.png in Resources */ = {isa = PBXBuildFile; fileRef = F23585E71BE7B24B0001EA39 /* logo_lekker.png */; settings = {ASSET_TAGS = (); }; };
+		1DD8D17F1BE7BFCF00E6607D /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8D17D1BE7BFCF00E6607D /* ListViewController.m */; };
+		F220D2291BE8E8530060B76D /* LekkerImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F220D2281BE8E8530060B76D /* LekkerImageStore.m */; };
+		F23585E51BE79A490001EA39 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F23585E31BE79A490001EA39 /* WelcomeViewController.m */; };
+		F23585E61BE79A490001EA39 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F23585E41BE79A490001EA39 /* WelcomeViewController.xib */; };
+		F23585E81BE7B24B0001EA39 /* logo_lekker.png in Resources */ = {isa = PBXBuildFile; fileRef = F23585E71BE7B24B0001EA39 /* logo_lekker.png */; };
+		F2702D361BE9FF1300627ED4 /* AddLekkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2702D341BE9FF1300627ED4 /* AddLekkerViewController.m */; };
+		F2702D371BE9FF1300627ED4 /* AddLekkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2702D351BE9FF1300627ED4 /* AddLekkerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,13 +85,13 @@
 		1DD8D17D1BE7BFCF00E6607D /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		F220D2271BE8E8530060B76D /* LekkerImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LekkerImageStore.h; sourceTree = "<group>"; };
 		F220D2281BE8E8530060B76D /* LekkerImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LekkerImageStore.m; sourceTree = "<group>"; };
-		F220D22A1BE8F1530060B76D /* AddLekkerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLekkerViewController.h; sourceTree = "<group>"; };
-		F220D22B1BE8F1530060B76D /* AddLekkerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLekkerViewController.m; sourceTree = "<group>"; };
-		F220D22C1BE8F1530060B76D /* AddLekkerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLekkerViewController.xib; sourceTree = "<group>"; };
 		F23585E21BE79A490001EA39 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		F23585E31BE79A490001EA39 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		F23585E41BE79A490001EA39 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		F23585E71BE7B24B0001EA39 /* logo_lekker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_lekker.png; sourceTree = "<group>"; };
+		F2702D331BE9FF1300627ED4 /* AddLekkerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLekkerViewController.h; sourceTree = "<group>"; };
+		F2702D341BE9FF1300627ED4 /* AddLekkerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLekkerViewController.m; sourceTree = "<group>"; };
+		F2702D351BE9FF1300627ED4 /* AddLekkerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLekkerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,9 +183,9 @@
 				F23585E21BE79A490001EA39 /* WelcomeViewController.h */,
 				F23585E31BE79A490001EA39 /* WelcomeViewController.m */,
 				F23585E41BE79A490001EA39 /* WelcomeViewController.xib */,
-				F220D22A1BE8F1530060B76D /* AddLekkerViewController.h */,
-				F220D22B1BE8F1530060B76D /* AddLekkerViewController.m */,
-				F220D22C1BE8F1530060B76D /* AddLekkerViewController.xib */,
+				F2702D331BE9FF1300627ED4 /* AddLekkerViewController.h */,
+				F2702D341BE9FF1300627ED4 /* AddLekkerViewController.m */,
+				F2702D351BE9FF1300627ED4 /* AddLekkerViewController.xib */,
 				F220D2271BE8E8530060B76D /* LekkerImageStore.h */,
 				F220D2281BE8E8530060B76D /* LekkerImageStore.m */,
 				1DD8D1611BE7736A00E6607D /* Assets.xcassets */,
@@ -239,7 +239,7 @@
 				TargetAttributes = {
 					1DD8D1571BE7736A00E6607D = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = EXEUSZ2G5F;
+						DevelopmentTeam = 8U2B4K4XV5;
 					};
 				};
 			};
@@ -266,9 +266,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2702D371BE9FF1300627ED4 /* AddLekkerViewController.xib in Resources */,
 				1DD8D1621BE7736A00E6607D /* Assets.xcassets in Resources */,
 				F23585E61BE79A490001EA39 /* WelcomeViewController.xib in Resources */,
-				F220D22E1BE8F1530060B76D /* AddLekkerViewController.xib in Resources */,
 				1D1F791A1BE8D21B004E9EB0 /* ListViewController.xib in Resources */,
 				F23585E81BE7B24B0001EA39 /* logo_lekker.png in Resources */,
 				1DD8D1701BE786EB00E6607D /* MapViewController.xib in Resources */,
@@ -289,7 +289,7 @@
 				1DD8D17F1BE7BFCF00E6607D /* ListViewController.m in Sources */,
 				1DD8D16F1BE786EB00E6607D /* MapViewController.m in Sources */,
 				F23585E51BE79A490001EA39 /* WelcomeViewController.m in Sources */,
-				F220D22D1BE8F1530060B76D /* AddLekkerViewController.m in Sources */,
+				F2702D361BE9FF1300627ED4 /* AddLekkerViewController.m in Sources */,
 				1DD8D1601BE7736A00E6607D /* AppDelegate.m in Sources */,
 				1DD8D15D1BE7736A00E6607D /* main.m in Sources */,
 				F220D2291BE8E8530060B76D /* LekkerImageStore.m in Sources */,
@@ -394,14 +394,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Lekker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BartandAlyson.Lekker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BartAlyson.Lekker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -409,14 +412,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Lekker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BartandAlyson.Lekker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BartAlyson.Lekker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
