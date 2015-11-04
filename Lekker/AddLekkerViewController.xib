@@ -7,6 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLekkerViewController">
             <connections>
                 <outlet property="imageView" destination="MuN-y7-u1k" id="mJv-Xv-BzQ"/>
+                <outlet property="lekkerTextField" destination="yfn-fo-wEf" id="H8F-jX-RkN"/>
+                <outlet property="titleTextField" destination="xMX-RI-HFY" id="BfP-bl-FKI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,8 +24,13 @@
                         <constraint firstAttribute="height" constant="303" id="2Tq-Vl-T7v"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="#Lekker" borderStyle="roundedRect" placeholder="add description to your #Lekker post here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yfn-fo-wEf">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="#Lekker: add description to your #Lekker post here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yfn-fo-wEf">
                     <rect key="frame" x="90" y="378" width="421" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xMX-RI-HFY">
+                    <rect key="frame" x="90" y="340" width="421" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>

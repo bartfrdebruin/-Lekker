@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
 
-@interface AddLekkerViewController : UIViewController <UINavigationControllerDelegate, UITextFieldDelegate>
+@interface AddLekkerViewController : UITableViewController <UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *lekkerTextField;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+
+
 
 @property (strong, nonatomic) UIImage *photo;
 
