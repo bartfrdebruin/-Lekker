@@ -81,7 +81,7 @@
     
     [self dismissViewControllerAnimated:YES completion:NULL];
     
-    [self presentViewController:addLekkerViewController animated:YES completion: NULL];
+    [self.navigationController pushViewController:addLekkerViewController animated:YES];
 }
 
 

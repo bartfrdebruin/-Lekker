@@ -12,6 +12,7 @@
 #import "AddLekkerViewController.h"
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
+    
     CLLocationManager *locationManager;
 }
 
