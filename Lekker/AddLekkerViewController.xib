@@ -16,30 +16,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MuN-y7-u1k">
-                    <rect key="frame" x="90" y="19" width="421" height="421"/>
+                    <rect key="frame" x="90" y="19" width="421" height="303"/>
                     <animations/>
-                </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="#Lekker:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Ab-pb-u6y">
-                    <rect key="frame" x="90" y="453" width="421" height="128"/>
-                    <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="128" id="4Ch-iQ-Zuv"/>
+                        <constraint firstAttribute="height" constant="303" id="2Tq-Vl-T7v"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                </textView>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="#Lekker" borderStyle="roundedRect" placeholder="add description to your #Lekker post here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yfn-fo-wEf">
+                    <rect key="frame" x="90" y="378" width="421" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="4Ab-pb-u6y" secondAttribute="bottom" constant="19" id="LmQ-5y-Tqu"/>
-                <constraint firstItem="MuN-y7-u1k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="90" id="U0S-n0-4c7"/>
-                <constraint firstItem="MuN-y7-u1k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="19" id="aQU-gc-ZdM"/>
-                <constraint firstItem="4Ab-pb-u6y" firstAttribute="top" secondItem="MuN-y7-u1k" secondAttribute="bottom" constant="13" id="qme-S5-mgj"/>
-                <constraint firstItem="4Ab-pb-u6y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="t8j-7p-QQL"/>
-                <constraint firstItem="4Ab-pb-u6y" firstAttribute="trailing" secondItem="MuN-y7-u1k" secondAttribute="trailing" id="wD7-Wa-L4W"/>
-                <constraint firstItem="4Ab-pb-u6y" firstAttribute="leading" secondItem="MuN-y7-u1k" secondAttribute="leading" id="zSN-hq-0xJ"/>
+                <constraint firstItem="MuN-y7-u1k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="90" id="YMf-dd-72f"/>
+                <constraint firstItem="MuN-y7-u1k" firstAttribute="leading" secondItem="yfn-fo-wEf" secondAttribute="leading" id="cLu-Mg-FnO"/>
+                <constraint firstItem="yfn-fo-wEf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eGe-CK-sif"/>
+                <constraint firstItem="MuN-y7-u1k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="19" id="rFN-vQ-V9P"/>
+                <constraint firstItem="yfn-fo-wEf" firstAttribute="trailing" secondItem="MuN-y7-u1k" secondAttribute="trailing" id="taM-yM-Rir"/>
+                <constraint firstItem="yfn-fo-wEf" firstAttribute="top" secondItem="MuN-y7-u1k" secondAttribute="bottom" constant="56" id="uSc-KS-4X9"/>
             </constraints>
         </view>
     </objects>
