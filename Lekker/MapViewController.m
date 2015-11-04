@@ -13,8 +13,6 @@
 
 @interface MapViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-@property AddLekkerViewController *imageView;
-
 @end
 
 @implementation MapViewController
@@ -26,6 +24,7 @@
     ListViewController *listView = [[ListViewController alloc]init];
     
     [self.navigationController pushViewController:listView animated:YES];
+    
     
 }
 
@@ -48,7 +47,6 @@
     
     mapNavigation.rightBarButtonItem = list;
 }
-
 
 #pragma mark Image Picker
 
@@ -73,19 +71,20 @@
     
 }
 
-
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    //why am I instantiating UIImage?
     
     AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
     
+    addLekkerViewController.imageView.image = image;
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self.navigationController pushViewController:addLekkerViewController animated:YES];
-    }];
-
+    //Get picked image from info dictionary...where is this info dictionary?
+    //    self.imageView.image = image;
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+    [self presentViewController:addLekkerViewController animated:YES completion: NULL];
 }
 
 

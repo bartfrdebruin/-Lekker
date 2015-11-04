@@ -10,4 +10,6 @@
 
 @interface AddLekkerViewController : UIViewController <UINavigationControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import "AddLekkerViewController.h"
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     CLLocationManager *locationManager;
@@ -23,6 +23,6 @@
 
 @property (nonatomic, strong) UIBarButtonItem *list;
 
-
+@property (strong, nonatomic) AddLekkerViewController *imageView;
 
 @end
