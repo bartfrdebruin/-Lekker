@@ -26,7 +26,6 @@
     
     [self.navigationController pushViewController:listView animated:YES];
     
-    
 }
 
 
@@ -56,7 +55,7 @@
 }
 
 
-#pragma mark Image Picker
+#pragma mark ImagePicker
 
 - (IBAction)takePicture:(id)sender {
     
@@ -79,7 +78,9 @@
     
 }
 
-#pragma mark Location Manager
+
+
+#pragma mark Map
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddLekkerViewController : UIViewController
+@interface AddLekkerViewController : UIViewController <UINavigationControllerDelegate, UIPickerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *lekkertextField;
 
 @end
