@@ -23,8 +23,6 @@
     
     [self.navigationController setNavigationBarHidden:NO];
     
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
