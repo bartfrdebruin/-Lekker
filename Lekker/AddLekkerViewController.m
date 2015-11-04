@@ -18,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.imageView.image = self.photo;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
