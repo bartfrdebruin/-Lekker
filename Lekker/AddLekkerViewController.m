@@ -21,5 +21,10 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:YES];
+    [self.navigationController setNavigationBarHidden:YES];
+}
 
 @end
