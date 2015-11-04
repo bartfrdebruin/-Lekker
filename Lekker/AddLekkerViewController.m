@@ -7,6 +7,7 @@
 //
 
 #import "AddLekkerViewController.h"
+#import "MapViewController.h"
 
 
 @interface AddLekkerViewController ()
