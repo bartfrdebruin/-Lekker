@@ -18,9 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-    self.imageView = self.photo;
+    self.imageView.image = self.photo;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
