@@ -77,7 +77,7 @@
     
     AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
     
-    addLekkerViewController.imageView.image = image;
+    addLekkerViewController.photo = image;
     
     [self dismissViewControllerAnimated:YES completion:NULL];
     
