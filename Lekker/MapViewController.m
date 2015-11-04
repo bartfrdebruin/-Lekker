@@ -76,10 +76,10 @@
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     //why am I instantiating UIImage?
     
-    //Get picked image from info dictionary...where is this info dictionary?
-//    self.imageView.image = image;
-    
     AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
+    
+    //Get picked image from info dictionary...where is this info dictionary?
+    //    self.imageView.image = image;
     
     [self dismissViewControllerAnimated:YES completion:NULL];
     

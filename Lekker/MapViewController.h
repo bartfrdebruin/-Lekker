@@ -23,4 +23,6 @@
 
 @property (nonatomic, strong) UIBarButtonItem *list;
 
+@property (strong, nonatomic) AddLekkerViewController *imageView;
+
 @end
