@@ -19,7 +19,7 @@
                     <rect key="frame" x="90" y="19" width="421" height="421"/>
                     <animations/>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="#Lekker:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Ab-pb-u6y">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="#Lekker:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Ab-pb-u6y">
                     <rect key="frame" x="90" y="453" width="421" height="128"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,7 +27,7 @@
                         <constraint firstAttribute="height" constant="128" id="4Ch-iQ-Zuv"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                 </textView>
             </subviews>
             <animations/>
