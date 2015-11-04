@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "ListViewController.h"
+#import "AddLekkerViewController.h"
 
 
 @interface MapViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
