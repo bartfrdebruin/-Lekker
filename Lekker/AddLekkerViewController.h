@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
+#import <MobileCoreServices/UTCoreTypes.h>
+
 
 @interface AddLekkerViewController : UIViewController <UINavigationControllerDelegate>
 
