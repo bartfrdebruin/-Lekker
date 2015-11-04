@@ -27,7 +27,6 @@
     
     [self.navigationController pushViewController:listView animated:YES];
     
-    
 }
 
 
@@ -49,6 +48,7 @@
     
     mapNavigation.rightBarButtonItem = list;
 }
+
 
 #pragma mark Image Picker
 
@@ -73,6 +73,7 @@
     
 }
 
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
@@ -80,9 +81,11 @@
     
     AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
     
-    [self dismissViewControllerAnimated:YES completion:NULL];
     
-    [self presentViewController:addLekkerViewController animated:YES completion: NULL];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.navigationController pushViewController:addLekkerViewController animated:YES];
+    }];
+
 }
 
 

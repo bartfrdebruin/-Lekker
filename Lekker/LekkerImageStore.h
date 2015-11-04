@@ -10,4 +10,6 @@
 
 @interface LekkerImageStore : PFObject
 
+
+
 @end

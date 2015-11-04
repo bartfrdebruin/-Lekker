@@ -29,6 +29,8 @@
 		1D1F791D1BE90812004E9EB0 /* #Lekker_groot.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791B1BE90812004E9EB0 /* #Lekker_groot.pdf */; };
 		1D1F791E1BE90812004E9EB0 /* #Lekker_klein.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791C1BE90812004E9EB0 /* #Lekker_klein.png */; };
 		1D1F79201BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791F1BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png */; };
+		1DA8696E1BEA19AA0030D27F /* LekkerCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8696D1BEA19AA0030D27F /* LekkerCellViewController.m */; };
+		1DA869701BEA23110030D27F /* LekkerCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA8696F1BEA23110030D27F /* LekkerCellViewController.xib */; };
 		1DD8D15D1BE7736A00E6607D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8D15C1BE7736A00E6607D /* main.m */; };
 		1DD8D1601BE7736A00E6607D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8D15F1BE7736A00E6607D /* AppDelegate.m */; };
 		1DD8D1621BE7736A00E6607D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DD8D1611BE7736A00E6607D /* Assets.xcassets */; };
@@ -69,6 +71,9 @@
 		1D1F791B1BE90812004E9EB0 /* #Lekker_groot.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "#Lekker_groot.pdf"; sourceTree = "<group>"; };
 		1D1F791C1BE90812004E9EB0 /* #Lekker_klein.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "#Lekker_klein.png"; sourceTree = "<group>"; };
 		1D1F791F1BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "#Lekker_klein_NoWhiteBorder.png"; sourceTree = "<group>"; };
+		1DA8696C1BEA19AA0030D27F /* LekkerCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LekkerCellViewController.h; sourceTree = "<group>"; };
+		1DA8696D1BEA19AA0030D27F /* LekkerCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LekkerCellViewController.m; sourceTree = "<group>"; };
+		1DA8696F1BEA23110030D27F /* LekkerCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LekkerCellViewController.xib; sourceTree = "<group>"; };
 		1DD8D1581BE7736A00E6607D /* Lekker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lekker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD8D15C1BE7736A00E6607D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1DD8D15E1BE7736A00E6607D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -177,6 +182,9 @@
 				1DD8D17C1BE7BFCF00E6607D /* ListViewController.h */,
 				1DD8D17D1BE7BFCF00E6607D /* ListViewController.m */,
 				1D1F79191BE8D21B004E9EB0 /* ListViewController.xib */,
+				1DA8696C1BEA19AA0030D27F /* LekkerCellViewController.h */,
+				1DA8696D1BEA19AA0030D27F /* LekkerCellViewController.m */,
+				1DA8696F1BEA23110030D27F /* LekkerCellViewController.xib */,
 				1DD8D16C1BE786EB00E6607D /* MapViewController.h */,
 				1DD8D16D1BE786EB00E6607D /* MapViewController.m */,
 				1DD8D16E1BE786EB00E6607D /* MapViewController.xib */,
@@ -239,7 +247,7 @@
 				TargetAttributes = {
 					1DD8D1571BE7736A00E6607D = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 8U2B4K4XV5;
+						DevelopmentTeam = EXEUSZ2G5F;
 					};
 				};
 			};
@@ -273,6 +281,7 @@
 				F23585E81BE7B24B0001EA39 /* logo_lekker.png in Resources */,
 				1DD8D1701BE786EB00E6607D /* MapViewController.xib in Resources */,
 				1D1F791D1BE90812004E9EB0 /* #Lekker_groot.pdf in Resources */,
+				1DA869701BEA23110030D27F /* LekkerCellViewController.xib in Resources */,
 				1D1F79201BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png in Resources */,
 				1DD8D1651BE7736A00E6607D /* LaunchScreen.storyboard in Resources */,
 				1D1F791E1BE90812004E9EB0 /* #Lekker_klein.png in Resources */,
@@ -288,6 +297,7 @@
 			files = (
 				1DD8D17F1BE7BFCF00E6607D /* ListViewController.m in Sources */,
 				1DD8D16F1BE786EB00E6607D /* MapViewController.m in Sources */,
+				1DA8696E1BEA19AA0030D27F /* LekkerCellViewController.m in Sources */,
 				F23585E51BE79A490001EA39 /* WelcomeViewController.m in Sources */,
 				F2702D361BE9FF1300627ED4 /* AddLekkerViewController.m in Sources */,
 				1DD8D1601BE7736A00E6607D /* AppDelegate.m in Sources */,
