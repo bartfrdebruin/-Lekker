@@ -79,9 +79,6 @@
     
     addLekkerViewController.imageView.image = image;
     
-    //Get picked image from info dictionary...where is this info dictionary?
-    //    self.imageView.image = image;
-    
     [self dismissViewControllerAnimated:YES completion:NULL];
     
     [self presentViewController:addLekkerViewController animated:YES completion: NULL];
