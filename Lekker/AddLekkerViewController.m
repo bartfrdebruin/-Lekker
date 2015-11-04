@@ -7,12 +7,13 @@
 //
 
 #import "AddLekkerViewController.h"
+#import "MapViewController.h"
 
 @interface AddLekkerViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
-@property (weak, nonatomic) IBOutlet UITextField *lekkertextField;
+@property (strong, nonatomic) IBOutlet UITextField *lekkertextField;
 
 @end
 

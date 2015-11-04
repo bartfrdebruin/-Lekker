@@ -72,6 +72,18 @@
     
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+   
+    [self.navigationController presentViewController:addLekkerViewController animated:YES completion:NULL];
+   
+}
+
 #pragma mark Location Manager
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
