@@ -22,6 +22,8 @@
     
 }
 
+#pragma textFieldShouldReturn
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
