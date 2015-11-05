@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 @interface ListViewController : PFQueryTableViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
