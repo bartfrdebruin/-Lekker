@@ -36,14 +36,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.meat count];
+    return 4;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(LekkerCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    cell.title.text = [self.titleCell objectAtIndex:indexPath.row];
-    cell.distance.text = [self.distance objectAtIndex:indexPath.row];
-    cell.lekkerComment.text = [self.comment objectAtIndex:indexPath.row];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,6 +56,20 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(LekkerCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.title.text = [self.titleCell objectAtIndex:indexPath.row];
+    cell.distance.text = [self.distance objectAtIndex:indexPath.row];
+    cell.lekkerComment.text = [self.comment objectAtIndex:indexPath.row];
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
+
 
 
 #pragma mark ViewDidLoad
@@ -66,6 +78,7 @@
     
     [super viewDidLoad];
    
+    
   }
 
 
