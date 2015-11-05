@@ -30,19 +30,19 @@
     PFObject *lekker = [PFObject objectWithClassName:@"Lekker"];
     [lekker setObject:self.titleTextField.text forKey:@"NameOfPost"];
     [lekker setObject:self.descriptionTextField.text forKey:@"Comment"];
-  
+    
+    // Lekker image
     NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
     
-    NSUUID *uuidString = [[NSUUID alloc] init];
-    PFFile *imageFile = [PFFile fileWithName:uuidString data:imageData];
+    NSUUID *uuid = [NSUUID UUID];
+    
+    PFFile *imageFile = [PFFile fileWithName:uuid.UUIDString data:imageData];
     [lekker setObject:imageFile forKey:@"imageFile"];
-    
-    
     
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error)
      {
         if (!error) {
-            
+            // do something with the new geoPoint
         }
     }];
     

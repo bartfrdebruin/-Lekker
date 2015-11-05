@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "AddLekkerViewController.h"
+#import <Parse/Parse.h>
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     
@@ -17,7 +18,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
+@property (nonatomic, strong) PFGeoPoint *userLocation;
 
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
