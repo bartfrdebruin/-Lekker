@@ -23,7 +23,14 @@
     
 }
 
-
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    CALayer *layer = [[CALayer alloc] init];
+    layer.opacity = 0.5;
+    
+    
+    return YES;
+}
 
 - (IBAction)post:(id)sender {
     
@@ -70,11 +77,6 @@
     }];
 }
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    
-    
-    return YES;
-}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 
