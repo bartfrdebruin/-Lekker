@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLekkerViewController">
             <connections>
+                <outlet property="descriptionTextField" destination="gyH-La-p2I" id="2rW-14-oSu"/>
                 <outlet property="imageView" destination="rpe-3X-Jcz" id="JDJ-cm-Zrq"/>
+                <outlet property="titleTextField" destination="8Dl-IW-z1p" id="5cT-7i-VQf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,8 +21,8 @@
                     <rect key="frame" x="134" y="27" width="333" height="333"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="333" id="Q2I-JH-byh"/>
-                        <constraint firstAttribute="height" constant="333" id="dQf-hD-WGL"/>
+                        <constraint firstAttribute="width" constant="333" id="044-jX-Cqk"/>
+                        <constraint firstAttribute="height" constant="333" id="ko6-wA-L5y"/>
                     </constraints>
                 </imageView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUO-k1-KjB">
@@ -41,15 +43,35 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Dl-IW-z1p">
+                    <rect key="frame" x="183" y="376" width="234" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="234" id="FER-9r-Qb1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gyH-La-p2I">
+                    <rect key="frame" x="183" y="414" width="234" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="AUO-k1-KjB" secondAttribute="bottom" id="GEk-cd-GLA"/>
-                <constraint firstAttribute="trailing" secondItem="AUO-k1-KjB" secondAttribute="trailing" id="KKg-h6-GOR"/>
-                <constraint firstItem="AUO-k1-KjB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hRH-Re-Wzz"/>
-                <constraint firstItem="rpe-3X-Jcz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="ia1-n7-T4o"/>
-                <constraint firstItem="rpe-3X-Jcz" firstAttribute="centerX" secondItem="AUO-k1-KjB" secondAttribute="centerX" id="l0f-2k-v4W"/>
+                <constraint firstItem="8Dl-IW-z1p" firstAttribute="centerX" secondItem="rpe-3X-Jcz" secondAttribute="centerX" id="2Kr-l4-D6h"/>
+                <constraint firstAttribute="trailing" secondItem="AUO-k1-KjB" secondAttribute="trailing" id="Kqo-la-AL6"/>
+                <constraint firstItem="8Dl-IW-z1p" firstAttribute="trailing" secondItem="gyH-La-p2I" secondAttribute="trailing" id="Lco-tK-Kcr"/>
+                <constraint firstItem="8Dl-IW-z1p" firstAttribute="top" secondItem="rpe-3X-Jcz" secondAttribute="bottom" constant="16" id="NOe-kf-QpG"/>
+                <constraint firstItem="8Dl-IW-z1p" firstAttribute="leading" secondItem="gyH-La-p2I" secondAttribute="leading" id="RWQ-nL-H2i"/>
+                <constraint firstItem="rpe-3X-Jcz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="iE7-Ds-ra2"/>
+                <constraint firstItem="AUO-k1-KjB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iFj-zh-571"/>
+                <constraint firstAttribute="bottom" secondItem="AUO-k1-KjB" secondAttribute="bottom" id="qEf-hb-FcV"/>
+                <constraint firstItem="gyH-La-p2I" firstAttribute="centerX" secondItem="AUO-k1-KjB" secondAttribute="centerX" id="wjY-w9-qjW"/>
+                <constraint firstItem="gyH-La-p2I" firstAttribute="top" secondItem="8Dl-IW-z1p" secondAttribute="bottom" constant="8" symbolic="YES" id="wmX-1K-OAA"/>
             </constraints>
         </view>
     </objects>
