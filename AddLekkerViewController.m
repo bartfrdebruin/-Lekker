@@ -23,6 +23,8 @@
 }
 
 - (IBAction)post:(id)sender {
+    
+    
 }
 
 - (IBAction)categoryChoice:(id)sender {
