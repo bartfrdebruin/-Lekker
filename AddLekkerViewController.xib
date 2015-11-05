@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLekkerViewController">
             <connections>
+                <outlet property="descriptionTextField" destination="MGC-zG-Ocs" id="A7m-WW-FoK"/>
                 <outlet property="imageView" destination="rpe-3X-Jcz" id="JDJ-cm-Zrq"/>
+                <outlet property="titleTextField" destination="SFD-u1-YcO" id="6a4-kb-hel"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,6 +43,26 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-3X-Jcz">
+                    <rect key="frame" x="203" y="32" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="HCZ-Dw-nKF"/>
+                        <constraint firstAttribute="width" constant="240" id="uxs-Ya-I8Y"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SFD-u1-YcO">
+                    <rect key="frame" x="275" y="187" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="gpt-SQ-lum"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="#Lekker description:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MGC-zG-Ocs">
+                    <rect key="frame" x="275" y="242" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -50,6 +72,13 @@
                 <constraint firstItem="AUO-k1-KjB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hRH-Re-Wzz"/>
                 <constraint firstItem="rpe-3X-Jcz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="ia1-n7-T4o"/>
                 <constraint firstItem="rpe-3X-Jcz" firstAttribute="centerX" secondItem="AUO-k1-KjB" secondAttribute="centerX" id="l0f-2k-v4W"/>
+                <constraint firstItem="MGC-zG-Ocs" firstAttribute="top" secondItem="SFD-u1-YcO" secondAttribute="bottom" constant="25" id="3Wt-34-AeW"/>
+                <constraint firstItem="MGC-zG-Ocs" firstAttribute="leading" secondItem="SFD-u1-YcO" secondAttribute="leading" id="5xR-gO-vol"/>
+                <constraint firstItem="rpe-3X-Jcz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="71E-oy-Wjb"/>
+                <constraint firstItem="SFD-u1-YcO" firstAttribute="top" secondItem="rpe-3X-Jcz" secondAttribute="bottom" constant="27" id="850-Fl-aFV"/>
+                <constraint firstItem="rpe-3X-Jcz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="203" id="I0I-bn-jiX"/>
+                <constraint firstItem="SFD-u1-YcO" firstAttribute="trailing" secondItem="MGC-zG-Ocs" secondAttribute="trailing" id="Tfd-ee-fWV"/>
+                <constraint firstItem="rpe-3X-Jcz" firstAttribute="centerX" secondItem="SFD-u1-YcO" secondAttribute="centerX" id="ele-Va-MKe"/>
             </constraints>
         </view>
     </objects>
