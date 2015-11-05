@@ -17,6 +17,6 @@
 
 @property (strong, nonatomic) UIImage *photo;
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *postButton;
 
 @end
