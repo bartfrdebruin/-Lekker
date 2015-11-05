@@ -23,6 +23,8 @@
     
 }
 
+
+
 - (IBAction)post:(id)sender {
     
     PFObject *lekker = [PFObject objectWithClassName:@"Lekker"];
@@ -31,11 +33,13 @@
     
     // Lekker image
     NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
-    NSString *filename = [NSString stringWithFormat:@"%@.png", self.titleTextField.text];
-    PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+    
+    NSUUID *uuidString = [[NSUUID alloc] init];
+    PFFile *imageFile = [PFFile fileWithName:uuidString data:imageData];
     [lekker setObject:imageFile forKey:@"imageFile"];
     
-    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error)
+     {
         if (!error) {
             // do something with the new geoPoint
         }
@@ -63,8 +67,6 @@
                  [alert addAction:defaultAction];
                  
                  [self presentViewController:alert animated:YES completion:nil];
-
-                 
              }
     }];
 }
