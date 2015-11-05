@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
+#import <Parse/Parse.h>
 
-@interface ListViewController : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ListViewController : PFQueryTableViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *vegetables;
 @property (nonatomic, strong) NSArray *meat;
