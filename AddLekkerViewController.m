@@ -37,22 +37,30 @@
     
     [lekker saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         
-             
-             
              if (!error) {
                  // Show success message
-                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved your #" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                 [alert show];
+                 UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload Complete" message: @"Successfully saved your #Lekker post!" preferredStyle:UIAlertControllerStyleAlert];
                  
-                 // Notify table view to reload the recipes from Parse cloud
-                 [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshTable" object:self];
+                 UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                       handler:^(UIAlertAction * action) {}];
+                 
+                 [alert addAction:defaultAction];
+                 
+                 [self presentViewController:alert animated:YES completion:nil];
                  
                  // Dismiss the controller
                  [self dismissViewControllerAnimated:YES completion:nil];
                  
              } else {
-                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Failure" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                 [alert show];
+                 UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload failure" message: @"Failed to save your #Lekker post!" preferredStyle:UIAlertControllerStyleAlert];
+                 
+                 UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                       handler:^(UIAlertAction * action) {}];
+                 
+                 [alert addAction:defaultAction];
+                 
+                 [self presentViewController:alert animated:YES completion:nil];
+
                  
              }
     }];
