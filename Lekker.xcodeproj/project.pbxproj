@@ -41,7 +41,6 @@
 		1DD8D1721BE7951700E6607D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8D1711BE7951700E6607D /* MapKit.framework */; };
 		1DD8D1761BE7A9B300E6607D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8D1751BE7A9B300E6607D /* CoreLocation.framework */; };
 		1DD8D17F1BE7BFCF00E6607D /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8D17D1BE7BFCF00E6607D /* ListViewController.m */; };
-		F220D2291BE8E8530060B76D /* LekkerImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F220D2281BE8E8530060B76D /* LekkerImageStore.m */; };
 		F227D8C31BEB49E600F18ECD /* AddLekkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F227D8C11BEB49E600F18ECD /* AddLekkerViewController.m */; };
 		F227D8C41BEB49E600F18ECD /* AddLekkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F227D8C21BEB49E600F18ECD /* AddLekkerViewController.xib */; };
 		F23585E51BE79A490001EA39 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F23585E31BE79A490001EA39 /* WelcomeViewController.m */; };
@@ -90,8 +89,6 @@
 		1DD8D1751BE7A9B300E6607D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1DD8D17C1BE7BFCF00E6607D /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		1DD8D17D1BE7BFCF00E6607D /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
-		F220D2271BE8E8530060B76D /* LekkerImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LekkerImageStore.h; sourceTree = "<group>"; };
-		F220D2281BE8E8530060B76D /* LekkerImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LekkerImageStore.m; sourceTree = "<group>"; };
 		F227D8C01BEB49E600F18ECD /* AddLekkerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddLekkerViewController.h; path = ../AddLekkerViewController.h; sourceTree = "<group>"; };
 		F227D8C11BEB49E600F18ECD /* AddLekkerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddLekkerViewController.m; path = ../AddLekkerViewController.m; sourceTree = "<group>"; };
 		F227D8C21BEB49E600F18ECD /* AddLekkerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddLekkerViewController.xib; path = ../AddLekkerViewController.xib; sourceTree = "<group>"; };
@@ -198,8 +195,6 @@
 				F23585E21BE79A490001EA39 /* WelcomeViewController.h */,
 				F23585E31BE79A490001EA39 /* WelcomeViewController.m */,
 				F23585E41BE79A490001EA39 /* WelcomeViewController.xib */,
-				F220D2271BE8E8530060B76D /* LekkerImageStore.h */,
-				F220D2281BE8E8530060B76D /* LekkerImageStore.m */,
 				1DD8D1611BE7736A00E6607D /* Assets.xcassets */,
 				1DD8D1631BE7736A00E6607D /* LaunchScreen.storyboard */,
 				1DD8D1661BE7736A00E6607D /* Info.plist */,
@@ -306,7 +301,6 @@
 				1DA869761BEA5D3C0030D27F /* LekkerCell.m in Sources */,
 				F227D8C31BEB49E600F18ECD /* AddLekkerViewController.m in Sources */,
 				1DD8D15D1BE7736A00E6607D /* main.m in Sources */,
-				F220D2291BE8E8530060B76D /* LekkerImageStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
