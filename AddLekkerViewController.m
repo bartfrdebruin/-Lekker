@@ -31,8 +31,7 @@
         
         
         PFObject *lekker = [PFObject objectWithClassName:@"Lekker"];
-        [lekker setObject:self.titleTextField.text forKey:@"NameOfPost"];
-        [lekker setObject:self.descriptionTextField.text forKey:@"Comment"];
+       [lekker setObject:self.descriptionTextField.text forKey:@"Comment"];
         [lekker setObject:geoPoint forKey:@"location"];
         
         // Lekker image
@@ -71,9 +70,14 @@
     }];
 }
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    
+    return YES;
+}
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+
     [textField resignFirstResponder];
     return YES;
 }
