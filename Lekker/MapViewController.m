@@ -49,6 +49,12 @@
         
         // Tell our manager to start looking for its location immediately
         [locationManager startUpdatingLocation];
+        
+        CLLocation *location = [locationManager location];
+        
+        
+      
+    
     }
     return self;
 }
