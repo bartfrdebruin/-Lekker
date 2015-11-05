@@ -12,11 +12,14 @@
 @interface AddLekkerViewController : UIViewController <UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 
 @property (strong, nonatomic) UIImage *photo;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *postButton;
+- (IBAction)post:(id)sender;
+- (IBAction)categoryChoice:(id)sender;
+
 
 @end

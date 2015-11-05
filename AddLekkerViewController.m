@@ -8,6 +8,7 @@
 
 #import "AddLekkerViewController.h"
 #import "MapViewController.h"
+#import <Parse/Parse.h>
 
 @interface AddLekkerViewController ()
 
@@ -22,11 +23,41 @@
     
 }
 
-#pragma post data to Parse
+- (IBAction)post:(id)sender {
+    
+    PFObject *lekker = [PFObject objectWithClassName:@"Lekker"];
+    [lekker setObject:self.titleTextField.text forKey:@"NameOfPost"];
+    [lekker setObject:self.descriptionTextField.text forKey:@"Comment"];
+    
+    // Recipe image
+    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
+    NSString *filename = [NSString stringWithFormat:@"%@.png", self.titleTextField.text];
+    PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+    [lekker setObject:imageFile forKey:@"imageFile"];
+    
+    [lekker saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+             
+             
+             if (!error) {
+                 // Show success message
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved your #" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                 [alert show];
+                 
+                 // Notify table view to reload the recipes from Parse cloud
+                 [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshTable" object:self];
+                 
+                 // Dismiss the controller
+                 [self dismissViewControllerAnimated:YES completion:nil];
+                 
+             } else {
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Failure" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                 [alert show];
+                 
+             }
+    }];
+}
 
-
-
-#pragma textFieldShouldReturn
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -34,4 +65,7 @@
     return YES;
 }
 
+- (IBAction)categoryChoice:(id)sender {
+    
+}
 @end

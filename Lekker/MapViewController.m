@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "ListViewController.h"
 #import "AddLekkerViewController.h"
+#import <MobileCoreServices/UTCoreTypes.h>
 
 
 @interface MapViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -59,8 +60,6 @@
     ListViewController *listView = [[ListViewController alloc] init];
     
     [self.navigationController pushViewController:listView animated:YES];
-    
-    
 }
 
 
@@ -98,18 +97,20 @@
         self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
     
+    self.imagePicker.mediaTypes = @[(NSString*)kUTTypeImage];
+    
     self.imagePicker.allowsEditing = YES;
     self.imagePicker.delegate = self;
-    
     // Place image picker on the screen
     [self presentViewController:self.imagePicker animated:YES completion: NULL];
     
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
-    
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+   
     AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
     
     addLekkerViewController.photo = image;
@@ -118,6 +119,14 @@
     
     [self.navigationController pushViewController:addLekkerViewController animated:YES];
 }
+
+//- (void) imagePickerController: (UIImagePickerController *) picker didFinishPickingMediaWithInfo: (NSDictionary *) info {
+//    
+//    UIImage *originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
+//    self.recipeImageView.image = originalImage;
+//    
+//    [picker dismissViewControllerAnimated:YES completion:nil];
+//}
 
 
 
