@@ -17,11 +17,46 @@
 
 @implementation MapViewController
 
-#pragma mark GoToList
 
--(IBAction)goToList:(id)sender {
+#pragma mark Location Manager
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
-    ListViewController *listView = [[ListViewController alloc]init];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(self) {
+        
+        
+        // Create location manager object
+        locationManager = [[CLLocationManager alloc] init];
+        
+        [locationManager setDelegate:self];
+        
+        // And we want it to be as accurate as possible
+        // regardless of how much time/power it takes
+        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        
+        [locationManager requestWhenInUseAuthorization];
+        [locationManager requestAlwaysAuthorization];
+        
+        CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];
+        
+        if (
+            authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
+            authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
+            [locationManager startUpdatingLocation];
+        }
+        
+        // Tell our manager to start looking for its location immediately
+        [locationManager startUpdatingLocation];
+    }
+    return self;
+}
+
+#pragma mark - GoToList
+
+- (IBAction)goToList:(id)sender {
+    
+    ListViewController *listView = [[ListViewController alloc] init];
     
     [self.navigationController pushViewController:listView animated:YES];
     
@@ -85,39 +120,6 @@
 }
 
 
-#pragma mark Location Manager
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if(self) {
-        
-       
-        // Create location manager object
-        locationManager = [[CLLocationManager alloc] init];
-        
-        [locationManager setDelegate:self];
-        
-        // And we want it to be as accurate as possible
-        // regardless of how much time/power it takes
-        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-                
-        [locationManager requestWhenInUseAuthorization];
-        [locationManager requestAlwaysAuthorization];
-        
-        CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];
-        
-        if (
-            authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
-            authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
-            [locationManager startUpdatingLocation];
-        }
-        
-                // Tell our manager to start looking for its location immediately
-                [locationManager startUpdatingLocation];
-    }
-    return self;
-}
 
 // Zooming in to our location
 - (void)mapView:(MKMapView * _Nonnull)mapView

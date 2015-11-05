@@ -11,9 +11,13 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 
 
-@interface AddLekkerViewController : UIViewController <UINavigationControllerDelegate>
+@interface AddLekkerViewController : UITableViewController <UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *lekkerTextField;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+
+
 
 @property (strong, nonatomic) UIImage *photo;
 
