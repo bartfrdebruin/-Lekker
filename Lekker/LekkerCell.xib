@@ -51,7 +51,7 @@
                 <outlet property="lekkerComment" destination="5L4-6S-8OI" id="dNn-NO-Xq1"/>
                 <outlet property="title" destination="MD7-gr-jxT" id="9mY-sJ-ToB"/>
             </connections>
-            <point key="canvasLocation" x="466" y="489"/>
+            <point key="canvasLocation" x="342" y="393"/>
         </tableViewCell>
     </objects>
 </document>

@@ -36,7 +36,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.titleCell count];
+    return [self.meat count];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(LekkerCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.title.text = [self.titleCell objectAtIndex:indexPath.row];
+    cell.distance.text = [self.distance objectAtIndex:indexPath.row];
+    cell.lekkerComment.text = [self.comment objectAtIndex:indexPath.row];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -51,12 +58,7 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(LekkerCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    cell.title.text = [self.titleCell objectAtIndex:indexPath.row];
-    cell.distance.text = [self.distance objectAtIndex:indexPath.row];
-    cell.lekkerComment.text = [self.comment objectAtIndex:indexPath.row];
-   }
+
 
 #pragma mark ViewDidLoad
 
