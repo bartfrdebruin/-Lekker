@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
 
-@interface ListViewController : UIViewController <UINavigationControllerDelegate>
+@interface ListViewController : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
-- (IBAction)takePicture:(id)sender;
+@property (nonatomic, strong) NSArray *vegetables;
+@property (nonatomic, strong) NSArray *meat;
+@property (nonatomic, strong) NSArray *titleCell;
+@property (nonatomic, strong) NSArray *distance;
+@property (nonatomic, strong) NSArray *categories;
+@property (nonatomic, strong) NSArray *comment;
+
+
+
 
 
 @end
