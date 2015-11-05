@@ -29,11 +29,17 @@
     [lekker setObject:self.titleTextField.text forKey:@"NameOfPost"];
     [lekker setObject:self.descriptionTextField.text forKey:@"Comment"];
     
-    // Recipe image
+    // Lekker image
     NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
     NSString *filename = [NSString stringWithFormat:@"%@.png", self.titleTextField.text];
     PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
     [lekker setObject:imageFile forKey:@"imageFile"];
+    
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+        if (!error) {
+            // do something with the new geoPoint
+        }
+    }];
     
     [lekker saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         
@@ -47,9 +53,6 @@
                  [alert addAction:defaultAction];
                  
                  [self presentViewController:alert animated:YES completion:nil];
-                 
-                 // Dismiss the controller
-                 [self dismissViewControllerAnimated:YES completion:nil];
                  
              } else {
                  UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload failure" message: @"Failed to save your #Lekker post!" preferredStyle:UIAlertControllerStyleAlert];
