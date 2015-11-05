@@ -11,9 +11,11 @@
 
 @interface AddLekkerViewController : UIViewController <UINavigationControllerDelegate>
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 @property (strong, nonatomic) UIImage *photo;
+
+- (IBAction)post:(id)sender;
+- (IBAction)categoryChoice:(id)sender;
+
 
 @end
