@@ -38,8 +38,6 @@
     
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(returnMainViewToInitialposition:) name:UIKeyboardWillHideNotification object:nil];
     
-//      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveToParse:) name:@"TestNotification" object:nil];
-    
 }
 
 - (void) viewWillDisappear:(BOOL)animated{
@@ -121,9 +119,9 @@
             // Lekker image
             NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
             
-          //  NSUUID *uuid = [NSUUID UUID];
+//            NSUUID *uuid = [NSUUID UUID];
             
-            PFFile *imageFile = [PFFile fileWithName:@"test" data:imageData];
+            PFFile *imageFile = [PFFile fileWithName: @"test" data:imageData];
             [lekker setObject:imageFile forKey:@"imageFile"];
             
             
@@ -134,20 +132,23 @@
             
             UIAlertAction* artsAndCulture = [UIAlertAction actionWithTitle:@"Arts & Culture" style:UIAlertActionStyleDefault
                                                                    handler:^(UIAlertAction * action) {
-                                                                       NSLog(@"%@", action.title);
                                                                        [lekker setObject:action.title forKey:@"category"];
-                                
+                                                                       [self saveLekker:lekker];
+
+                                                                       
                                                                    }];
             
             UIAlertAction* foodAndDrinks = [UIAlertAction actionWithTitle:@"Food & Drinks" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {
                                                                       [lekker setObject:action.title forKey:@"category"];
+                                                                      [self saveLekker:lekker];
+
                                                                   }];
             
             UIAlertAction* randomLekkers = [UIAlertAction actionWithTitle:@"Random #Lekkers" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {
                                                                       [lekker setObject:action.title forKey:@"category"];
-                                                                      
+                                                                      [self saveLekker:lekker];
                                                                   }];
             
             
@@ -158,38 +159,39 @@
             [self presentViewController:alert animated:NO completion:^{
                 // Add saveInBackGround here for some advanced ninja coding
             }];
-            
-            
-            
-            [lekker saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                
-                if (!error) {
-                    // Show success message
-                    UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload Complete" message: @"Successfully saved your #Lekker post!" preferredStyle:UIAlertControllerStyleAlert];
-                    
-                    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                          handler:^(UIAlertAction * action) {}];
-                    
-                    [alert addAction:defaultAction];
-                    
-                    [self presentViewController:alert animated:YES completion:nil];
-                    
-                } else {
-                    UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload failure" message: @"Failed to save your #Lekker post!" preferredStyle:UIAlertControllerStyleAlert];
-                    
-                    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                          handler:^(UIAlertAction * action) {}];
-                    
-                    [alert addAction:defaultAction];
-                    
-                    [self presentViewController:alert animated:YES completion:nil];
-                }
-            }];
-
+           
         }
     }];
 }
 
+- (void)saveLekker:(PFObject *)lekker {
+    
+    [self.lekker saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        if (!error) {
+            // Show success message
+            UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload Complete" message: @"Successfully saved your #Lekker post!" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+            
+        } else {
+            UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload failure" message: @"Failed to save your #Lekker post!" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+    
+}
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
