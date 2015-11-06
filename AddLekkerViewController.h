@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
+#import <Parse/Parse.h>
 
 @interface AddLekkerViewController : UIViewController <UINavigationControllerDelegate, UITextFieldDelegate>
 
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @property (strong, nonatomic) UIImage *photo;
+@property (strong, nonatomic) PFObject *lekker;
 
 - (IBAction)post:(id)sender;
 - (IBAction)categoryChoice:(id)sender;
