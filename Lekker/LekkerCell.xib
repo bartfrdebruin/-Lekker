@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,32 +11,54 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="115.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqK-3f-F10">
+                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqK-3f-F10" customClass="PFImageView">
                         <rect key="frame" x="14" y="14" width="90" height="90"/>
                         <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="F9m-ws-qUG"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MD7-gr-jxT">
-                        <rect key="frame" x="118" y="13" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MD7-gr-jxT">
+                        <rect key="frame" x="118" y="13" width="202" height="21"/>
                         <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Q7h-6d-3LF"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#Lekker: Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5L4-6S-8OI">
-                        <rect key="frame" x="118" y="38" width="194" height="66"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#Lekker: Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5L4-6S-8OI">
+                        <rect key="frame" x="118" y="38" width="202" height="66"/>
                         <animations/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7qj-Gw-PeZ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7qj-Gw-PeZ">
                         <rect key="frame" x="8" y="8" width="102" height="102"/>
                         <animations/>
                     </imageView>
                 </subviews>
                 <animations/>
+                <constraints>
+                    <constraint firstItem="qqK-3f-F10" firstAttribute="centerY" secondItem="7qj-Gw-PeZ" secondAttribute="centerY" id="CNw-Sd-lgY"/>
+                    <constraint firstItem="7qj-Gw-PeZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DR8-67-0Mc"/>
+                    <constraint firstItem="qqK-3f-F10" firstAttribute="bottom" secondItem="5L4-6S-8OI" secondAttribute="bottom" id="FmV-OX-CeO"/>
+                    <constraint firstItem="MD7-gr-jxT" firstAttribute="trailing" secondItem="5L4-6S-8OI" secondAttribute="trailing" id="NVe-dP-d4S"/>
+                    <constraint firstItem="MD7-gr-jxT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="d4q-81-heR"/>
+                    <constraint firstItem="qqK-3f-F10" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="d5r-0e-QAL"/>
+                    <constraint firstItem="MD7-gr-jxT" firstAttribute="leading" secondItem="7qj-Gw-PeZ" secondAttribute="trailing" constant="8" symbolic="YES" id="d6j-Uj-80m"/>
+                    <constraint firstAttribute="trailing" secondItem="MD7-gr-jxT" secondAttribute="trailing" id="e4q-Wg-XEZ"/>
+                    <constraint firstItem="5L4-6S-8OI" firstAttribute="leading" secondItem="qqK-3f-F10" secondAttribute="trailing" constant="14" id="epV-eG-m79"/>
+                    <constraint firstItem="qqK-3f-F10" firstAttribute="centerX" secondItem="7qj-Gw-PeZ" secondAttribute="centerX" id="fuR-Ev-jDh"/>
+                    <constraint firstItem="5L4-6S-8OI" firstAttribute="leading" secondItem="MD7-gr-jxT" secondAttribute="leading" id="lRU-Vi-tV5"/>
+                    <constraint firstItem="5L4-6S-8OI" firstAttribute="top" secondItem="MD7-gr-jxT" secondAttribute="bottom" constant="4" id="ln5-K3-XTF"/>
+                    <constraint firstItem="7qj-Gw-PeZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="lnN-dT-H0e"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="qqK-3f-F10" secondAttribute="bottom" constant="3.5" id="xyj-YC-sIh"/>
+                </constraints>
             </tableViewCellContentView>
             <animations/>
             <connections>

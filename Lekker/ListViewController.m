@@ -44,6 +44,12 @@
     NSString *newString = object[@"NameOfPost"];
     cell.title.text = newString;
     
+    NSString *newComment = object[@"Comment"];
+    cell.lekkerComment.text = newComment;
+    
+//    PFFile *thumbnail = [object objectForKey:@"imageFile"];
+//    cell.imageThumbnail 
+    
 //Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!!
     
     return cell;
