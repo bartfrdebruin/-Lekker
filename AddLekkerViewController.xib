@@ -17,14 +17,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-3X-Jcz">
-                    <rect key="frame" x="41" y="68" width="333" height="333"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="333" id="044-jX-Cqk"/>
-                        <constraint firstAttribute="height" constant="333" id="ko6-wA-L5y"/>
-                    </constraints>
-                </imageView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUO-k1-KjB">
                     <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                     <animations/>
@@ -54,6 +46,14 @@
                         <outlet property="delegate" destination="-1" id="Vbo-c2-jdb"/>
                     </connections>
                 </toolbar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-3X-Jcz">
+                    <rect key="frame" x="41" y="113" width="333" height="333"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="333" id="044-jX-Cqk"/>
+                        <constraint firstAttribute="height" constant="333" id="ko6-wA-L5y"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -61,7 +61,7 @@
                 <constraint firstAttribute="trailing" secondItem="AUO-k1-KjB" secondAttribute="trailing" id="Kqo-la-AL6"/>
                 <constraint firstItem="rpe-3X-Jcz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="iE7-Ds-ra2"/>
                 <constraint firstItem="AUO-k1-KjB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iFj-zh-571"/>
-                <constraint firstAttribute="bottom" secondItem="AUO-k1-KjB" secondAttribute="bottom" id="qEf-hb-FcV"/>
+                <constraint firstAttribute="bottom" secondItem="AUO-k1-KjB" secondAttribute="bottom" identifier="bottomConstraint" id="qEf-hb-FcV"/>
                 <constraint firstItem="rpe-3X-Jcz" firstAttribute="centerX" secondItem="AUO-k1-KjB" secondAttribute="centerX" id="vbY-2X-AXG"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>

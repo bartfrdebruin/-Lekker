@@ -16,22 +16,94 @@
 
 @implementation AddLekkerViewController
 
+#pragma mark Views
+
+- (void) viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    }
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    
+    // Getting the imageView from the property
     self.imageView.image = self.photo;
     
+    self.descriptionTextField.delegate = self;
+    
+    // Creating a notification when the keyboard floats up.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(liftMainViewWhenKeybordAppears:) name:UIKeyboardWillShowNotification object:nil];
+    
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(returnMainViewToInitialposition:) name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+- (void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+
+#pragma mark keyboard
+
+- (void) liftMainViewWhenKeybordAppears:(NSNotification*)aNotification{
+    NSDictionary* userInfo = [aNotification userInfo];
+    NSTimeInterval animationDuration;
+    UIViewAnimationCurve animationCurve;
+    CGRect keyboardFrame;
     
-    textField.inputAccessoryView=self.toolbar;
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[userInfo objectForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardFrame];
+    
+//    NSArray* constraints = self.toolbar.constraints;
+//    NSLayoutConstraint* bottomConstraint;
+//    for (NSLayoutConstraint *constraint in constraints) {
+//        
+//        if ([constraint.identifier isEqualToString:@"bottomConstraint"]) {
+//            bottomConstraint = constraint;
+//            break;
+//        }
+//        
+//    }
+//    
+//    bottomConstraint.constant = bottomConstraint.constant - keyboardFrame.size.height;
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - keyboardFrame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+    
+    [UIView commitAnimations];
+    
+}
+
+- (void) returnMainViewToInitialposition:(NSNotification*)aNotification{
+    NSDictionary* userInfo = [aNotification userInfo];
+    NSTimeInterval animationDuration;
+    UIViewAnimationCurve animationCurve;
+    CGRect keyboardFrame;
+    
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[userInfo objectForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardFrame];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + keyboardFrame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
 
     
+    [UIView commitAnimations];
     
-    return YES;
 }
+
+#pragma mark creating post
 
 - (IBAction)post:(id)sender {
     
@@ -39,7 +111,7 @@
         
         
         PFObject *lekker = [PFObject objectWithClassName:@"Lekker"];
-       [lekker setObject:self.descriptionTextField.text forKey:@"Comment"];
+        [lekker setObject:self.descriptionTextField.text forKey:@"Comment"];
         [lekker setObject:geoPoint forKey:@"location"];
         
         // Lekker image
@@ -49,6 +121,36 @@
         
         PFFile *imageFile = [PFFile fileWithName:uuid.UUIDString data:imageData];
         [lekker setObject:imageFile forKey:@"imageFile"];
+        
+        
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Categories"
+                                                                       message:@"Choose a category to fit your post!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        
+        UIAlertAction* artsAndCulture = [UIAlertAction actionWithTitle:@"Arts & Culture" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  [lekker setObject:action.title forKey:@"category"];
+                                                              }];
+        
+        UIAlertAction* foodAndDrinks = [UIAlertAction actionWithTitle:@"Food & Drinks" style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction * action) {
+                                                               [lekker setObject:action.title forKey:@"category"];
+                                                               }];
+        
+        UIAlertAction* randomLekkers = [UIAlertAction actionWithTitle:@"Random #Lekkers" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  [lekker setObject:action.title forKey:@"category"];
+                                                                  
+ 
+                                                              }];
+
+        
+        [alert addAction:artsAndCulture];
+        [alert addAction:foodAndDrinks];
+        [alert addAction:randomLekkers];
+        
+        [self presentViewController:alert animated:NO completion:nil];
         
         
         [lekker saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -80,8 +182,9 @@
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-
-    [textField resignFirstResponder];
+    
+    
+    [self.descriptionTextField resignFirstResponder];
     return YES;
 }
 
