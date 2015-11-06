@@ -15,21 +15,6 @@
 
 @implementation ListViewController
 
-#pragma mark Array
-
-- (id)init {
-    self = [super init];
-    if (self) {
-        self.titleCell = @[@"Dish1", @"Dish2", @"Dish3", @"Dish4"];
-        self.vegetables = @[@"Paprika", @"Aubergine", @"Wortelen", @"Tomaten"];
-        self.meat = @[@"Beef", @"Lamb", @"Chicken", @"Pork", @"Goat"];
-        self.categories =@[@"red",@"Blue", @"Green", @"Pink"];
-        self.comment =@[@"blabla1",@"blabla2", @"blabla3", @"blabla4"];
-    }
-    
-    return self;
-}
-
 #pragma mark TableView
 
 - (id)initWithCoder:(NSCoder *)aCoder
@@ -82,43 +67,14 @@
     
 //Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!!
     
-//    UILabel *prepTimeLabel = (UILabel*) [cell viewWithTag:102];
-//    prepTimeLabel.text = [object objectForKey:@"prepTime"];
-// HOW TO DO THIS????
-//    PFGeoPoint *
-//    bob.property?? = [object objectForKey:@"location"];
-    
     return cell;
 }
 
-// Removed following code to replace them Parse methods.
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    
-//    return 4;
-//}
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    
-//    return 1;
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(LekkerCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 //{
-//    LekkerCell * cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell"];
-//    if (!cell)
-//    {
-//        [tableView registerNib:[UINib nibWithNibName:@"LekkerCell" bundle:nil] forCellReuseIdentifier:@"MyCell"];
-//        cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell"];
-//    }
-//    
-//    return cell;
+//    cell.title.text = [self.titleCell objectAtIndex:indexPath.row];
+//    cell.lekkerComment.text = [self.comment objectAtIndex:indexPath.row];
 //}
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(LekkerCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    cell.title.text = [self.titleCell objectAtIndex:indexPath.row];
-    cell.lekkerComment.text = [self.comment objectAtIndex:indexPath.row];
-}
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
