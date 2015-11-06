@@ -15,53 +15,52 @@
 
 @implementation ListViewController
 
-#pragma mark Array
-
-- (id)init {
-    self = [super init];
-    if (self) {
-        self.titleCell = @[@"Dish1", @"Dish2", @"Dish3", @"Dish4"];
-        self.vegetables = @[@"Paprika", @"Aubergine", @"Wortelen", @"Tomaten"];
-        self.meat = @[@"Beef", @"Lamb", @"Chicken", @"Pork", @"Goat"];
-        self.distance =@[@"500m", @"600m", @"700m", @"800m"];
-        self.categories =@[@"red",@"Blue", @"Green", @"Pink"];
-        self.comment =@[@"blabla1",@"blabla2", @"blabla3", @"blabla4"];
-    }
-    
-    return self;
-}
-
 #pragma mark TableView
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 4;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (PFQuery *)queryForTable
 {
-    LekkerCell * cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell"];
-    if (!cell)
-    {
-        [tableView registerNib:[UINib nibWithNibName:@"LekkerCell" bundle:nil] forCellReuseIdentifier:@"MyCell"];
-        cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Lekker"];
+    
+    return query;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
+{
+    static NSString *simpleTableIdentifier = @"cell";
+    
+    LekkerCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"LekkerCell" owner:nil options:nil] objectAtIndex:0];
     }
+    
+    // Configure the cell
+    PFFile *thumbnail = [object objectForKey:@"imageFile"];
+    PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
+    thumbnailImageView.image = [UIImage imageNamed:@"placeholder.jpg"];
+    thumbnailImageView.file = thumbnail;
+    [thumbnailImageView loadInBackground];
+    
+    NSString *newString = object[@"NameOfPost"];
+    cell.title.text = newString;
+    
+    NSString *newComment = object[@"Comment"];
+    cell.lekkerComment.text = newComment;
+    
+//    PFFile *thumbnail = [object objectForKey:@"imageFile"];
+//    cell.imageThumbnail 
+    
+//Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!!
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(LekkerCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    cell.title.text = [self.titleCell objectAtIndex:indexPath.row];
-    cell.distance.text = [self.distance objectAtIndex:indexPath.row];
-    cell.lekkerComment.text = [self.comment objectAtIndex:indexPath.row];
-}
+// Took the following out because it's not in recipe tutorial.
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(LekkerCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    cell.title.text = [self.titleCell objectAtIndex:indexPath.row];
+//    cell.lekkerComment.text = [self.comment objectAtIndex:indexPath.row];
+//}
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

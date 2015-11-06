@@ -13,15 +13,4 @@
 
 @interface ListViewController : PFQueryTableViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) NSArray *vegetables;
-@property (nonatomic, strong) NSArray *meat;
-@property (nonatomic, strong) NSArray *titleCell;
-@property (nonatomic, strong) NSArray *distance;
-@property (nonatomic, strong) NSArray *categories;
-@property (nonatomic, strong) NSArray *comment;
-
-
-
-
-
 @end
