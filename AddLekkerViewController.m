@@ -23,10 +23,11 @@
     
 }
 
+
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     
-    CALayer *layer = [[CALayer alloc] init];
-    layer.opacity = 0.5;
+    textField.inputAccessoryView=self.toolbar;
+
     
     
     return YES;
