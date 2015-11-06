@@ -70,6 +70,7 @@
     return cell;
 }
 
+// Took the following out because it's not in recipe tutorial.
 //- (void)tableView:(UITableView *)tableView willDisplayCell:(LekkerCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    cell.title.text = [self.titleCell objectAtIndex:indexPath.row];
