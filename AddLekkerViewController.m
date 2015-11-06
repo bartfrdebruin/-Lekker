@@ -32,10 +32,11 @@
     self.imageView.image = self.photo;
     
     self.descriptionTextField.delegate = self;
-    // Creating a notification when the keyboard floats up.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(returnMainViewToInitialposition:) name:UIKeyboardWillShowNotification object:nil];
     
-     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(liftMainViewWhenKeybordAppears:) name:UIKeyboardWillHideNotification object:nil];
+    // Creating a notification when the keyboard floats up.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(liftMainViewWhenKeybordAppears:) name:UIKeyboardWillShowNotification object:nil];
+    
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(returnMainViewToInitialposition:) name:UIKeyboardWillHideNotification object:nil];
     
 }
 
@@ -58,12 +59,27 @@
     [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
     [[userInfo objectForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardFrame];
     
+//    NSArray* constraints = self.toolbar.constraints;
+//    NSLayoutConstraint* bottomConstraint;
+//    for (NSLayoutConstraint *constraint in constraints) {
+//        
+//        if ([constraint.identifier isEqualToString:@"bottomConstraint"]) {
+//            bottomConstraint = constraint;
+//            break;
+//        }
+//        
+//    }
+//    
+//    bottomConstraint.constant = bottomConstraint.constant - keyboardFrame.size.height;
+    
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:animationDuration];
     [UIView setAnimationCurve:animationCurve];
     
-    [self.toolbar setFrame:CGRectMake(self.toolbar.frame.origin.x, self.toolbar.frame.origin.y - keyboardFrame.size.height, self.toolbar.frame.size.width, self.toolbar.frame.size.height)];
+    [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - keyboardFrame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+    
     [UIView commitAnimations];
+    
 }
 
 - (void) returnMainViewToInitialposition:(NSNotification*)aNotification{
@@ -80,10 +96,11 @@
     [UIView setAnimationDuration:animationDuration];
     [UIView setAnimationCurve:animationCurve];
     
-    [self.toolbar setFrame:CGRectMake(self.toolbar.frame.origin.x, self.toolbar.frame.origin.y + keyboardFrame.size.height, self.toolbar.frame.size.width, self.toolbar.frame.size.height)];
+    [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + keyboardFrame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+
+    
     [UIView commitAnimations];
     
-//    CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
 }
 
 #pragma mark creating post
@@ -94,7 +111,7 @@
         
         
         PFObject *lekker = [PFObject objectWithClassName:@"Lekker"];
-       [lekker setObject:self.descriptionTextField.text forKey:@"Comment"];
+        [lekker setObject:self.descriptionTextField.text forKey:@"Comment"];
         [lekker setObject:geoPoint forKey:@"location"];
         
         // Lekker image
@@ -104,6 +121,36 @@
         
         PFFile *imageFile = [PFFile fileWithName:uuid.UUIDString data:imageData];
         [lekker setObject:imageFile forKey:@"imageFile"];
+        
+        
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Categories"
+                                                                       message:@"Choose a category to fit your post!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        
+        UIAlertAction* artsAndCulture = [UIAlertAction actionWithTitle:@"Arts & Culture" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  [lekker setObject:action.title forKey:@"category"];
+                                                              }];
+        
+        UIAlertAction* foodAndDrinks = [UIAlertAction actionWithTitle:@"Food & Drinks" style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction * action) {
+                                                               [lekker setObject:action.title forKey:@"category"];
+                                                               }];
+        
+        UIAlertAction* randomLekkers = [UIAlertAction actionWithTitle:@"Random #Lekkers" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  [lekker setObject:action.title forKey:@"category"];
+                                                                  
+ 
+                                                              }];
+
+        
+        [alert addAction:artsAndCulture];
+        [alert addAction:foodAndDrinks];
+        [alert addAction:randomLekkers];
+        
+        [self presentViewController:alert animated:NO completion:nil];
         
         
         [lekker saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
