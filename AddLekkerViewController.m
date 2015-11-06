@@ -16,22 +16,77 @@
 
 @implementation AddLekkerViewController
 
+#pragma mark Views
+
+- (void) viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    }
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    
+    // Getting the imageView from the property
     self.imageView.image = self.photo;
     
+    self.descriptionTextField.delegate = self;
+    // Creating a notification when the keyboard floats up.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(returnMainViewToInitialposition:) name:UIKeyboardWillShowNotification object:nil];
+    
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(liftMainViewWhenKeybordAppears:) name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+- (void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    
-    textField.inputAccessoryView=self.toolbar;
 
+#pragma mark keyboard
+
+- (void) liftMainViewWhenKeybordAppears:(NSNotification*)aNotification{
+    NSDictionary* userInfo = [aNotification userInfo];
+    NSTimeInterval animationDuration;
+    UIViewAnimationCurve animationCurve;
+    CGRect keyboardFrame;
     
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[userInfo objectForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardFrame];
     
-    return YES;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    [self.toolbar setFrame:CGRectMake(self.toolbar.frame.origin.x, self.toolbar.frame.origin.y - keyboardFrame.size.height, self.toolbar.frame.size.width, self.toolbar.frame.size.height)];
+    [UIView commitAnimations];
 }
+
+- (void) returnMainViewToInitialposition:(NSNotification*)aNotification{
+    NSDictionary* userInfo = [aNotification userInfo];
+    NSTimeInterval animationDuration;
+    UIViewAnimationCurve animationCurve;
+    CGRect keyboardFrame;
+    
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[userInfo objectForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardFrame];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    [self.toolbar setFrame:CGRectMake(self.toolbar.frame.origin.x, self.toolbar.frame.origin.y + keyboardFrame.size.height, self.toolbar.frame.size.width, self.toolbar.frame.size.height)];
+    [UIView commitAnimations];
+    
+//    CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+}
+
+#pragma mark creating post
 
 - (IBAction)post:(id)sender {
     
@@ -80,8 +135,9 @@
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-
-    [textField resignFirstResponder];
+    
+    
+    [self.descriptionTextField resignFirstResponder];
     return YES;
 }
 
