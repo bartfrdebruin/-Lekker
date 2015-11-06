@@ -23,7 +23,6 @@
         self.titleCell = @[@"Dish1", @"Dish2", @"Dish3", @"Dish4"];
         self.vegetables = @[@"Paprika", @"Aubergine", @"Wortelen", @"Tomaten"];
         self.meat = @[@"Beef", @"Lamb", @"Chicken", @"Pork", @"Goat"];
-        self.distance =@[@"500m", @"600m", @"700m", @"800m"];
         self.categories =@[@"red",@"Blue", @"Green", @"Pink"];
         self.comment =@[@"blabla1",@"blabla2", @"blabla3", @"blabla4"];
     }
@@ -37,16 +36,16 @@
 {
     self = [super initWithCoder:aCoder];
     if (self) {
-        // The className to query on
+      
         self.parseClassName = @"Lekker";
         
         // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"name";
+        self.textKey = @"Comment";
         
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
         
-        // Whether the built-in pagination is enabled
+        // Whether the built-in pagination is enabled. Leaving this set to NO for now because not sure if we want this.
         self.paginationEnabled = NO;
     }
     return self;
@@ -61,7 +60,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
-    static NSString *simpleTableIdentifier = @"RecipeCell";
+    static NSString *simpleTableIdentifier = @"LekkerCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil) {
@@ -75,11 +74,19 @@
     thumbnailImageView.file = thumbnail;
     [thumbnailImageView loadInBackground];
     
-    UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
-    nameLabel.text = [object objectForKey:@"name"];
+    UILabel *titleLabel = (UILabel*) [cell viewWithTag:101];
+    titleLabel.text = [object objectForKey:@"title"];
+
+    UILabel *lekkerComment = (UILabel*) [cell viewWithTag:102];
+    lekkerComment.text = [object objectForKey:@"lekkerComment"];
     
-    UILabel *prepTimeLabel = (UILabel*) [cell viewWithTag:102];
-    prepTimeLabel.text = [object objectForKey:@"prepTime"];
+//Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!!
+    
+//    UILabel *prepTimeLabel = (UILabel*) [cell viewWithTag:102];
+//    prepTimeLabel.text = [object objectForKey:@"prepTime"];
+// HOW TO DO THIS????
+//    PFGeoPoint *
+//    bob.property?? = [object objectForKey:@"location"];
     
     return cell;
 }
@@ -110,7 +117,6 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(LekkerCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell.title.text = [self.titleCell objectAtIndex:indexPath.row];
-    cell.distance.text = [self.distance objectAtIndex:indexPath.row];
     cell.lekkerComment.text = [self.comment objectAtIndex:indexPath.row];
 }
 

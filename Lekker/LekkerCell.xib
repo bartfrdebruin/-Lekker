@@ -30,12 +30,6 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrJ-cb-4ir">
-                        <rect key="frame" x="245" y="13" width="67" height="21"/>
-                        <animations/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="14"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7qj-Gw-PeZ">
                         <rect key="frame" x="8" y="8" width="102" height="102"/>
                         <animations/>
@@ -46,7 +40,6 @@
             <animations/>
             <connections>
                 <outlet property="category" destination="7qj-Gw-PeZ" id="zue-wp-hM8"/>
-                <outlet property="distance" destination="lrJ-cb-4ir" id="931-yO-tTV"/>
                 <outlet property="imageThumbnail" destination="qqK-3f-F10" id="283-6T-OFp"/>
                 <outlet property="lekkerComment" destination="5L4-6S-8OI" id="dNn-NO-Xq1"/>
                 <outlet property="title" destination="MD7-gr-jxT" id="9mY-sJ-ToB"/>
