@@ -46,7 +46,6 @@
 		F23585E51BE79A490001EA39 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F23585E31BE79A490001EA39 /* WelcomeViewController.m */; };
 		F23585E61BE79A490001EA39 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F23585E41BE79A490001EA39 /* WelcomeViewController.xib */; };
 		F23585E81BE7B24B0001EA39 /* logo_lekker.png in Resources */ = {isa = PBXBuildFile; fileRef = F23585E71BE7B24B0001EA39 /* logo_lekker.png */; };
-		F24B627A1BECDC8B004EC526 /* Lekker.m in Sources */ = {isa = PBXBuildFile; fileRef = F24B62791BECDC8B004EC526 /* Lekker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,8 +96,6 @@
 		F23585E31BE79A490001EA39 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		F23585E41BE79A490001EA39 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		F23585E71BE7B24B0001EA39 /* logo_lekker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_lekker.png; sourceTree = "<group>"; };
-		F24B62781BECDC8B004EC526 /* Lekker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lekker.h; sourceTree = "<group>"; };
-		F24B62791BECDC8B004EC526 /* Lekker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lekker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,8 +180,6 @@
 			children = (
 				1DD8D15E1BE7736A00E6607D /* AppDelegate.h */,
 				1DD8D15F1BE7736A00E6607D /* AppDelegate.m */,
-				F24B62781BECDC8B004EC526 /* Lekker.h */,
-				F24B62791BECDC8B004EC526 /* Lekker.m */,
 				1DA869731BEA5D3C0030D27F /* LekkerCell.h */,
 				1DA869741BEA5D3C0030D27F /* LekkerCell.m */,
 				1DA869751BEA5D3C0030D27F /* LekkerCell.xib */,
@@ -300,7 +295,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DD8D17F1BE7BFCF00E6607D /* ListViewController.m in Sources */,
-				F24B627A1BECDC8B004EC526 /* Lekker.m in Sources */,
 				1DD8D16F1BE786EB00E6607D /* MapViewController.m in Sources */,
 				F23585E51BE79A490001EA39 /* WelcomeViewController.m in Sources */,
 				1DD8D1601BE7736A00E6607D /* AppDelegate.m in Sources */,
