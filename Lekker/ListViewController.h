@@ -20,8 +20,4 @@
 @property (nonatomic, strong) NSArray *categories;
 @property (nonatomic, strong) NSArray *comment;
 
-
-
-
-
 @end
