@@ -12,4 +12,10 @@
 
 @interface Lekker : NSObject
 
+@property (strong, nonatomic) PFFile *imageFile;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *lekkerComment;
+
+//add property for category image view later
+
 @end
