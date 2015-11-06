@@ -17,39 +17,21 @@
 
 #pragma mark TableView
 
-- (id)initWithCoder:(NSCoder *)aCoder
-{
-    self = [super initWithCoder:aCoder];
-    if (self) {
-      
-        self.parseClassName = @"Lekker";
-        
-        // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"Comment";
-        
-        // Whether the built-in pull-to-refresh is enabled
-        self.pullToRefreshEnabled = YES;
-        
-        // Whether the built-in pagination is enabled. Leaving this set to NO for now because not sure if we want this.
-        self.paginationEnabled = NO;
-    }
-    return self;
-}
 
 - (PFQuery *)queryForTable
 {
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    PFQuery *query = [PFQuery queryWithClassName:@"Lekker"];
     
     return query;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
-    static NSString *simpleTableIdentifier = @"LekkerCell";
+    static NSString *simpleTableIdentifier = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    LekkerCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"LekkerCell" owner:nil options:nil] objectAtIndex:0];
     }
     
     // Configure the cell
@@ -59,11 +41,8 @@
     thumbnailImageView.file = thumbnail;
     [thumbnailImageView loadInBackground];
     
-    UILabel *titleLabel = (UILabel*) [cell viewWithTag:101];
-    titleLabel.text = [object objectForKey:@"title"];
-
-    UILabel *lekkerComment = (UILabel*) [cell viewWithTag:102];
-    lekkerComment.text = [object objectForKey:@"lekkerComment"];
+    NSString *newString = object[@"NameOfPost"];
+    cell.title.text = newString;
     
 //Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!!
     
