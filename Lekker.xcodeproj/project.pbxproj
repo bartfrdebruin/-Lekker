@@ -183,9 +183,9 @@
 			children = (
 				1DD8D15E1BE7736A00E6607D /* AppDelegate.h */,
 				1DD8D15F1BE7736A00E6607D /* AppDelegate.m */,
-				1DA869731BEA5D3C0030D27F /* LekkerCell.h */,
 				F24B62781BECDC8B004EC526 /* Lekker.h */,
 				F24B62791BECDC8B004EC526 /* Lekker.m */,
+				1DA869731BEA5D3C0030D27F /* LekkerCell.h */,
 				1DA869741BEA5D3C0030D27F /* LekkerCell.m */,
 				1DA869751BEA5D3C0030D27F /* LekkerCell.xib */,
 				1DD8D17C1BE7BFCF00E6607D /* ListViewController.h */,
