@@ -54,6 +54,9 @@
                         <constraint firstAttribute="height" constant="333" id="ko6-wA-L5y"/>
                     </constraints>
                 </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hXY-9a-dIr">
+                    <rect key="frame" x="189" y="534" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
