@@ -51,10 +51,7 @@
         [locationManager startUpdatingLocation];
         
         CLLocation *location = [locationManager location];
-        
-        
       
-    
     }
     return self;
 }
