@@ -126,15 +126,6 @@
     [self.navigationController pushViewController:addLekkerViewController animated:YES];
 }
 
-//- (void) imagePickerController: (UIImagePickerController *) picker didFinishPickingMediaWithInfo: (NSDictionary *) info {
-//    
-//    UIImage *originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
-//    self.recipeImageView.image = originalImage;
-//    
-//    [picker dismissViewControllerAnimated:YES completion:nil];
-//}
-
-
 
 // Zooming in to our location
 - (void)mapView:(MKMapView * _Nonnull)mapView
