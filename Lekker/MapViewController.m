@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "ListViewController.h"
 #import "AddLekkerViewController.h"
+#import "LekkerAnnotations.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 
 
@@ -51,13 +52,45 @@
         [locationManager startUpdatingLocation];
         
         CLLocation *location = [locationManager location];
-        
-        
-      
-    
     }
     return self;
 }
+
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    // If the annotation is the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // Handle any custom annotations.
+    if ([annotation isKindOfClass:[LekkerAnnotations class]])
+    {
+        // Try to dequeue an existing pin view first.
+        MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
+                                                                 dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        
+        if (!pinView)
+        {
+            // If an existing pin view was not available, create one.
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                                      reuseIdentifier:@"CustomPinAnnotationView"];
+            pinView.pinColor = MKPinAnnotationColorRed;
+            pinView.animatesDrop = YES;
+            pinView.canShowCallout = YES;
+            
+            // If appropriate, customize the callout by adding accessory views (code not shown).
+        }
+        else
+            pinView.annotation = annotation;
+        
+        return pinView;
+    }
+    
+    return nil;
+}
+
 
 #pragma mark - GoToList
 
@@ -125,15 +158,6 @@
     
     [self.navigationController pushViewController:addLekkerViewController animated:YES];
 }
-
-//- (void) imagePickerController: (UIImagePickerController *) picker didFinishPickingMediaWithInfo: (NSDictionary *) info {
-//    
-//    UIImage *originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
-//    self.recipeImageView.image = originalImage;
-//    
-//    [picker dismissViewControllerAnimated:YES completion:nil];
-//}
-
 
 
 // Zooming in to our location

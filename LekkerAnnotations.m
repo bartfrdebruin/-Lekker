@@ -10,16 +10,14 @@
 
 @implementation LekkerAnnotations 
 
-- (id) initWithTitle:(NSString *)annotationTitle location:(CLLocationCoordinate2D)location {
-    
+- (id)initWithLocation:(CLLocationCoordinate2D)lekkerLocations {
     self = [super init];
-    
     if (self) {
-        self.coordinate = location;
+        coordinate = lekkerLocations;
     }
-    
     return self;
 }
+
 
 - (MKAnnotationView *)annotationView {
     

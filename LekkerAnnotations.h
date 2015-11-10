@@ -11,6 +11,13 @@
 #import "MapViewController.h"
 #import "AddLekkerViewController.h"
 
-@interface LekkerAnnotations : NSObject <MKAnnotation>
+@interface LekkerAnnotations : NSObject <MKAnnotation> {
+    
+    CLLocationCoordinate2D coordinate;
+}
+
+@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+
+- (id)initWithLocation:(CLLocationCoordinate2D)coord;
 
 @end
