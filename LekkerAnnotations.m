@@ -8,11 +8,19 @@
 
 #import "LekkerAnnotations.h"
 
-@implementation LekkerAnnotations 
+@implementation LekkerAnnotations
+
+- (PFQuery *)queryForTable
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Lekker"];
+    
+    return query;
+}
 
 - (id)initWithLocation:(CLLocationCoordinate2D)lekkerLocations {
     self = [super init];
     if (self) {
+        
         coordinate = lekkerLocations;
     }
     return self;

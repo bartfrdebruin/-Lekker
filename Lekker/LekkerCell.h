@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *category;
 @property (weak, nonatomic) IBOutlet UIImageView *imageThumbnail;
 
+@property PFGeoPoint *geoPoint;
 
 
 @end

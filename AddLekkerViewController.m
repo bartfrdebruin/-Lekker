@@ -198,23 +198,23 @@
             PFFile *imageFile = [PFFile fileWithName:uuid.UUIDString data:imageData];
             [lekker setObject:imageFile forKey:@"imageFile"];
             
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Categories"
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Categories"
                                                                            message:@"Choose a category to fit your post!"
                                                                     preferredStyle:UIAlertControllerStyleAlert];
             
-            UIAlertAction* artsAndCulture = [UIAlertAction actionWithTitle:@"Arts & Culture" style:UIAlertActionStyleDefault
+            UIAlertAction *artsAndCulture = [UIAlertAction actionWithTitle:@"Arts & Culture" style:UIAlertActionStyleDefault
                                                                    handler:^(UIAlertAction * action) {
                                                                        [lekker setObject:action.title forKey:@"category"];
                                                                        [self saveLekker:lekker];
                                                                    }];
             
-            UIAlertAction* foodAndDrinks = [UIAlertAction actionWithTitle:@"Food & Drinks" style:UIAlertActionStyleDefault
+            UIAlertAction *foodAndDrinks = [UIAlertAction actionWithTitle:@"Food & Drinks" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {
                                                                       [lekker setObject:action.title forKey:@"category"];
                                                                       [self saveLekker:lekker];
                                                                   }];
             
-            UIAlertAction* randomLekkers = [UIAlertAction actionWithTitle:@"Random #Lekkers" style:UIAlertActionStyleDefault
+            UIAlertAction *randomLekkers = [UIAlertAction actionWithTitle:@"Random #Lekkers" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {
                                                                       [lekker setObject:action.title forKey:@"category"];
                                                                       [self saveLekker:lekker];
