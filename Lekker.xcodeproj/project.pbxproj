@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0E87C11BF1C079007B5F74 /* LekkerAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0E87C01BF1C079007B5F74 /* LekkerAnnotations.m */; };
 		1D1F78D91BE8BAF9004E9EB0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1F78D81BE8BAF9004E9EB0 /* AudioToolbox.framework */; };
 		1D1F78DB1BE8BAFF004E9EB0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1F78DA1BE8BAFF004E9EB0 /* CFNetwork.framework */; };
 		1D1F78DD1BE8BB06004E9EB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1F78DC1BE8BB06004E9EB0 /* CoreGraphics.framework */; };
@@ -50,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D0E87BF1BF1C079007B5F74 /* LekkerAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LekkerAnnotations.h; sourceTree = SOURCE_ROOT; };
+		1D0E87C01BF1C079007B5F74 /* LekkerAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LekkerAnnotations.m; sourceTree = SOURCE_ROOT; };
 		1D1F78D81BE8BAF9004E9EB0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1D1F78DA1BE8BAFF004E9EB0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		1D1F78DC1BE8BB06004E9EB0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -194,6 +197,8 @@
 				F227D8C01BEB49E600F18ECD /* AddLekkerViewController.h */,
 				F227D8C11BEB49E600F18ECD /* AddLekkerViewController.m */,
 				F227D8C21BEB49E600F18ECD /* AddLekkerViewController.xib */,
+				1D0E87BF1BF1C079007B5F74 /* LekkerAnnotations.h */,
+				1D0E87C01BF1C079007B5F74 /* LekkerAnnotations.m */,
 				1DD8D16C1BE786EB00E6607D /* MapViewController.h */,
 				1DD8D16D1BE786EB00E6607D /* MapViewController.m */,
 				1DD8D16E1BE786EB00E6607D /* MapViewController.xib */,
@@ -300,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DD8D17F1BE7BFCF00E6607D /* ListViewController.m in Sources */,
+				1D0E87C11BF1C079007B5F74 /* LekkerAnnotations.m in Sources */,
 				F24B627A1BECDC8B004EC526 /* Lekker.m in Sources */,
 				1DD8D16F1BE786EB00E6607D /* MapViewController.m in Sources */,
 				F23585E51BE79A490001EA39 /* WelcomeViewController.m in Sources */,

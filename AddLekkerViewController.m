@@ -9,6 +9,7 @@
 #import "AddLekkerViewController.h"
 #import "MapViewController.h"
 #import <Parse/Parse.h>
+#import "LekkerAnnotations.h"
 
 @interface AddLekkerViewController ()
 
