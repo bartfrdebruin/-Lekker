@@ -1,13 +1,13 @@
 //
-//  Lekker.m
+//  LekkerViewController.h
 //  Lekker
 //
 //  Created by Alyson Vivattanapa on 11/6/15.
 //  Copyright © 2015 Bart & Alyson. All rights reserved.
 //
 
-#import "Lekker.h"
+#import <UIKit/UIKit.h>
 
-@implementation Lekker
+@interface LekkerViewController : UIViewController
 
 @end

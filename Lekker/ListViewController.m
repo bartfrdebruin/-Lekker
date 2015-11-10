@@ -34,7 +34,6 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"LekkerCell" owner:nil options:nil] objectAtIndex:0];
     }
     
-    // Configure the cell
     PFFile *thumbnail = [object objectForKey:@"imageFile"];
     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
     thumbnailImageView.image = [UIImage imageNamed:@"placeholder.jpg"];
@@ -47,37 +46,22 @@
     NSString *newComment = object[@"Comment"];
     cell.lekkerComment.text = newComment;
     
-//    PFFile *thumbnail = [object objectForKey:@"imageFile"];
-//    cell.imageThumbnail 
-    
-//Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!!
+//Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!! right???
     
     return cell;
 }
-
-// Took the following out because it's not in recipe tutorial.
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(LekkerCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    cell.title.text = [self.titleCell objectAtIndex:indexPath.row];
-//    cell.lekkerComment.text = [self.comment objectAtIndex:indexPath.row];
-//}
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 120;
 }
 
-
-
-
 #pragma mark ViewDidLoad
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-   
-    
+       
   }
 
 
