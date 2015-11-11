@@ -8,6 +8,7 @@
 
 #import "ListViewController.h"
 #import "LekkerCell.h"
+#import "DetailViewController.h"
 
 @interface ListViewController ()
 
@@ -40,11 +41,9 @@
     thumbnailImageView.file = thumbnail;
     [thumbnailImageView loadInBackground];
     
-//    NSString *newString = object[@"NameOfPost"];
-//    cell.title.text = newString;
-    
     NSString *newComment = object[@"Comment"];
     cell.lekkerComment.text = newComment;
+    
     
 //Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!! right???
     
@@ -64,8 +63,25 @@
        
   }
 
-#pragma try creating annotations 
+#pragma didSelectRowAtIndexPath
 
+- (void)tableView:(UITableView * _Nonnull)tableView
+didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath
+{
+    
+    PFObject *object = [self objectAtIndexPath:indexPath];
+
+    NSString *comment = object[@"Comment"];
+
+    NSLog(@"%@", object);
+    
+    DetailViewController *dtl = [[DetailViewController alloc]init];
+    
+    dtl.comment = comment;
+    
+    [self.navigationController pushViewController:dtl animated:YES];
+
+}
 
 
 @end

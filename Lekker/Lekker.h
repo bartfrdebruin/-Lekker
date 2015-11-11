@@ -10,11 +10,11 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 
-@interface Lekker : NSObject
+@interface Lekker : PFObject
 
 @property (strong, nonatomic) PFFile *imageFile;
-@property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *lekkerComment;
+@property (strong, nonatomic) NSString *category;
 
 //add property for category image view later
 

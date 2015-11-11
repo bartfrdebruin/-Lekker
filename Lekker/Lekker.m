@@ -10,4 +10,8 @@
 
 @implementation Lekker
 
+@synthesize imageFile;
+@synthesize lekkerComment;
+@synthesize category;
+
 @end
