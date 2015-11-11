@@ -10,4 +10,9 @@
 
 @implementation Lekker
 
+@synthesize imageFile;
+@synthesize title;
+
+
+
 @end
