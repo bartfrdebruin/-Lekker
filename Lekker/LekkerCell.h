@@ -10,11 +10,8 @@
 
 @interface LekkerCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *lekkerComment;
 @property (weak, nonatomic) IBOutlet UIImageView *category;
 @property (weak, nonatomic) IBOutlet UIImageView *imageThumbnail;
-
-
 
 @end
