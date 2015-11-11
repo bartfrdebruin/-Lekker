@@ -18,6 +18,6 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 
-- (id)initWithLocation:(CLLocationCoordinate2D)coordinate title:(NSString *)comment subtitle:(NSString*)category;
+- (id)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)comment subtitle:(NSString*)category;
 
 @end
