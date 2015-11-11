@@ -11,8 +11,9 @@
 #import <CoreLocation/CoreLocation.h>
 #import "AddLekkerViewController.h"
 #import <Parse/Parse.h>
+#import "LekkerAnnotations.h"
 
-@interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate>  {
     
     CLLocationManager *locationManager;
 }
@@ -24,7 +25,10 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
 @property (nonatomic, strong) UIBarButtonItem *list;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 
+
+- (void)addAnnotation:(id<MKAnnotation> _Nonnull)annotation;
 
 
 @end

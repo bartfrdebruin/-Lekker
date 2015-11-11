@@ -10,14 +10,14 @@
 #import <MapKit/MapKit.h>
 #import "MapViewController.h"
 #import "AddLekkerViewController.h"
+#import "ListViewController.h"
 
-@interface LekkerAnnotations : NSObject <MKAnnotation> {
-    
-    CLLocationCoordinate2D coordinate;
-}
+@interface LekkerAnnotations : NSObject <MKAnnotation> 
 
-@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *subtitle;
 
-- (id)initWithLocation:(CLLocationCoordinate2D)coord;
+- (id)initWithLocation:(CLLocationCoordinate2D)coordinate title:(NSString *)comment subtitle:(NSString*)category;
 
 @end
