@@ -8,6 +8,7 @@
 
 #import "ListViewController.h"
 #import "LekkerCell.h"
+#import "DetailViewController.h"
 
 @interface ListViewController ()
 
@@ -61,8 +62,25 @@
        
   }
 
-#pragma try creating annotations 
+#pragma didSelectRowAtIndexPath
 
+- (void)tableView:(UITableView * _Nonnull)tableView
+didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath
+{
+    
+    PFObject *object = [self objectAtIndexPath:indexPath];
+
+    NSString *comment = object[@"Comment"];
+
+    NSLog(@"%@", object);
+    
+    DetailViewController *dtl = [[DetailViewController alloc]init];
+    
+    dtl.comment = comment;
+    
+    [self.navigationController pushViewController:dtl animated:YES];
+
+}
 
 
 @end

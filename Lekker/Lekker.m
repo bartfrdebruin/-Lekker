@@ -11,8 +11,7 @@
 @implementation Lekker
 
 @synthesize imageFile;
-@synthesize title;
-
-
+@synthesize lekkerComment;
+@synthesize category;
 
 @end
