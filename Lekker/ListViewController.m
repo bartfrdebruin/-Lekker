@@ -44,8 +44,6 @@
     NSString *newComment = object[@"Comment"];
     cell.lekkerComment.text = newComment;
     
-    NSString *addCategory = [object objectForKey:@"category"];
-    cell.categoryTitle.text = addCategory;
     
 //Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!! right???
     
