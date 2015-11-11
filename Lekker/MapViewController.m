@@ -60,6 +60,57 @@
 }
 
 
+#pragma mark viewDidLoad
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+    [self.mapView setShowsUserLocation:YES];
+    
+    [self.navigationItem setHidesBackButton:YES];
+    
+    UINavigationItem *mapNavigation = self.navigationItem;
+    mapNavigation.title = @"#Lekker";
+    
+    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target:self action:@selector(goToList:)];
+    
+    mapNavigation.rightBarButtonItem = list;
+    
+    PFQuery *queriesForAnnotation = [PFQuery queryWithClassName:@"Lekker"];
+    
+    self.imagesForAnnotation = [[NSMutableArray alloc] init];
+    
+    [queriesForAnnotation findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        
+        for (PFObject *object in objects) {
+            
+            NSString *comment = object[@"Comment"];
+            NSString *category = object[@"category"];
+            PFGeoPoint *geoPoint = object[@"location"];
+            
+            PFFile *image = [object objectForKey:@"imageFile"];
+            
+            [self.imagesForAnnotation addObject:image];
+            //
+            //            PFImageView *annotationImageView = [UIImage imageNamed:@"placeholder.jpg"];
+            //            UIImage *image = [UIImage imageWithData:imageFile];
+            //
+            //            annotationImageView.file = imageFile;
+            //            [annotationImageView loadInBackground];
+            
+            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+            
+            LekkerAnnotations *lekkerAnnotation = [[LekkerAnnotations alloc] initWithLocation:coord title:comment subtitle:category];
+            
+            [self.mapView addAnnotation:lekkerAnnotation];
+        };
+    }];
+}
+
+
+
 // Zooming in to our location
 - (void)mapView:(MKMapView * _Nonnull)mapView
 didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
@@ -77,6 +128,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id<MKAnnotation>)annotation {
     
+    
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
         
         return nil;
@@ -86,6 +138,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
         LekkerAnnotations *lekkerAnno = (LekkerAnnotations *)annotation;
         
         NSLog(@"%@", lekkerAnno.mySubtitle);
+
         
         if ([lekkerAnno.mySubtitle isEqualToString:@"Arts & Culture"]) {
             
@@ -144,8 +197,8 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             foodAndDrinksLekkers.rightCalloutAccessoryView = rightButton;
             
             // Add a custom image to the left side of the callout.
-            UIImageView *foodAndDrinksPin = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"#Lekker_pin.png"]];
-            foodAndDrinksLekkers.leftCalloutAccessoryView = foodAndDrinksPin;
+            //UIImageView *foodAndDrinksPin = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.imagesForAnnotation]];
+            //foodAndDrinksLekkers.leftCalloutAccessoryView = foodAndDrinksPin;
             
             return foodAndDrinksLekkers;
         }
@@ -153,22 +206,12 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 }
 
 
-
-
 #pragma mark Update Categories
 
 - (IBAction)categoryChooser:(id)sender {
     
     
-    
-    
-    
-    
-    
-    
-    
 }
-
 
 
 #pragma mark - GoToList
@@ -180,40 +223,6 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     [self.navigationController pushViewController:listView animated:YES];
 }
 
-
-#pragma mark viewDidLoad
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    [self.mapView setShowsUserLocation:YES];
-    
-    [self.navigationItem setHidesBackButton:YES];
-    
-    UINavigationItem *mapNavigation = self.navigationItem;
-    mapNavigation.title = @"#Lekker";
-    
-    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target:self action:@selector(goToList:)];
-    
-    mapNavigation.rightBarButtonItem = list;
-    
-    PFQuery *queriesForAnnotation = [PFQuery queryWithClassName:@"Lekker"];
-    [queriesForAnnotation findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        for (PFObject *object in objects) {
-            
-            NSString *comment = object[@"Comment"];
-            NSString *category = object[@"category"];
-            PFGeoPoint *geoPoint = object[@"location"];
-            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
-            
-            LekkerAnnotations *lekkerAnnotation = [[LekkerAnnotations alloc] initWithLocation:coord title:comment subtitle:category];
-            
-            [self.mapView addAnnotation:lekkerAnnotation];
-        };
-    }];
-}
 
 
 #pragma mark Image Picker
@@ -258,7 +267,6 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 
 
 #pragma didSelectAnnotationView
-
 
 
 //- (void)tableView:(UITableView * _Nonnull)tableView
