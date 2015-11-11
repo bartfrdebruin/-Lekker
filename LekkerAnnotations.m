@@ -10,18 +10,23 @@
 
 @implementation LekkerAnnotations
 
-@synthesize coordinate;
-
 
 - (id)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)comment subtitle:(NSString *)category {
     self = [super init];
     if (self) {
         
-        self.title = comment;
-        self.subtitle = category;
-        coordinate = coord;
+        self.myTitle = comment;
+        self.mySubtitle = category;
+        self.myCoordinate = coord;
     }
     return self;
+}
+
+
+- (CLLocationCoordinate2D)coordinate {
+    
+    return self.myCoordinate;
+    
 }
 
 

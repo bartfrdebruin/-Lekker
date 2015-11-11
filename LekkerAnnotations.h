@@ -15,8 +15,8 @@
 @interface LekkerAnnotations : NSObject <MKAnnotation> 
 
 @property (nonatomic) CLLocationCoordinate2D myCoordinate;
-@property (nonatomic) NSString *title;
-@property (nonatomic) NSString *subtitle;
+@property (nonatomic, strong) NSString *myTitle;
+@property (nonatomic, strong) NSString *mySubtitle;
 
 - (id)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)comment subtitle:(NSString*)category;
 

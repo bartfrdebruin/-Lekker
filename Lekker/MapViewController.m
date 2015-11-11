@@ -11,6 +11,7 @@
 #import "AddLekkerViewController.h"
 #import "LekkerAnnotations.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import <MapKit/MapKit.h>
 
 
 @interface MapViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -57,6 +58,21 @@
 }
 
 
+// Zooming in to our location
+- (void)mapView:(MKMapView * _Nonnull)mapView
+didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
+    
+    CLLocationCoordinate2D loc = [userLocation coordinate];
+    MKCoordinateRegion region =
+    
+    MKCoordinateRegionMakeWithDistance(loc, 500, 500);
+    [mapView setRegion:region animated:YES];
+}
+
+
+#pragma mark Annotions
+
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id<MKAnnotation>)annotation {
     
@@ -77,7 +93,7 @@
             lekkerAnnotation = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                                       reuseIdentifier:@"CustomPinAnnotationView"];
             
-            lekkerAnnotation.pinColor = MKPinAnnotationColorRed;
+            lekkerAnnotation.pinTintColor = MKPinAnnotationColorRed;
             lekkerAnnotation.animatesDrop = YES;
             lekkerAnnotation.canShowCallout = YES;
             
@@ -177,16 +193,7 @@
 }
 
 
-// Zooming in to our location
-- (void)mapView:(MKMapView * _Nonnull)mapView
-didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
-    
-    CLLocationCoordinate2D loc = [userLocation coordinate];
-    MKCoordinateRegion region =
-    
-    MKCoordinateRegionMakeWithDistance(loc, 500, 500);
-    [mapView setRegion:region animated:YES];
-}
+
 
 
 @end
