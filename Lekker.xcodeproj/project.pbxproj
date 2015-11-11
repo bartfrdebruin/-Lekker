@@ -30,6 +30,7 @@
 		1D1F791D1BE90812004E9EB0 /* #Lekker_groot.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791B1BE90812004E9EB0 /* #Lekker_groot.pdf */; };
 		1D1F791E1BE90812004E9EB0 /* #Lekker_klein.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791C1BE90812004E9EB0 /* #Lekker_klein.png */; };
 		1D1F79201BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1F791F1BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png */; };
+		1D8B294F1BF35CD700C1A402 /* #Lekker_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D8B294E1BF35CD700C1A402 /* #Lekker_pin.png */; };
 		1DA869721BEA4C190030D27F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA869711BEA4C190030D27F /* MobileCoreServices.framework */; };
 		1DA869761BEA5D3C0030D27F /* LekkerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA869741BEA5D3C0030D27F /* LekkerCell.m */; };
 		1DA869771BEA5D3C0030D27F /* LekkerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA869751BEA5D3C0030D27F /* LekkerCell.xib */; };
@@ -77,6 +78,7 @@
 		1D1F791B1BE90812004E9EB0 /* #Lekker_groot.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "#Lekker_groot.pdf"; sourceTree = "<group>"; };
 		1D1F791C1BE90812004E9EB0 /* #Lekker_klein.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "#Lekker_klein.png"; sourceTree = "<group>"; };
 		1D1F791F1BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "#Lekker_klein_NoWhiteBorder.png"; sourceTree = "<group>"; };
+		1D8B294E1BF35CD700C1A402 /* #Lekker_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "#Lekker_pin.png"; path = "../../../Design/#Lekker_pin.png"; sourceTree = "<group>"; };
 		1DA869711BEA4C190030D27F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1DA869731BEA5D3C0030D27F /* LekkerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LekkerCell.h; sourceTree = "<group>"; };
 		1DA869741BEA5D3C0030D27F /* LekkerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LekkerCell.m; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				1DD8D15C1BE7736A00E6607D /* main.m */,
+				1D8B294E1BF35CD700C1A402 /* #Lekker_pin.png */,
 				F23585E71BE7B24B0001EA39 /* logo_lekker.png */,
 				1D1F791B1BE90812004E9EB0 /* #Lekker_groot.pdf */,
 				1D1F791F1BE90959004E9EB0 /* #Lekker_klein_NoWhiteBorder.png */,
@@ -296,6 +299,7 @@
 				1D1F791A1BE8D21B004E9EB0 /* ListViewController.xib in Resources */,
 				F23585E81BE7B24B0001EA39 /* logo_lekker.png in Resources */,
 				1DD8D1701BE786EB00E6607D /* MapViewController.xib in Resources */,
+				1D8B294F1BF35CD700C1A402 /* #Lekker_pin.png in Resources */,
 				F227D8C41BEB49E600F18ECD /* AddLekkerViewController.xib in Resources */,
 				1D1F791D1BE90812004E9EB0 /* #Lekker_groot.pdf in Resources */,
 				F2164CAD1BF33F5300167195 /* DetailViewController.xib in Resources */,

@@ -8,20 +8,45 @@
 
 #import "LekkerAnnotations.h"
 
+@interface LekkerAnnotations () <MKAnnotation> 
+
+@property (nonatomic) CLLocationCoordinate2D myCoordinate;
+@property (nonatomic, strong) NSString *myTitle;
+@property (nonatomic, strong) NSString *mySubtitle;
+
+@end
+
+
+
 @implementation LekkerAnnotations
 
-@synthesize coordinate;
 
-- (id)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)comment subtitle:(NSString*)category {
+- (id)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)comment subtitle:(NSString *)category {
     self = [super init];
     if (self) {
         
-        self.title = comment;
-        self.subtitle = category;
-        coordinate = coord;
+        self.myTitle = comment;
+        self.mySubtitle = category;
+        self.myCoordinate = coord;
     }
     return self;
 }
 
+
+- (CLLocationCoordinate2D)coordinate {
+    
+    return self.myCoordinate;
+    
+}
+
+- (NSString *)title {
+    
+    return self.myTitle;
+}
+
+- (NSString *)subtitle {
+    
+    return self.mySubtitle;
+}
 
 @end

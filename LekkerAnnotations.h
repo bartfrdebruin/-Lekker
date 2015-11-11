@@ -8,16 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-#import "MapViewController.h"
-#import "AddLekkerViewController.h"
-#import "ListViewController.h"
 
-@interface LekkerAnnotations : NSObject <MKAnnotation> 
+@interface LekkerAnnotations : NSObject
 
-@property (nonatomic) CLLocationCoordinate2D coordinate;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, strong) NSString *mySubtitle;
 
 - (id)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)comment subtitle:(NSString*)category;
+
 
 @end
