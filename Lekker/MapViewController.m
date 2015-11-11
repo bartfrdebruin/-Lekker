@@ -241,41 +241,19 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 
 // COMMENTED THIS OUT. PASSING OBJECT FROM LIST VIEW CONTROLLER TO DETAIL VIEW CONTROLLER FIRST. THEN WILL PROBABLY PASS OBJECT FROM MAP VIEW CONTROLLER TO DETAIL VIEW CONTROLLER.
 
-//- (void)mapView:(MKMapView * _Nonnull)mapView
-//didSelectAnnotationView:(MKAnnotationView * _Nonnull)view
-//{
-//    
-//    static NSString *simpleAnnotationIdentifier = @"lekkerAnnotation";
-//    
-//    LekkerAnnotations *lekkerAnnotation = [mapView dequeueReusableAnnotationViewWithIdentifier:simpleAnnotationIdentifier];
-//    if (lekkerAnnotation == nil) {
-//        lekkerAnnotation = [[[NSBundle mainBundle] loadNibNamed:@"LekkerAnnotations" owner:nil options:nil] objectAtIndex:0];
-//    }
-//    
-////    PFObject *object = [self ];
-//    
-//    NSString *comment = object[@"Comment"];
-//    
-//    NSString *category = object[@"category"];
-//    
-//    DetailViewController *dtl = [[DetailViewController alloc]init];
-//    
-//    PFFile *image = [object objectForKey:@"imageFile"];
-//    PFImageView *imageView = (PFImageView*) [//lekkerAnnotation?? viewWithTag:100];
-//    imageView.image = [UIImage imageNamed:@"placeholder.jpg"];
-//    
-//    dtl.comment = comment;
-//    
-//    dtl.category = category;
-//    
-//    dtl.image = image;
-//    
-//    NSLog(@"%@", object);
-//    
-//    [self.navigationController pushViewController:dtl animated:YES];
-//    
-//}
+- (void)mapView:(MKMapView * _Nonnull)mapView
+didSelectAnnotationView:(MKAnnotationView * _Nonnull)view
+{
+    
+    PFObject *lekkerAnnotationView = [self.mapView.selectedAnnotations objectAtIndex:([self.mapView.selectedAnnotations count]-1)];
+    
+    DetailViewController *dtl = [[DetailViewController alloc]init];
 
+    dtl.detailViewObject = lekkerAnnotationView;
+    
+    [self.navigationController pushViewController:dtl animated:YES];
+
+}
 
 #pragma mark Image Picker
 
