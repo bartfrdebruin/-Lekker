@@ -13,7 +13,7 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
-#import "LekkerCell.h"
+#import "DetailViewController.h"
 
 
 @interface MapViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -193,12 +193,6 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 }
 
 
-
-
-
-
-
-
 #pragma mark - GoToList
 
 - (IBAction)goToList:(id)sender {
@@ -243,6 +237,45 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     }];
 }
 
+#pragma didSelectAnnotationView
+
+// COMMENTED THIS OUT. PASSING OBJECT FROM LIST VIEW CONTROLLER TO DETAIL VIEW CONTROLLER FIRST. THEN WILL PROBABLY PASS OBJECT FROM MAP VIEW CONTROLLER TO DETAIL VIEW CONTROLLER.
+
+//- (void)mapView:(MKMapView * _Nonnull)mapView
+//didSelectAnnotationView:(MKAnnotationView * _Nonnull)view
+//{
+//    
+//    static NSString *simpleAnnotationIdentifier = @"lekkerAnnotation";
+//    
+//    LekkerAnnotations *lekkerAnnotation = [mapView dequeueReusableAnnotationViewWithIdentifier:simpleAnnotationIdentifier];
+//    if (lekkerAnnotation == nil) {
+//        lekkerAnnotation = [[[NSBundle mainBundle] loadNibNamed:@"LekkerAnnotations" owner:nil options:nil] objectAtIndex:0];
+//    }
+//    
+////    PFObject *object = [self ];
+//    
+//    NSString *comment = object[@"Comment"];
+//    
+//    NSString *category = object[@"category"];
+//    
+//    DetailViewController *dtl = [[DetailViewController alloc]init];
+//    
+//    PFFile *image = [object objectForKey:@"imageFile"];
+//    PFImageView *imageView = (PFImageView*) [//lekkerAnnotation?? viewWithTag:100];
+//    imageView.image = [UIImage imageNamed:@"placeholder.jpg"];
+//    
+//    dtl.comment = comment;
+//    
+//    dtl.category = category;
+//    
+//    dtl.image = image;
+//    
+//    NSLog(@"%@", object);
+//    
+//    [self.navigationController pushViewController:dtl animated:YES];
+//    
+//}
+
 
 #pragma mark Image Picker
 
@@ -282,48 +315,5 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     [self.navigationController pushViewController:addLekkerViewController animated:YES];
 }
 
-
-
-
-#pragma didSelectAnnotationView
-
-
-
-//- (void)tableView:(UITableView * _Nonnull)tableView
-//didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath
-//{
-//    
-//    PFObject *object = [self objectAtIndexPath:indexPath];
-//    
-//    NSString *comment = object[@"Comment"];
-//    
-//    NSLog(@"%@", object);
-//    
-//    DetailViewController *dtl = [[DetailViewController alloc]init];
-//    
-//    dtl.comment = comment;
-//    
-//    [self.navigationController pushViewController:dtl animated:YES];
-//    
-//}
-
-
-//- (void)mapView:(MKMapView * _Nonnull)mapView
-//didSelectAnnotationView:(MKAnnotationView * _Nonnull)view
-//{
-//    
-//    PFObject *object = [self objectAtAnnotationView:view];
-//    
-//    NSString *comment = object[@"Comment"];
-//    
-//    NSLog(@"%@", object);
-//    
-//    DetailViewController *dtl = [[DetailViewController alloc]init];
-//    
-//    dtl.comment = comment;
-//    
-//    [self.navigationController pushViewController:dtl animated:YES];
-//    
-//}
 
 @end

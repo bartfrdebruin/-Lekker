@@ -12,7 +12,6 @@
 
 @property (nonatomic) CLLocationCoordinate2D myCoordinate;
 @property (nonatomic, strong) NSString *myTitle;
-@property (nonatomic, strong) NSString *mySubtitle;
 
 @end
 

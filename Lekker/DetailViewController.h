@@ -11,12 +11,12 @@
 
 @interface DetailViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *lekkerImage;
+@property (weak, nonatomic) IBOutlet PFImageView *lekkerImage;
 
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 
-@property (nonatomic, strong) NSString *comment;
+@property (strong, nonatomic) PFObject *detailViewObject;
 
 @end
