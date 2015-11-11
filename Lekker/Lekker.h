@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 
-@interface Lekker : PFObject
+@interface Lekker : NSObject
 
 @property (strong, nonatomic) PFFile *imageFile;
 @property (strong, nonatomic) NSString *title;
