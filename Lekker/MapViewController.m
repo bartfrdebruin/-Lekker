@@ -72,47 +72,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 }
 
 
-#pragma mark Location Manager
-
-//    // If the annotation is the user location, just return nil.
-//    if ([annotation isKindOfClass:[MKUserLocation class]])
-//        return nil;
-//
-//    // Handle any custom annotations.
-//    if ([annotation isKindOfClass:[LekkerAnnotations class]])
-//    {
-////        // Try to dequeue an existing pin view first.
-////        MKPinAnnotationView* lekkerAnnotation = (MKPinAnnotationView*)[mapView
-////                                                                 dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
-//
-//        MKAnnotationView* lekkerAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation
-//                                                               reuseIdentifier:@"MyCustomAnnotation"];
-//        lekkerAnnotation.image = [UIImage imageNamed:@"#Lekker_pin.png"];
-//        lekkerAnnotation.centerOffset = CGPointMake(10, -20);
-//
-//
-//
-////        if (!lekkerAnnotation)
-////        {
-//////            // If an existing pin view was not available, create one.
-//////            lekkerAnnotation = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-//////                                                      reuseIdentifier:@"CustomPinAnnotationView"];
-//////
-//////            lekkerAnnotation.pinTintColor = MKPinAnnotationColorRed;
-//////            lekkerAnnotation.animatesDrop = YES;
-//////            lekkerAnnotation.canShowCallout = YES;
-////
-////            // If appropriate, customize the callout by adding accessory views (code not shown).
-////        }
-////        else
-////            lekkerAnnotation.annotation = annotation;
-//
-//
-//
-//        return lekkerAnnotation;
-//    }
-//
-//    return nil;
+#pragma mark Annotation
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -130,11 +90,11 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
         if ([lekkerAnno.mySubtitle isEqualToString:@"Arts & Culture"]) {
             
             
-            MKPinAnnotationView *artsAndCulture = [[MKPinAnnotationView alloc]
+            MKAnnotationView *artsAndCulture = [[MKAnnotationView alloc]
                                                    initWithAnnotation:annotation reuseIdentifier:@"Arts & Culture"];
             
-            artsAndCulture.pinColor = MKPinAnnotationColorGreen;
-            artsAndCulture.animatesDrop = YES;
+            artsAndCulture.image = [UIImage imageNamed:@"#Lekker_artsAndCulture"];
+            artsAndCulture.centerOffset = CGPointMake(10, -20);
             artsAndCulture.canShowCallout = YES;
             
             // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
@@ -151,11 +111,11 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
         } else if ([lekkerAnno.mySubtitle isEqualToString:@"Random #Lekkers"]) {
             
             
-            MKPinAnnotationView *randomLekker = [[MKPinAnnotationView alloc]
+            MKAnnotationView *randomLekker = [[MKAnnotationView alloc]
                                                  initWithAnnotation:annotation reuseIdentifier:@"#RandomLekkers"];
             
-            randomLekker.pinColor = MKPinAnnotationColorPurple;
-            randomLekker.animatesDrop = YES;
+            randomLekker.image = [UIImage imageNamed:@"#Lekker_randomlekkers"];
+            randomLekker.centerOffset = CGPointMake(10, -20);
             randomLekker.canShowCallout = YES;
             
             // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
@@ -172,11 +132,11 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
         } else ([lekkerAnno.mySubtitle isEqualToString:@"Food & Drinks"]);{
             
             
-            MKPinAnnotationView *foodAndDrinksLekkers = [[MKPinAnnotationView alloc]
+            MKAnnotationView *foodAndDrinksLekkers = [[MKAnnotationView alloc]
                                                          initWithAnnotation:annotation reuseIdentifier:@"#FoodAndDrinksLekkers"];
             
-            foodAndDrinksLekkers.pinColor = MKPinAnnotationColorRed;
-            foodAndDrinksLekkers.animatesDrop = YES;
+            foodAndDrinksLekkers.image = [UIImage imageNamed:@"#Lekker_foodAndDrinks"];
+            foodAndDrinksLekkers.centerOffset = CGPointMake(10, -20);
             foodAndDrinksLekkers.canShowCallout = YES;
             
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -195,7 +155,19 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 
 
 
+#pragma mark Update Categories
 
+- (IBAction)categoryChooser:(id)sender {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
 
 
 
