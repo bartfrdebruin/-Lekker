@@ -40,9 +40,6 @@
     thumbnailImageView.file = thumbnail;
     [thumbnailImageView loadInBackground];
     
-//    NSString *newString = object[@"NameOfPost"];
-//    cell.title.text = newString;
-    
     NSString *newComment = object[@"Comment"];
     cell.lekkerComment.text = newComment;
     
