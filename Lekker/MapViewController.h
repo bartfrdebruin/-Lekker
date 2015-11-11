@@ -26,6 +26,8 @@
 
 @property (nonatomic, strong) UIBarButtonItem *list;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (nonatomic, strong) NSString *mySubtitle;
+
 
 
 
