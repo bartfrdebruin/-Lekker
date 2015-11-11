@@ -10,32 +10,18 @@
 
 @implementation LekkerAnnotations
 
-- (PFQuery *)queryForTable
-{
-    PFQuery *query = [PFQuery queryWithClassName:@"Lekker"];
-    
-    return query;
-}
+@synthesize coordinate;
 
-- (id)initWithLocation:(CLLocationCoordinate2D)lekkerLocations {
+- (id)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)comment subtitle:(NSString*)category {
     self = [super init];
     if (self) {
         
-        coordinate = lekkerLocations;
+        self.title = comment;
+        self.subtitle = category;
+        coordinate = coord;
     }
     return self;
 }
 
-
-- (MKAnnotationView *)annotationView {
-    
-    MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:@"LekkerAnnotations"];
-    
-    annotationView.enabled = YES;
-    annotationView.canShowCallout = YES;
-    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
-    return annotationView;
-}
 
 @end

@@ -68,24 +68,25 @@
     if ([annotation isKindOfClass:[LekkerAnnotations class]])
     {
         // Try to dequeue an existing pin view first.
-        MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
+        MKPinAnnotationView* lekkerAnnotation = (MKPinAnnotationView*)[mapView
                                                                  dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
         
-        if (!pinView)
+        if (!lekkerAnnotation)
         {
             // If an existing pin view was not available, create one.
-            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+            lekkerAnnotation = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                                       reuseIdentifier:@"CustomPinAnnotationView"];
-            pinView.pinColor = MKPinAnnotationColorRed;
-            pinView.animatesDrop = YES;
-            pinView.canShowCallout = YES;
+            
+            lekkerAnnotation.pinColor = MKPinAnnotationColorRed;
+            lekkerAnnotation.animatesDrop = YES;
+            lekkerAnnotation.canShowCallout = YES;
             
             // If appropriate, customize the callout by adding accessory views (code not shown).
         }
         else
-            pinView.annotation = annotation;
+            lekkerAnnotation.annotation = annotation;
         
-        return pinView;
+        return lekkerAnnotation;
     }
     
     return nil;
@@ -119,7 +120,23 @@
     UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target:self action:@selector(goToList:)];
     
     mapNavigation.rightBarButtonItem = list;
+    
+    PFQuery *queriesForAnnotation = [PFQuery queryWithClassName:@"Lekker"];
+    [queriesForAnnotation findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        for (PFObject *object in objects) {
+            
+            NSString *comment = object[@"Comment"];
+            NSString *category = object[@"category"];
+            PFGeoPoint *geoPoint = object[@"location"];
+            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+            
+            LekkerAnnotations *lekkerAnnotation = [[LekkerAnnotations alloc] initWithLocation:coord title:comment subtitle:category];
+            
+            [self.mapView addAnnotation:lekkerAnnotation];
+        };
+    }];
 }
+
 
 #pragma mark Image Picker
 
