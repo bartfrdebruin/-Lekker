@@ -12,7 +12,8 @@
 
 @synthesize coordinate;
 
-- (id)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)comment subtitle:(NSString*)category {
+
+- (id)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)comment subtitle:(NSString *)category {
     self = [super init];
     if (self) {
         

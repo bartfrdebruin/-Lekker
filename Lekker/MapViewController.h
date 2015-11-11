@@ -28,7 +28,7 @@
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 
 
-- (void)addAnnotation:(id<MKAnnotation> _Nonnull)annotation;
+
 
 
 @end
