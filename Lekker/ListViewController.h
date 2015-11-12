@@ -13,4 +13,6 @@
 
 @interface ListViewController : PFQueryTableViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) PFGeoPoint *userLocation;
+
 @end

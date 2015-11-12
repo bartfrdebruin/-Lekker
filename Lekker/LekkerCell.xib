@@ -11,48 +11,60 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="115.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqK-3f-F10" customClass="PFImageView">
                         <rect key="frame" x="14" y="14" width="90" height="90"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="90" id="FjS-6x-RRy"/>
+                            <constraint firstAttribute="width" constant="90" id="xxd-Om-JCc"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7qj-Gw-PeZ">
                         <rect key="frame" x="8" y="8" width="102" height="102"/>
                         <animations/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#Lekker: Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5L4-6S-8OI">
-                        <rect key="frame" x="118" y="8" width="202" height="102"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Category: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkr-7G-WTL">
+                        <rect key="frame" x="120" y="83" width="184" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="bbD-tP-WeS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#Lekker: Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5L4-6S-8OI">
+                        <rect key="frame" x="118" y="36" width="202" height="33"/>
                         <animations/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <animations/>
+                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="5L4-6S-8OI" firstAttribute="bottom" secondItem="7qj-Gw-PeZ" secondAttribute="bottom" id="0Uf-Q0-uNz"/>
-                    <constraint firstItem="7qj-Gw-PeZ" firstAttribute="top" secondItem="5L4-6S-8OI" secondAttribute="top" id="5gf-Jg-9uI"/>
-                    <constraint firstItem="7qj-Gw-PeZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Leb-US-aQp"/>
-                    <constraint firstItem="5L4-6S-8OI" firstAttribute="leading" secondItem="7qj-Gw-PeZ" secondAttribute="trailing" constant="8" symbolic="YES" id="Ppg-or-vuK"/>
-                    <constraint firstItem="qqK-3f-F10" firstAttribute="centerX" secondItem="7qj-Gw-PeZ" secondAttribute="centerX" id="SCH-D1-Yx9"/>
-                    <constraint firstItem="7qj-Gw-PeZ" firstAttribute="centerY" secondItem="qqK-3f-F10" secondAttribute="centerY" id="X2J-Au-88H"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="qqK-3f-F10" secondAttribute="bottom" constant="3.5" id="ZXi-k9-un6"/>
-                    <constraint firstItem="5L4-6S-8OI" firstAttribute="leading" secondItem="qqK-3f-F10" secondAttribute="trailing" constant="14" id="d3g-Fh-kqV"/>
-                    <constraint firstItem="7qj-Gw-PeZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fAb-fw-UO8"/>
-                    <constraint firstAttribute="trailing" secondItem="5L4-6S-8OI" secondAttribute="trailing" id="h7L-1D-8MT"/>
-                    <constraint firstItem="qqK-3f-F10" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="ksU-1k-ter"/>
+                    <constraint firstAttribute="trailing" secondItem="5L4-6S-8OI" secondAttribute="trailing" id="1IC-j2-GQd"/>
+                    <constraint firstItem="Tkr-7G-WTL" firstAttribute="top" secondItem="5L4-6S-8OI" secondAttribute="bottom" constant="14" id="HQF-Vr-a62"/>
+                    <constraint firstItem="7qj-Gw-PeZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="HWT-a2-NTK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Tkr-7G-WTL" secondAttribute="trailing" constant="8" id="PJl-9B-PtM"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="qqK-3f-F10" secondAttribute="bottom" constant="3.5" id="PzL-Rt-PKJ"/>
+                    <constraint firstItem="qqK-3f-F10" firstAttribute="bottom" secondItem="Tkr-7G-WTL" secondAttribute="bottom" id="a4E-Fg-kXL"/>
+                    <constraint firstItem="7qj-Gw-PeZ" firstAttribute="centerY" secondItem="qqK-3f-F10" secondAttribute="centerY" id="bBD-aW-JM7"/>
+                    <constraint firstItem="5L4-6S-8OI" firstAttribute="leading" secondItem="qqK-3f-F10" secondAttribute="trailing" constant="14" id="da8-nR-LKE"/>
+                    <constraint firstItem="5L4-6S-8OI" firstAttribute="leading" secondItem="7qj-Gw-PeZ" secondAttribute="trailing" constant="8" symbolic="YES" id="i8p-LC-bPA"/>
+                    <constraint firstItem="7qj-Gw-PeZ" firstAttribute="centerX" secondItem="qqK-3f-F10" secondAttribute="centerX" id="nMu-Qg-Hzh"/>
+                    <constraint firstItem="qqK-3f-F10" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="qoy-2e-ujR"/>
+                    <constraint firstItem="7qj-Gw-PeZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="uyN-h3-Zzi"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="category" destination="7qj-Gw-PeZ" id="zue-wp-hM8"/>
+                <outlet property="category" destination="Tkr-7G-WTL" id="mOc-vV-3r5"/>
                 <outlet property="imageThumbnail" destination="qqK-3f-F10" id="283-6T-OFp"/>
-                <outlet property="lekkerComment" destination="5L4-6S-8OI" id="dNn-NO-Xq1"/>
+                <outlet property="lekkerComment" destination="5L4-6S-8OI" id="ybk-nw-RMR"/>
             </connections>
             <point key="canvasLocation" x="342" y="393"/>
         </tableViewCell>

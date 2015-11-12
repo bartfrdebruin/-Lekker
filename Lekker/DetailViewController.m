@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ListViewController.h"
 
 @interface DetailViewController ()
 
@@ -16,6 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.navigationItem setHidesBackButton:NO];
+    
+    UINavigationItem *detailNavigation = self.navigationItem;
+    detailNavigation.title = @"#Lekker Details";
+    
+    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target: self action:@selector(goToList:)];
+    
+    detailNavigation.rightBarButtonItem = list;
     
     PFFile *imageFile = self.detailViewObject [@"imageFile"];
     
@@ -31,5 +41,15 @@
     self.categoryLabel.text = [self.detailViewObject objectForKey:@"category"];
 
 }
+
+#pragma mark - GoToList
+
+- (IBAction)goToList:(id)sender {
+    
+    ListViewController *listView = [[ListViewController alloc] init];
+    
+    [self.navigationController pushViewController:listView animated:YES];
+}
+
 
 @end

@@ -21,7 +21,16 @@
 
 - (PFQuery *)queryForTable
 {
+ 
+//    PFGeoPoint *userGeoPoint = self.userLocation;
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Lekker"];
+    
+    [query orderByDescending:@"createdAt"];
+    
+//    [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
+//    
+//    query.limit = 10;
     
     return query;
 }
@@ -45,6 +54,9 @@
     NSString *newComment = object[@"Comment"];
     cell.lekkerComment.text = newComment;
     
+    NSString *newCategory = object[@"category"];
+    cell.category.text = newCategory;
+    
     
 //Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!! right???
     
@@ -61,6 +73,25 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+//    PFGeoPoint *userGeoPoint = self.userLocation [@"imageFile"];
+//    
+//    [userGeoPoint getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+//        PFGeoPoint *image = [UIImage imageWithData:data];
+//        self.lekkerImage.image = image;
+//    }];
+//    
+//    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+//        if (!error) {
+//            self.userLocation = geoPoint;
+//            [self loadObjects];
+//        }
+//    }];
+    
+    [self.navigationItem setHidesBackButton:NO];
+    
+    UINavigationItem *detailNavigation = self.navigationItem;
+    detailNavigation.title = @"#Lekker List";
        
   }
 

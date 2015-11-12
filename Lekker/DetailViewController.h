@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Lekker.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *lekkerImage;
 
@@ -18,5 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 
 @property (strong, nonatomic) PFObject *detailViewObject;
+
+@property (nonatomic, strong) UIBarButtonItem *list;
 
 @end
