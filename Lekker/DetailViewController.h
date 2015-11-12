@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Lekker.h"
 
-@interface DetailViewController : UIViewController <UINavigationControllerDelegate>
+@interface DetailViewController : UIViewController <UINavigationControllerDelegate, UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *lekkerImage;
 

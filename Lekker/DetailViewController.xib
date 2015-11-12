@@ -9,59 +9,66 @@
                 <outlet property="categoryLabel" destination="mcg-Hg-5D7" id="cRh-7T-D8i"/>
                 <outlet property="commentLabel" destination="c0Y-Qd-lLm" id="HQc-sv-xd5"/>
                 <outlet property="lekkerImage" destination="bX1-yk-rk9" id="8cV-i7-15U"/>
+                <outlet property="scrollView" destination="DhU-kC-gIF" id="wmd-oG-pJw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" tag="100" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="DhU-kC-gIF">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bX1-yk-rk9">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="453"/>
-                    <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0Y-Qd-lLm">
-                    <rect key="frame" x="122" y="466" width="357" height="23"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lekker# " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iir-wS-cAP">
-                    <rect key="frame" x="36" y="466" width="73" height="23"/>
+                <view clearsContextBeforeDrawing="NO" tag="100" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bX1-yk-rk9">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="453"/>
+                            <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0Y-Qd-lLm">
+                            <rect key="frame" x="122" y="466" width="357" height="23"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Lekker# " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iir-wS-cAP">
+                            <rect key="frame" x="36" y="466" width="73" height="23"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="73" id="asb-Wp-CzH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcg-Hg-5D7">
+                            <rect key="frame" x="36" y="554" width="187" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="atd-ls-Epr"/>
+                                <constraint firstAttribute="width" constant="187" id="cmC-kM-HKG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="73" id="asb-Wp-CzH"/>
+                        <constraint firstAttribute="bottom" secondItem="mcg-Hg-5D7" secondAttribute="bottom" constant="15" id="0sf-rt-PuY"/>
+                        <constraint firstItem="c0Y-Qd-lLm" firstAttribute="baseline" secondItem="Iir-wS-cAP" secondAttribute="baseline" id="6FC-rl-n39"/>
+                        <constraint firstAttribute="trailing" secondItem="bX1-yk-rk9" secondAttribute="trailing" id="9LK-qj-R08"/>
+                        <constraint firstItem="mcg-Hg-5D7" firstAttribute="top" secondItem="Iir-wS-cAP" secondAttribute="bottom" constant="65" id="B93-nM-SZP"/>
+                        <constraint firstItem="c0Y-Qd-lLm" firstAttribute="leading" secondItem="Iir-wS-cAP" secondAttribute="trailing" constant="13" id="H9B-24-0hd"/>
+                        <constraint firstItem="Iir-wS-cAP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="36" id="Jaq-fG-uSe"/>
+                        <constraint firstItem="bX1-yk-rk9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SAy-FX-zIa"/>
+                        <constraint firstItem="bX1-yk-rk9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Uot-XM-cbG"/>
+                        <constraint firstItem="bX1-yk-rk9" firstAttribute="centerX" secondItem="c0Y-Qd-lLm" secondAttribute="centerX" id="fRC-Uh-zGM"/>
+                        <constraint firstItem="Iir-wS-cAP" firstAttribute="top" secondItem="bX1-yk-rk9" secondAttribute="bottom" constant="13" id="u9q-Hg-vzI"/>
+                        <constraint firstItem="Iir-wS-cAP" firstAttribute="top" secondItem="c0Y-Qd-lLm" secondAttribute="top" id="vh0-J3-t6D"/>
+                        <constraint firstItem="mcg-Hg-5D7" firstAttribute="leading" secondItem="Iir-wS-cAP" secondAttribute="leading" id="vlr-AJ-MsH"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcg-Hg-5D7">
-                    <rect key="frame" x="36" y="554" width="187" height="31"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="31" id="atd-ls-Epr"/>
-                        <constraint firstAttribute="width" constant="187" id="cmC-kM-HKG"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="mcg-Hg-5D7" secondAttribute="bottom" constant="15" id="0sf-rt-PuY"/>
-                <constraint firstItem="c0Y-Qd-lLm" firstAttribute="baseline" secondItem="Iir-wS-cAP" secondAttribute="baseline" id="6FC-rl-n39"/>
-                <constraint firstAttribute="trailing" secondItem="bX1-yk-rk9" secondAttribute="trailing" id="9LK-qj-R08"/>
-                <constraint firstItem="mcg-Hg-5D7" firstAttribute="top" secondItem="Iir-wS-cAP" secondAttribute="bottom" constant="65" id="B93-nM-SZP"/>
-                <constraint firstItem="c0Y-Qd-lLm" firstAttribute="leading" secondItem="Iir-wS-cAP" secondAttribute="trailing" constant="13" id="H9B-24-0hd"/>
-                <constraint firstItem="Iir-wS-cAP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="36" id="Jaq-fG-uSe"/>
-                <constraint firstItem="bX1-yk-rk9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SAy-FX-zIa"/>
-                <constraint firstItem="bX1-yk-rk9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Uot-XM-cbG"/>
-                <constraint firstItem="bX1-yk-rk9" firstAttribute="centerX" secondItem="c0Y-Qd-lLm" secondAttribute="centerX" id="fRC-Uh-zGM"/>
-                <constraint firstItem="Iir-wS-cAP" firstAttribute="top" secondItem="bX1-yk-rk9" secondAttribute="bottom" constant="13" id="u9q-Hg-vzI"/>
-                <constraint firstItem="Iir-wS-cAP" firstAttribute="top" secondItem="c0Y-Qd-lLm" secondAttribute="top" id="vh0-J3-t6D"/>
-                <constraint firstItem="mcg-Hg-5D7" firstAttribute="leading" secondItem="Iir-wS-cAP" secondAttribute="leading" id="vlr-AJ-MsH"/>
-            </constraints>
-        </view>
+            <point key="canvasLocation" x="344" y="-489"/>
+        </scrollView>
     </objects>
 </document>
