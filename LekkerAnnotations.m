@@ -22,14 +22,9 @@
         
         PFGeoPoint *geopoint = object[@"location"];
         
-<<<<<<< HEAD
         self.coordinate = CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude);
-                
-=======
-        coordinate = CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude);
+
         
-        
->>>>>>> e74618a218d8d0d810f07996b4f98e8f3f32becf
     }
     return self;
     
