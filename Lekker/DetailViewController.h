@@ -19,4 +19,6 @@
 
 @property (strong, nonatomic) PFObject *detailViewObject;
 
+@property (nonatomic, strong) UIBarButtonItem *list;
+
 @end
