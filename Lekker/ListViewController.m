@@ -23,6 +23,8 @@
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Lekker"];
     
+    [query orderByDescending:@"createdAt"];
+    
     return query;
 }
 
@@ -61,6 +63,11 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    [self.navigationItem setHidesBackButton:NO];
+    
+    UINavigationItem *detailNavigation = self.navigationItem;
+    detailNavigation.title = @"#Lekker List";
        
   }
 

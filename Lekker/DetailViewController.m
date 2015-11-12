@@ -21,7 +21,7 @@
     [self.navigationItem setHidesBackButton:NO];
     
     UINavigationItem *detailNavigation = self.navigationItem;
-    detailNavigation.title = @"#Lekker";
+    detailNavigation.title = @"#Lekker Details";
     
     UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target: self action:@selector(goToList:)];
     
