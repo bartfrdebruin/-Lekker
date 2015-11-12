@@ -120,67 +120,31 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
         LekkerAnnotations *lekkerAnno = (LekkerAnnotations *)annotation;
         
         NSString *category = lekkerAnno.lekkerObject [@"category"];
-
-        if ([category isEqualToString:@"Arts & Culture"]) {
-            
-            MKAnnotationView *artsAndCulture = [self annotationForCategory:@"Arts & Culture" image:[UIImage imageNamed:@"#Lekker_artsAndCulture"] annotation:lekkerAnno];
-            
-            return artsAndCulture;
-            
-        } else if ([category isEqualToString:@"Random #Lekkers"]) {
-            
-            MKAnnotationView *randomLekker = [self annotationForCategory:@"Random #Lekkers" image:[UIImage imageNamed:@"#Lekker_randomlekkers"] annotation:lekkerAnno];
-            
-            return randomLekker;
-            
-//            MKAnnotationView *randomLekker = [[MKAnnotationView alloc]
-//                                                 initWithAnnotation:lekkerAnno reuseIdentifier:@"#RandomLekkers"];
+        
+        MKAnnotationView *lekkerAnnotationView = [self annotationForCategory:category image:[UIImage imageNamed:category] annotation:lekkerAnno];
+        
+        return lekkerAnnotationView;
+        
+//
+//        if ([category isEqualToString:@"Arts & Culture"]) {
 //            
-//            randomLekker.image = [UIImage imageNamed:@"#Lekker_randomlekkers"];
-//            randomLekker.centerOffset = CGPointMake(10, -20);
-//            randomLekker.canShowCallout = YES;
-//            lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
-//            lekkerAnno.subtitle = lekkerAnno.lekkerObject [@"category"];
+//            MKAnnotationView *artsAndCulture = [self annotationForCategory:category image:[UIImage imageNamed:category] annotation:lekkerAnno];
 //            
-//            // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
-//            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//            [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
-//            randomLekker.rightCalloutAccessoryView = rightButton;
+//            return artsAndCulture;
 //            
-//            // Add a custom image to the left side of the callout.
-//            PFImageView *randomLekkerPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 50)];
-//            randomLekkerPin.file = lekkerAnno.lekkerObject [@"imageFile"];
-//            [randomLekkerPin loadInBackground];
-//            randomLekker.leftCalloutAccessoryView = randomLekkerPin;
+//        } else if ([category isEqualToString:@"Random #Lekkers"]) {
+//            
+//            MKAnnotationView *randomLekker = [self annotationForCategory:category image:[UIImage imageNamed:category] annotation:lekkerAnno];
 //            
 //            return randomLekker;
-            
-        } else ([category isEqualToString:@"Food & Drinks"]);{
-            
-            MKAnnotationView *foodAndDrinksLekkers = [self annotationForCategory:@"Food & Drinks" image:[UIImage imageNamed:@"#Lekker_foodAndDrinks"] annotation:lekkerAnno];
-
-            
-//            MKAnnotationView *foodAndDrinksLekkers = [[MKAnnotationView alloc]
-//                                                         initWithAnnotation:lekkerAnno reuseIdentifier:@"#FoodAndDrinksLekkers"];
 //            
-//            foodAndDrinksLekkers.image = [UIImage imageNamed:@"#Lekker_foodAndDrinks"];
-//            foodAndDrinksLekkers.centerOffset = CGPointMake(10, -20);
-//            foodAndDrinksLekkers.canShowCallout = YES;
-//            lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
-//            lekkerAnno.subtitle = lekkerAnno.lekkerObject [@"category"];
+//            
+//        } else ([category isEqualToString:@"Food & Drinks"]);{
+//            
+//            MKAnnotationView *foodAndDrinksLekkers = [self annotationForCategory:category image:[UIImage imageNamed:category] annotation:lekkerAnno];
 //
-//            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//            [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
-//            foodAndDrinksLekkers.rightCalloutAccessoryView = rightButton;
-//            
-//            // Add a custom image to the left side of the callout.
-//            PFImageView *foodAndDrinksPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 100)];
-//            foodAndDrinksPin.file = lekkerAnno.lekkerObject [@"imageFile"];
-//            [foodAndDrinksPin loadInBackground];
-//            foodAndDrinksLekkers.leftCalloutAccessoryView = foodAndDrinksPin;
-
-            return foodAndDrinksLekkers;
-        }
+//            return foodAndDrinksLekkers;
+//        }
     }
 }
 
