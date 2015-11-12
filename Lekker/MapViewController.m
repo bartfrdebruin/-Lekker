@@ -188,12 +188,11 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             lekkerAnno.subtitle = lekkerAnno.lekkerObject [@"category"];
 
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            
             [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
             foodAndDrinksLekkers.rightCalloutAccessoryView = rightButton;
             
             // Add a custom image to the left side of the callout.
-            PFImageView *foodAndDrinksPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 50)];
+            PFImageView *foodAndDrinksPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 100)];
             foodAndDrinksPin.file = lekkerAnno.lekkerObject [@"imageFile"];
             [foodAndDrinksPin loadInBackground];
             foodAndDrinksLekkers.leftCalloutAccessoryView = foodAndDrinksPin;
@@ -262,22 +261,25 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 }
 
 
+
+
 #pragma didSelectAnnotationView
 
-
 - (void)mapView:(MKMapView * _Nonnull)mapView
-didSelectAnnotationView:(MKAnnotationView * _Nonnull)view
+ annotationView:(MKAnnotationView * _Nonnull)view
+calloutAccessoryControlTapped:(UIControl * _Nonnull)control
+
 {
     
     LekkerAnnotations *lekkerAnnotation = (LekkerAnnotations*) view.annotation;
     
    // NSLog(@"%@", lekkerAnnotation.lekkerObject);
     
-    DetailViewController *detailViewController = [[DetailViewController alloc]init];
+    DetailViewController *dtl = [[DetailViewController alloc]init];
     
-    detailViewController.detailViewObject = lekkerAnnotation.lekkerObject;
+    dtl.detailViewObject = lekkerAnnotation.lekkerObject;
     
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [self.navigationController pushViewController:dtl animated:YES];
     
 }
 
