@@ -86,8 +86,6 @@
             
             LekkerAnnotations *lekkerAnnotation = [[LekkerAnnotations alloc] initWithObject:object];
             
-            
-            
             [self.mapView addAnnotation:lekkerAnnotation];
         };
     }];
@@ -123,79 +121,63 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
         
         NSString *category = lekkerAnno.lekkerObject [@"category"];
 
-        
         if ([category isEqualToString:@"Arts & Culture"]) {
             
-            
-            MKAnnotationView *artsAndCulture = [[MKAnnotationView alloc]
-                                                   initWithAnnotation:lekkerAnno reuseIdentifier:@"Arts & Culture"];
-            
-            artsAndCulture.image = [UIImage imageNamed:@"#Lekker_artsAndCulture"];
-            artsAndCulture.centerOffset = CGPointMake(10, -20);
-            artsAndCulture.canShowCallout = YES;
-            lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
-            lekkerAnno.subtitle = lekkerAnno.lekkerObject [@"category"];
-            
-            // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
-            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
-            artsAndCulture.rightCalloutAccessoryView = rightButton;
-            
-        
-            // Add a custom image to the left side of the callout.
-            PFImageView *artsAndCulturePin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 50)];
-            artsAndCulturePin.file = lekkerAnno.lekkerObject [@"imageFile"];
-            [artsAndCulturePin loadInBackground];
-            artsAndCulture.leftCalloutAccessoryView = artsAndCulturePin;
+            MKAnnotationView *artsAndCulture = [self annotationForCategory:@"Arts & Culture" image:[UIImage imageNamed:@"#Lekker_artsAndCulture"] annotation:lekkerAnno];
             
             return artsAndCulture;
             
         } else if ([category isEqualToString:@"Random #Lekkers"]) {
             
-            
-            MKAnnotationView *randomLekker = [[MKAnnotationView alloc]
-                                                 initWithAnnotation:lekkerAnno reuseIdentifier:@"#RandomLekkers"];
-            
-            randomLekker.image = [UIImage imageNamed:@"#Lekker_randomlekkers"];
-            randomLekker.centerOffset = CGPointMake(10, -20);
-            randomLekker.canShowCallout = YES;
-            lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
-            lekkerAnno.subtitle = lekkerAnno.lekkerObject [@"category"];
-            
-            // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
-            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
-            randomLekker.rightCalloutAccessoryView = rightButton;
-            
-            // Add a custom image to the left side of the callout.
-            PFImageView *randomLekkerPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 50)];
-            randomLekkerPin.file = lekkerAnno.lekkerObject [@"imageFile"];
-            [randomLekkerPin loadInBackground];
-            randomLekker.leftCalloutAccessoryView = randomLekkerPin;
+            MKAnnotationView *randomLekker = [self annotationForCategory:@"Random #Lekkers" image:[UIImage imageNamed:@"#Lekker_randomlekkers"] annotation:lekkerAnno];
             
             return randomLekker;
             
+//            MKAnnotationView *randomLekker = [[MKAnnotationView alloc]
+//                                                 initWithAnnotation:lekkerAnno reuseIdentifier:@"#RandomLekkers"];
+//            
+//            randomLekker.image = [UIImage imageNamed:@"#Lekker_randomlekkers"];
+//            randomLekker.centerOffset = CGPointMake(10, -20);
+//            randomLekker.canShowCallout = YES;
+//            lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
+//            lekkerAnno.subtitle = lekkerAnno.lekkerObject [@"category"];
+//            
+//            // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
+//            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//            [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
+//            randomLekker.rightCalloutAccessoryView = rightButton;
+//            
+//            // Add a custom image to the left side of the callout.
+//            PFImageView *randomLekkerPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 50)];
+//            randomLekkerPin.file = lekkerAnno.lekkerObject [@"imageFile"];
+//            [randomLekkerPin loadInBackground];
+//            randomLekker.leftCalloutAccessoryView = randomLekkerPin;
+//            
+//            return randomLekker;
+            
         } else ([category isEqualToString:@"Food & Drinks"]);{
             
-            
-            MKAnnotationView *foodAndDrinksLekkers = [[MKAnnotationView alloc]
-                                                         initWithAnnotation:lekkerAnno reuseIdentifier:@"#FoodAndDrinksLekkers"];
-            
-            foodAndDrinksLekkers.image = [UIImage imageNamed:@"#Lekker_foodAndDrinks"];
-            foodAndDrinksLekkers.centerOffset = CGPointMake(10, -20);
-            foodAndDrinksLekkers.canShowCallout = YES;
-            lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
-            lekkerAnno.subtitle = lekkerAnno.lekkerObject [@"category"];
+            MKAnnotationView *foodAndDrinksLekkers = [self annotationForCategory:@"Food & Drinks" image:[UIImage imageNamed:@"#Lekker_foodAndDrinks"] annotation:lekkerAnno];
 
-            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
-            foodAndDrinksLekkers.rightCalloutAccessoryView = rightButton;
             
-            // Add a custom image to the left side of the callout.
-            PFImageView *foodAndDrinksPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 100)];
-            foodAndDrinksPin.file = lekkerAnno.lekkerObject [@"imageFile"];
-            [foodAndDrinksPin loadInBackground];
-            foodAndDrinksLekkers.leftCalloutAccessoryView = foodAndDrinksPin;
+//            MKAnnotationView *foodAndDrinksLekkers = [[MKAnnotationView alloc]
+//                                                         initWithAnnotation:lekkerAnno reuseIdentifier:@"#FoodAndDrinksLekkers"];
+//            
+//            foodAndDrinksLekkers.image = [UIImage imageNamed:@"#Lekker_foodAndDrinks"];
+//            foodAndDrinksLekkers.centerOffset = CGPointMake(10, -20);
+//            foodAndDrinksLekkers.canShowCallout = YES;
+//            lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
+//            lekkerAnno.subtitle = lekkerAnno.lekkerObject [@"category"];
+//
+//            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//            [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
+//            foodAndDrinksLekkers.rightCalloutAccessoryView = rightButton;
+//            
+//            // Add a custom image to the left side of the callout.
+//            PFImageView *foodAndDrinksPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 100)];
+//            foodAndDrinksPin.file = lekkerAnno.lekkerObject [@"imageFile"];
+//            [foodAndDrinksPin loadInBackground];
+//            foodAndDrinksLekkers.leftCalloutAccessoryView = foodAndDrinksPin;
 
             return foodAndDrinksLekkers;
         }
@@ -203,12 +185,70 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 }
 
 
+#pragma mark Annotation Update
+
+
+- (MKAnnotationView *)annotationForCategory:(NSString *)category image:(UIImage *)image annotation:(LekkerAnnotations *)annotation {
+    
+    MKAnnotationView *annotationForMap = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:category];
+    
+    annotationForMap.image = image;
+    annotationForMap.centerOffset = CGPointMake(10, -20);
+    annotationForMap.canShowCallout = YES;
+    annotation.title = annotation.lekkerObject [@"Comment"];
+    annotation.subtitle = annotation.lekkerObject [@"category"];
+    
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
+    annotationForMap.rightCalloutAccessoryView = rightButton;
+    
+    PFImageView *annotationPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 100)];
+    annotationPin.file = annotation.lekkerObject [@"imageFile"];
+    [annotationPin loadInBackground];
+    annotationForMap.leftCalloutAccessoryView = annotationPin;
+    
+    return annotationForMap;
+    
+    }
+
 #pragma mark Update Categories
 
 - (IBAction)categoryChooser:(id)sender {
     
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Categories"
+                                                                   message:@"Update your categories!"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *allCategories = [UIAlertAction actionWithTitle:@"All Categories" style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction * action) {
+                                                               
+                                                               
+                                                           }];
+    
+    UIAlertAction *artsAndCulture = [UIAlertAction actionWithTitle:@"Arts & Culture" style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction * action) {
+                                                           }];
+    
+    UIAlertAction *foodAndDrinks = [UIAlertAction actionWithTitle:@"Food & Drinks" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              
+                                                              
+                                                          }];
+    
+    UIAlertAction *randomLekkers = [UIAlertAction actionWithTitle:@"Random #Lekkers" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                          }];
+    
+    [alert addAction:allCategories];
+    [alert addAction:artsAndCulture];
+    [alert addAction:foodAndDrinks];
+    [alert addAction:randomLekkers];
+    
+    [self presentViewController:alert animated:NO completion:nil];
     
 }
+
+
 
 
 #pragma mark - GoToList

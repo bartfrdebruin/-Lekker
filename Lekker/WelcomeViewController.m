@@ -28,13 +28,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:YES];
+    
     [self.navigationController setNavigationBarHidden:YES];
     
 //    UINavigationItem *navigation = self.navigationItem;
 //    navigation.title = @"#LekkerMap";
-    
-    
-
 }
 
 - (void)viewDidLoad {
