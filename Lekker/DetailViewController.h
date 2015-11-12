@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Lekker.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *lekkerImage;
 
