@@ -21,4 +21,6 @@
 
 @property (nonatomic, strong) UIBarButtonItem *list;
 
+@property(nonatomic, readonly, nonnull) UIPanGestureRecognizer *panGestureRecognizer;
+
 @end

@@ -19,11 +19,10 @@
 
 #pragma mark Views
 
-- (void) viewWillAppear:(BOOL)animated{
-    
+- (void) viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
-    
-    }
+}
 
 
 - (void)viewDidLoad {
@@ -33,8 +32,6 @@
     self.imageView.image = self.photo;
     
     self.descriptionTextField.delegate = self;
-    
-//    [self.view addSubview:<#(nonnull UIView *)#>
     
     // Creating a notification when the keyboard floats up.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(liftMainViewWhenKeybordAppears:) name:UIKeyboardWillShowNotification object:nil];
