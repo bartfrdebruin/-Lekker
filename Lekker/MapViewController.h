@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "AddLekkerViewController.h"
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 #import "LekkerAnnotations.h"
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate>  {
@@ -26,6 +27,7 @@
 
 @property (nonatomic, strong) UIBarButtonItem *list;
 @property (nonatomic, strong) NSString *category;
+@property (nonatomic, strong) PFImageView *image;
 
 
 

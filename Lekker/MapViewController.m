@@ -134,14 +134,18 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             artsAndCulture.centerOffset = CGPointMake(10, -20);
             artsAndCulture.canShowCallout = YES;
             lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
+            lekkerAnno.subtitle = lekkerAnno.lekkerObject [@"category"];
             
             // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
             artsAndCulture.rightCalloutAccessoryView = rightButton;
             
+        
             // Add a custom image to the left side of the callout.
-            UIImageView *artsAndCulturePin = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"#Lekker_pin.png"]];
+            PFImageView *artsAndCulturePin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 50)];
+            artsAndCulturePin.file = lekkerAnno.lekkerObject [@"imageFile"];
+            [artsAndCulturePin loadInBackground];
             artsAndCulture.leftCalloutAccessoryView = artsAndCulturePin;
             
             return artsAndCulture;
@@ -156,6 +160,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             randomLekker.centerOffset = CGPointMake(10, -20);
             randomLekker.canShowCallout = YES;
             lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
+            lekkerAnno.subtitle = lekkerAnno.lekkerObject [@"category"];
             
             // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -163,7 +168,9 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             randomLekker.rightCalloutAccessoryView = rightButton;
             
             // Add a custom image to the left side of the callout.
-            UIImageView *randomLekkerPin = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"#Lekker_pin.png"]];
+            PFImageView *randomLekkerPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 50)];
+            randomLekkerPin.file = lekkerAnno.lekkerObject [@"imageFile"];
+            [randomLekkerPin loadInBackground];
             randomLekker.leftCalloutAccessoryView = randomLekkerPin;
             
             return randomLekker;
@@ -178,15 +185,18 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             foodAndDrinksLekkers.centerOffset = CGPointMake(10, -20);
             foodAndDrinksLekkers.canShowCallout = YES;
             lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
-            
+            lekkerAnno.subtitle = lekkerAnno.lekkerObject [@"category"];
+
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
             foodAndDrinksLekkers.rightCalloutAccessoryView = rightButton;
             
             // Add a custom image to the left side of the callout.
-            //UIImageView *foodAndDrinksPin = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.imagesForAnnotation]];
-            //foodAndDrinksLekkers.leftCalloutAccessoryView = foodAndDrinksPin;
-            
+            PFImageView *foodAndDrinksPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 50)];
+            foodAndDrinksPin.file = lekkerAnno.lekkerObject [@"imageFile"];
+            [foodAndDrinksPin loadInBackground];
+            foodAndDrinksLekkers.leftCalloutAccessoryView = foodAndDrinksPin;
+
             return foodAndDrinksLekkers;
         }
     }

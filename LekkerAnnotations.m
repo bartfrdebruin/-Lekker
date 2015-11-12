@@ -23,11 +23,7 @@
         PFGeoPoint *geopoint = object[@"location"];
         
         self.coordinate = CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude);
-        
-        NSString *comment = object[@"comment"];
-        
-        self.title = comment;
-        
+                
     }
     return self;
     
