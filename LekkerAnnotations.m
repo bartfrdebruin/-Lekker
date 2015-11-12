@@ -8,6 +8,7 @@
 
 #import "LekkerAnnotations.h"
 
+
 @interface LekkerAnnotations () <MKAnnotation> 
 
 @property (nonatomic) CLLocationCoordinate2D myCoordinate;
@@ -47,5 +48,7 @@
     
     return self.mySubtitle;
 }
+
+
 
 @end

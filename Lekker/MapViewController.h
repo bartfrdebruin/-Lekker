@@ -13,7 +13,7 @@
 #import <Parse/Parse.h>
 #import "LekkerAnnotations.h"
 
-@interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate>  {
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate, MKAnnotation>  {
     
     CLLocationManager *locationManager;
 }
@@ -27,9 +27,5 @@
 @property (nonatomic, strong) UIBarButtonItem *list;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, strong) NSString *mySubtitle;
-
-
-
-
 
 @end

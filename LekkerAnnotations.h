@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
-@interface LekkerAnnotations : NSObject
+@interface LekkerAnnotations : NSObject <MKAnnotation>
 
 @property (nonatomic, strong) NSString *mySubtitle;
 

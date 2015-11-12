@@ -190,6 +190,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             return foodAndDrinksLekkers;
         }
     }
+    
 }
 
 
@@ -239,18 +240,26 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 
 #pragma didSelectAnnotationView
 
-// COMMENTED THIS OUT. PASSING OBJECT FROM LIST VIEW CONTROLLER TO DETAIL VIEW CONTROLLER FIRST. THEN WILL PROBABLY PASS OBJECT FROM MAP VIEW CONTROLLER TO DETAIL VIEW CONTROLLER.
+//    PFObject *lekkerAtIndexPath = [self objectAtIndexPath:indexPath];
+//    
+//    DetailViewController *dtl = [[DetailViewController alloc]init];
+//    
+//    dtl.detailViewObject = lekkerAtIndexPath;
+//    
+//    [self.navigationController pushViewController:dtl animated:YES];
+//    
+//}
+
 
 - (void)mapView:(MKMapView * _Nonnull)mapView
 didSelectAnnotationView:(MKAnnotationView * _Nonnull)view
 {
-    
-    PFObject *lekkerAnnotationView = [self.mapView.selectedAnnotations objectAtIndex:([self.mapView.selectedAnnotations count]-1)];
+    LekkerAnnotations *lekkerAnnotation = (LekkerAnnotations *) view.annotation;
     
     DetailViewController *dtl = [[DetailViewController alloc]init];
-
-    dtl.detailViewObject = lekkerAnnotationView;
     
+    dtl.detailViewObject = lekkerAnnotation;
+        
     [self.navigationController pushViewController:dtl animated:YES];
 
 }
