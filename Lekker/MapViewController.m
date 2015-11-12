@@ -125,26 +125,6 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
         
         return lekkerAnnotationView;
         
-//
-//        if ([category isEqualToString:@"Arts & Culture"]) {
-//            
-//            MKAnnotationView *artsAndCulture = [self annotationForCategory:category image:[UIImage imageNamed:category] annotation:lekkerAnno];
-//            
-//            return artsAndCulture;
-//            
-//        } else if ([category isEqualToString:@"Random #Lekkers"]) {
-//            
-//            MKAnnotationView *randomLekker = [self annotationForCategory:category image:[UIImage imageNamed:category] annotation:lekkerAnno];
-//            
-//            return randomLekker;
-//            
-//            
-//        } else ([category isEqualToString:@"Food & Drinks"]);{
-//            
-//            MKAnnotationView *foodAndDrinksLekkers = [self annotationForCategory:category image:[UIImage imageNamed:category] annotation:lekkerAnno];
-//
-//            return foodAndDrinksLekkers;
-//        }
     }
 }
 
@@ -186,11 +166,14 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     UIAlertAction *allCategories = [UIAlertAction actionWithTitle:@"All Categories" style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction * action) {
                                                                
-                                                               
+                                                               [self annotationForCategory:self.category image:self.category annotation: self.category];
                                                            }];
     
     UIAlertAction *artsAndCulture = [UIAlertAction actionWithTitle:@"Arts & Culture" style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction * action) {
+                                                               
+                                                               
+                                                               
                                                            }];
     
     UIAlertAction *foodAndDrinks = [UIAlertAction actionWithTitle:@"Food & Drinks" style:UIAlertActionStyleDefault
