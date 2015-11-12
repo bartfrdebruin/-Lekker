@@ -192,7 +192,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             foodAndDrinksLekkers.rightCalloutAccessoryView = rightButton;
             
             // Add a custom image to the left side of the callout.
-            PFImageView *foodAndDrinksPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 50)];
+            PFImageView *foodAndDrinksPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 100)];
             foodAndDrinksPin.file = lekkerAnno.lekkerObject [@"imageFile"];
             [foodAndDrinksPin loadInBackground];
             foodAndDrinksLekkers.leftCalloutAccessoryView = foodAndDrinksPin;
