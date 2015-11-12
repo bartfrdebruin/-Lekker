@@ -39,8 +39,21 @@
     self.commentLabel.text = [self.detailViewObject objectForKey:@"Comment"];
     
     self.categoryLabel.text = [self.detailViewObject objectForKey:@"category"];
-
+    
+    self.scrollView.minimumZoomScale = 0.5;
+    self.scrollView.maximumZoomScale = 6.0;
+    self.scrollView.contentSize = self.lekkerImage.frame.size;
+    self.scrollView.delegate = self;
 }
+
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.lekkerImage;
+}
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView*)view atScale:(CGFloat)scale{
+}
+
 
 #pragma mark - GoToList
 
