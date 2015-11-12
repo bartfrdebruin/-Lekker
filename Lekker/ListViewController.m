@@ -69,16 +69,12 @@
 - (void)tableView:(UITableView * _Nonnull)tableView
 didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath
 {
-    
-    PFObject *object = [self objectAtIndexPath:indexPath];
 
-    NSString *comment = object[@"Comment"];
-
-    NSLog(@"%@", object);
+    PFObject *lekkerAtIndexPath = [self objectAtIndexPath:indexPath];
     
     DetailViewController *dtl = [[DetailViewController alloc]init];
     
-    dtl.comment = comment;
+    dtl.detailViewObject = lekkerAtIndexPath;
     
     [self.navigationController pushViewController:dtl animated:YES];
 

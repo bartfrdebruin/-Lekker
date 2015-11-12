@@ -17,8 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.commentLabel.text = self.comment;
+    self.lekkerImage.file = [self.detailViewObject objectForKey:@"imageFile"];
     
+    self.commentLabel.text = [self.detailViewObject objectForKey:@"Comment"];
+    
+    self.categoryLabel.text = [self.detailViewObject objectForKey:@"category"];
+
 }
 
 @end
