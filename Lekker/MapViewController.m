@@ -278,6 +278,8 @@ didSelectAnnotationView:(MKAnnotationView * _Nonnull)view
     
     LekkerAnnotations *lekkerAnnotation = (LekkerAnnotations*) view.annotation;
     
+   // NSLog(@"%@", lekkerAnnotation.lekkerObject);
+    
     DetailViewController *dtl = [[DetailViewController alloc]init];
     
     dtl.detailViewObject = lekkerAnnotation.lekkerObject;

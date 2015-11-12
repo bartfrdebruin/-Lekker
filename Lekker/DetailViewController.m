@@ -17,7 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.lekkerImage.file = [self.detailViewObject objectForKey:@"imageFile"];
+    PFFile *imageFile = self.detailViewObject [@"imageFile"];
+    
+    [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        UIImage *image = [UIImage imageWithData:data];
+        self.lekkerImage.image = image;
+    }];
+    
+    NSLog(@"%@", imageFile);
     
     self.commentLabel.text = [self.detailViewObject objectForKey:@"Comment"];
     

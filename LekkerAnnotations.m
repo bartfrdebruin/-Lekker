@@ -27,6 +27,7 @@
         
         coordinate = CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude);
         
+        
     }
     return self;
     
