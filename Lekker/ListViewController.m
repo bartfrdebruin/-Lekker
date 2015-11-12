@@ -36,6 +36,7 @@
     }
     
     PFFile *thumbnail = [object objectForKey:@"imageFile"];
+    
     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
     thumbnailImageView.image = [UIImage imageNamed:@"placeholder.jpg"];
     thumbnailImageView.file = thumbnail;

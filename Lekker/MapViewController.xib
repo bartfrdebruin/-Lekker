@@ -21,7 +21,11 @@
                     <animations/>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="7zd-NE-x7x"/>
-                        <barButtonItem title="Category Chooser" id="FXa-cO-ZWP"/>
+                        <barButtonItem title="Category Chooser" id="FXa-cO-ZWP">
+                            <connections>
+                                <action selector="categoryChooser:" destination="-1" id="rDj-Pb-M54"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="djg-Qq-7x7"/>
                         <barButtonItem systemItem="camera" id="8qR-xg-pCk">
                             <connections>

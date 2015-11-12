@@ -25,7 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
 @property (nonatomic, strong) UIBarButtonItem *list;
-@property (nonatomic) CLLocationCoordinate2D coordinate;
-@property (nonatomic, strong) NSString *mySubtitle;
+@property (nonatomic, strong) NSString *category;
 
 @end
