@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ListViewController.h"
 
 @interface DetailViewController ()
 
@@ -16,6 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.navigationItem setHidesBackButton:NO];
+    
+    UINavigationItem *mapNavigation = self.navigationItem;
+    mapNavigation.title = @"#Lekker";
+    
+    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target:self action:@selector(goToList:)];
+    
+    mapNavigation.rightBarButtonItem = list;
+    
     
     PFFile *imageFile = self.detailViewObject [@"imageFile"];
     
