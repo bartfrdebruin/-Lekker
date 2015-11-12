@@ -44,6 +44,10 @@
     self.scrollView.maximumZoomScale = 6.0;
     self.scrollView.contentSize = self.lekkerImage.frame.size;
     self.scrollView.delegate = self;
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
+    tapRecognizer.numberOfTapsRequired = 2;
+    [self.scrollView addGestureRecognizer:tapRecognizer];
 }
 
 
@@ -54,6 +58,13 @@
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView*)view atScale:(CGFloat)scale{
 }
 
+- (void)tapDetected:(UITapGestureRecognizer *)tapRecognizer
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        self.lekkerImage.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+        self.lekkerImage.transform = CGAffineTransformIdentity;
+    }];
+}
 
 #pragma mark - GoToList
 
