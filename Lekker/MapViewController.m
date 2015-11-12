@@ -14,7 +14,7 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import "LekkerCell.h"
-
+#import "DetailViewController.h"
 
 @interface MapViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -285,22 +285,20 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 //}
 
 
-//- (void)mapView:(MKMapView * _Nonnull)mapView
-//didSelectAnnotationView:(MKAnnotationView * _Nonnull)view
-//{
-//    
-//    PFObject *object = [self objectAtAnnotationView:view];
-//    
-//    NSString *comment = object[@"Comment"];
-//    
-//    NSLog(@"%@", object);
-//    
-//    DetailViewController *dtl = [[DetailViewController alloc]init];
-//    
-//    dtl.comment = comment;
-//    
-//    [self.navigationController pushViewController:dtl animated:YES];
-//    
-//}
+- (void)mapView:(MKMapView * _Nonnull)mapView
+didSelectAnnotationView:(MKAnnotationView * _Nonnull)view
+{
+    
+    LekkerAnnotations *lekkerAnnotation = (LekkerAnnotations*) view.annotation;
+    
+   // NSLog(@"%@", lekkerAnnotation.lekkerObject);
+    
+    DetailViewController *dtl = [[DetailViewController alloc]init];
+    
+    dtl.detailViewObject = lekkerAnnotation.lekkerObject;
+    
+    [self.navigationController pushViewController:dtl animated:YES];
+    
+}
 
 @end

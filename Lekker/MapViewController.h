@@ -14,7 +14,7 @@
 #import <ParseUI/ParseUI.h>
 #import "LekkerAnnotations.h"
 
-@interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate>  {
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate, MKAnnotation>  {
     
     CLLocationManager *locationManager;
 }
@@ -28,8 +28,5 @@
 @property (nonatomic, strong) UIBarButtonItem *list;
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) PFImageView *image;
-
-
-
 
 @end
