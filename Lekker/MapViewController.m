@@ -80,13 +80,17 @@
     
     PFQuery *queriesForAnnotation = [PFQuery queryWithClassName:@"Lekker"];
     
+    self.allAnnotations = [[NSMutableArray alloc] init];
+    
     [queriesForAnnotation findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         
         for (PFObject *object in objects) {
             
             LekkerAnnotations *lekkerAnnotation = [[LekkerAnnotations alloc] initWithObject:object];
             
-            [self.mapView addAnnotation:lekkerAnnotation];
+            [self.allAnnotations addObject:lekkerAnnotation];
+            
+//            [self.mapView addAnnotation:lekkerAnnotation];
         };
     }];
 }
@@ -166,13 +170,22 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     UIAlertAction *allCategories = [UIAlertAction actionWithTitle:@"All Categories" style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction * action) {
                                                                
-                                                               [self annotationForCategory:self.category image:self.category annotation: self.category];
+//                                                               [self annotationForCategory:self.category image:self.category annotation: self.category];
                                                            }];
     
     UIAlertAction *artsAndCulture = [UIAlertAction actionWithTitle:@"Arts & Culture" style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction * action) {
                                                                
-                                                               
+                                                               for (LekkerAnnotations *lekkerAnno in self.allAnnotations) {
+                                                                   
+//                                                                   if ([category isEqualToString:@"Arts & Culture"]) {
+//                                                                       
+//                                                                       [self.mapView addAnnotation:lekkerAnnotation];
+//                                                                   } else {
+//                                                                    [self.mapView addAnnotation:lekkerAnnotation];
+//
+//                                                                   }
+                                                               }
                                                                
                                                            }];
     

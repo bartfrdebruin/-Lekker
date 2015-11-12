@@ -28,5 +28,7 @@
 @property (nonatomic, strong) UIBarButtonItem *list;
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) PFImageView *image;
+@property (nonatomic, strong) LekkerAnnotations *annotation;
+@property (nonatomic, strong) NSMutableArray *allAnnotations;
 
 @end
