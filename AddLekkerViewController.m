@@ -34,6 +34,8 @@
     
     self.descriptionTextField.delegate = self;
     
+//    [self.view addSubview:<#(nonnull UIView *)#>
+    
     // Creating a notification when the keyboard floats up.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(liftMainViewWhenKeybordAppears:) name:UIKeyboardWillShowNotification object:nil];
     
