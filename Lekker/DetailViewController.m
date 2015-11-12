@@ -20,13 +20,12 @@
     
     [self.navigationItem setHidesBackButton:NO];
     
-    UINavigationItem *mapNavigation = self.navigationItem;
-    mapNavigation.title = @"#Lekker";
+    UINavigationItem *detailNavigation = self.navigationItem;
+    detailNavigation.title = @"#Lekker";
     
-    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target:self action:@selector(goToList:)];
+    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target: self action:@selector(goToList:)];
     
-    mapNavigation.rightBarButtonItem = list;
-    
+    detailNavigation.rightBarButtonItem = list;
     
     PFFile *imageFile = self.detailViewObject [@"imageFile"];
     
@@ -42,5 +41,15 @@
     self.categoryLabel.text = [self.detailViewObject objectForKey:@"category"];
 
 }
+
+#pragma mark - GoToList
+
+- (IBAction)goToList:(id)sender {
+    
+    ListViewController *listView = [[ListViewController alloc] init];
+    
+    [self.navigationController pushViewController:listView animated:YES];
+}
+
 
 @end
