@@ -10,12 +10,11 @@
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
 
-@interface LekkerAnnotations : NSObject
+@interface LekkerAnnotations : NSObject <MKAnnotation> 
 
-@property (nonatomic, strong) NSString *mySubtitle;
-@property (nonatomic, strong) PFFile *imageFile;
+@property (nonatomic, strong) PFObject *lekkerObject;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 
-- (id)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)comment subtitle:(NSString*)category;
-
+- (id)initWithObject:(PFObject *)object;
 
 @end

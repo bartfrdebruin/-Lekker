@@ -80,29 +80,13 @@
     
     PFQuery *queriesForAnnotation = [PFQuery queryWithClassName:@"Lekker"];
     
-    self.imagesForAnnotation = [[NSMutableArray alloc] init];
-    
     [queriesForAnnotation findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         
         for (PFObject *object in objects) {
             
-            NSString *comment = object[@"Comment"];
-            NSString *category = object[@"category"];
-            PFGeoPoint *geoPoint = object[@"location"];
+            LekkerAnnotations *lekkerAnnotation = [[LekkerAnnotations alloc] initWithObject:object];
             
-            PFFile *image = [object objectForKey:@"imageFile"];
             
-            [self.imagesForAnnotation addObject:image];
-            //
-            //            PFImageView *annotationImageView = [UIImage imageNamed:@"placeholder.jpg"];
-            //            UIImage *image = [UIImage imageWithData:imageFile];
-            //
-            //            annotationImageView.file = imageFile;
-            //            [annotationImageView loadInBackground];
-            
-            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
-            
-            LekkerAnnotations *lekkerAnnotation = [[LekkerAnnotations alloc] initWithLocation:coord title:comment subtitle:category];
             
             [self.mapView addAnnotation:lekkerAnnotation];
         };
@@ -137,10 +121,10 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
         
         LekkerAnnotations *lekkerAnno = (LekkerAnnotations *)annotation;
         
-        NSLog(@"%@", lekkerAnno.mySubtitle);
+        NSString *category = lekkerAnno.lekkerObject [@"category"];
 
         
-        if ([lekkerAnno.mySubtitle isEqualToString:@"Arts & Culture"]) {
+        if ([category isEqualToString:@"Arts & Culture"]) {
             
             
             MKAnnotationView *artsAndCulture = [[MKAnnotationView alloc]
@@ -148,7 +132,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             
             artsAndCulture.image = [UIImage imageNamed:@"#Lekker_artsAndCulture"];
             artsAndCulture.centerOffset = CGPointMake(10, -20);
-            artsAndCulture.canShowCallout = YES;
+           // artsAndCulture.canShowCallout = YES;
             
             // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -161,7 +145,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             
             return artsAndCulture;
             
-        } else if ([lekkerAnno.mySubtitle isEqualToString:@"Random #Lekkers"]) {
+        } else if ([category isEqualToString:@"Random #Lekkers"]) {
             
             
             MKAnnotationView *randomLekker = [[MKAnnotationView alloc]
@@ -169,7 +153,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             
             randomLekker.image = [UIImage imageNamed:@"#Lekker_randomlekkers"];
             randomLekker.centerOffset = CGPointMake(10, -20);
-            randomLekker.canShowCallout = YES;
+//            randomLekker.canShowCallout = YES;
             
             // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -182,7 +166,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             
             return randomLekker;
             
-        } else ([lekkerAnno.mySubtitle isEqualToString:@"Food & Drinks"]);{
+        } else ([category isEqualToString:@"Food & Drinks"]);{
             
             
             MKAnnotationView *foodAndDrinksLekkers = [[MKAnnotationView alloc]
@@ -190,7 +174,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             
             foodAndDrinksLekkers.image = [UIImage imageNamed:@"#Lekker_foodAndDrinks"];
             foodAndDrinksLekkers.centerOffset = CGPointMake(10, -20);
-            foodAndDrinksLekkers.canShowCallout = YES;
+//            foodAndDrinksLekkers.canShowCallout = YES;
             
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
