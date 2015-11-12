@@ -14,9 +14,6 @@
 
 @implementation LekkerAnnotations
 
-@synthesize coordinate;
-
-
 - (instancetype _Nonnull)initWithObject:(PFObject*)object {
     
     self = [super init];
@@ -25,7 +22,11 @@
         
         PFGeoPoint *geopoint = object[@"location"];
         
-        coordinate = CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude);
+        self.coordinate = CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude);
+        
+        NSString *comment = object[@"comment"];
+        
+        self.title = comment;
         
     }
     return self;

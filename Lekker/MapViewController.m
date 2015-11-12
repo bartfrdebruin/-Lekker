@@ -128,11 +128,12 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             
             
             MKAnnotationView *artsAndCulture = [[MKAnnotationView alloc]
-                                                   initWithAnnotation:annotation reuseIdentifier:@"Arts & Culture"];
+                                                   initWithAnnotation:lekkerAnno reuseIdentifier:@"Arts & Culture"];
             
             artsAndCulture.image = [UIImage imageNamed:@"#Lekker_artsAndCulture"];
             artsAndCulture.centerOffset = CGPointMake(10, -20);
-           // artsAndCulture.canShowCallout = YES;
+            artsAndCulture.canShowCallout = YES;
+            lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
             
             // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -149,11 +150,12 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             
             
             MKAnnotationView *randomLekker = [[MKAnnotationView alloc]
-                                                 initWithAnnotation:annotation reuseIdentifier:@"#RandomLekkers"];
+                                                 initWithAnnotation:lekkerAnno reuseIdentifier:@"#RandomLekkers"];
             
             randomLekker.image = [UIImage imageNamed:@"#Lekker_randomlekkers"];
             randomLekker.centerOffset = CGPointMake(10, -20);
-//            randomLekker.canShowCallout = YES;
+            randomLekker.canShowCallout = YES;
+            lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
             
             // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -170,11 +172,12 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             
             
             MKAnnotationView *foodAndDrinksLekkers = [[MKAnnotationView alloc]
-                                                         initWithAnnotation:annotation reuseIdentifier:@"#FoodAndDrinksLekkers"];
+                                                         initWithAnnotation:lekkerAnno reuseIdentifier:@"#FoodAndDrinksLekkers"];
             
             foodAndDrinksLekkers.image = [UIImage imageNamed:@"#Lekker_foodAndDrinks"];
             foodAndDrinksLekkers.centerOffset = CGPointMake(10, -20);
-//            foodAndDrinksLekkers.canShowCallout = YES;
+            foodAndDrinksLekkers.canShowCallout = YES;
+            lekkerAnno.title = lekkerAnno.lekkerObject [@"Comment"];
             
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];

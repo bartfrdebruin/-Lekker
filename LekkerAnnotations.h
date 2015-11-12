@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) PFObject *lekkerObject;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (nonatomic) NSString *title;
 
 - (id)initWithObject:(PFObject *)object;
 
