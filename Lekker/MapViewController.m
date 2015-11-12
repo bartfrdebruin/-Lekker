@@ -261,28 +261,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 }
 
 
-
-
 #pragma didSelectAnnotationView
-
-
-//- (void)tableView:(UITableView * _Nonnull)tableView
-//didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath
-//{
-//    
-//    PFObject *object = [self objectAtIndexPath:indexPath];
-//    
-//    NSString *comment = object[@"Comment"];
-//    
-//    NSLog(@"%@", object);
-//    
-//    DetailViewController *dtl = [[DetailViewController alloc]init];
-//    
-//    dtl.comment = comment;
-//    
-//    [self.navigationController pushViewController:dtl animated:YES];
-//    
-//}
 
 
 - (void)mapView:(MKMapView * _Nonnull)mapView
