@@ -103,7 +103,7 @@
     [self.navigationItem setHidesBackButton:NO];
     
     UINavigationItem *detailNavigation = self.navigationItem;
-    detailNavigation.title = @"#Lekker List";
+    detailNavigation.title = @"Recent #Lekkers";
        
   }
 
