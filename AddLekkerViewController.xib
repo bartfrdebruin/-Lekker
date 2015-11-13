@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLekkerViewController">
@@ -27,7 +28,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" id="jsM-dv-C7O">
-                            <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's #Lekker?" textAlignment="natural" minimumFontSize="17" id="gyH-La-p2I">
+                            <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's #Lekker?" textAlignment="natural" minimumFontSize="17" id="gyH-La-p2I">
                                 <rect key="frame" x="22" y="7" width="191" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
@@ -46,23 +47,35 @@
                         <outlet property="delegate" destination="-1" id="Vbo-c2-jdb"/>
                     </connections>
                 </toolbar>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-3X-Jcz">
-                    <rect key="frame" x="41" y="113" width="333" height="333"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-3X-Jcz">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="333" id="044-jX-Cqk"/>
-                        <constraint firstAttribute="height" constant="333" id="ko6-wA-L5y"/>
+                        <constraint firstAttribute="height" constant="414" id="TAf-Uw-cj7"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell the world what's #Lekker!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaf-bg-OwY">
+                    <rect key="frame" x="8" y="645" width="398" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="lte-Ou-GI2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="AUO-k1-KjB" secondAttribute="trailing" id="Kqo-la-AL6"/>
-                <constraint firstItem="rpe-3X-Jcz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="iE7-Ds-ra2"/>
-                <constraint firstItem="AUO-k1-KjB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iFj-zh-571"/>
-                <constraint firstAttribute="bottom" secondItem="AUO-k1-KjB" secondAttribute="bottom" identifier="bottomConstraint" id="qEf-hb-FcV"/>
-                <constraint firstItem="rpe-3X-Jcz" firstAttribute="centerX" secondItem="AUO-k1-KjB" secondAttribute="centerX" id="vbY-2X-AXG"/>
+                <constraint firstItem="AUO-k1-KjB" firstAttribute="centerX" secondItem="Xaf-bg-OwY" secondAttribute="centerX" id="8HG-DJ-5QM"/>
+                <constraint firstAttribute="trailing" secondItem="AUO-k1-KjB" secondAttribute="trailing" id="XM4-OE-4Tt"/>
+                <constraint firstAttribute="bottom" secondItem="AUO-k1-KjB" secondAttribute="bottom" id="e1a-VN-iM7"/>
+                <constraint firstItem="rpe-3X-Jcz" firstAttribute="trailing" secondItem="AUO-k1-KjB" secondAttribute="trailing" id="e8x-YS-WqP"/>
+                <constraint firstItem="rpe-3X-Jcz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hyJ-kT-Ibc"/>
+                <constraint firstItem="Xaf-bg-OwY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="oJg-7B-IZ1"/>
+                <constraint firstItem="AUO-k1-KjB" firstAttribute="top" secondItem="Xaf-bg-OwY" secondAttribute="bottom" id="v8S-6M-y7x"/>
+                <constraint firstItem="AUO-k1-KjB" firstAttribute="leading" secondItem="rpe-3X-Jcz" secondAttribute="leading" id="wZO-g1-uyA"/>
+                <constraint firstItem="rpe-3X-Jcz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zHq-wf-7Kf"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
         </view>

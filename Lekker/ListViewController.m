@@ -18,19 +18,39 @@
 
 #pragma mark TableView
 
+//- (instancetype)initWithStyle:(UITableViewStyle)style {
+//    self = [super initWithStyle:style];
+//    if (self) { // This table displays items in the Todo class
+//        self.parseClassName = @"Lekker";
+//        self.pullToRefreshEnabled = YES;
+//        self.paginationEnabled = YES;
+//        self.objectsPerPage = 25;
+//    }
+//    return self;
+//}
 
 - (PFQuery *)queryForTable
 {
  
-//    PFGeoPoint *userGeoPoint = self.userLocation;
+//    {
+//        if (!self.userLocation) {
+//            return nil;
+//        }
+//        // User's location
+//        PFGeoPoint *userGeoPoint = self.userLocation;
+//        // Create a query for places
+//        PFQuery *query = [PFQuery queryWithClassName:@"Lekker"];
+//        // Interested in locations near user.
+//        [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
+//        // Limit what could be a lot of points.
+//        query.limit = 10;
+//
+//        return query;
+//    }
     
     PFQuery *query = [PFQuery queryWithClassName:@"Lekker"];
     
     [query orderByDescending:@"createdAt"];
-    
-//    [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
-//    
-//    query.limit = 10;
     
     return query;
 }
@@ -57,7 +77,6 @@
     NSString *newCategory = object[@"category"];
     cell.category.text = newCategory;
     
-    
 //Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!! right???
     
     return cell;
@@ -74,13 +93,6 @@
     
     [super viewDidLoad];
     
-//    PFGeoPoint *userGeoPoint = self.userLocation [@"imageFile"];
-//    
-//    [userGeoPoint getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-//        PFGeoPoint *image = [UIImage imageWithData:data];
-//        self.lekkerImage.image = image;
-//    }];
-//    
 //    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
 //        if (!error) {
 //            self.userLocation = geoPoint;
@@ -100,16 +112,28 @@
 - (void)tableView:(UITableView * _Nonnull)tableView
 didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath
 {
+    
+    if (indexPath.row == [self.objects count]) {
+        [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    }
+    else {
 
     PFObject *lekkerAtIndexPath = [self objectAtIndexPath:indexPath];
     
-    DetailViewController *dtl = [[DetailViewController alloc]init];
+    DetailViewController *detailViewController = [[DetailViewController alloc]init];
     
-    dtl.detailViewObject = lekkerAtIndexPath;
+    detailViewController.detailViewObject = lekkerAtIndexPath;
     
-    [self.navigationController pushViewController:dtl animated:YES];
-
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    }
+        
+//        DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+        
+//        self.selectedObject = self.objects[indexPath.row];
+        
+//        detailViewController.currentObject = self.selectedObject;
+        
 }
 
-
 @end
+
