@@ -57,7 +57,7 @@
                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="#Lekker Label" translatesAutoresizingMaskIntoConstraints="NO" id="ZsX-eV-r79">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="#Lekker Label" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsX-eV-r79">
                     <rect key="frame" x="30" y="509" width="562" height="73"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,6 +70,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="mcg-Hg-5D7" secondAttribute="bottom" constant="88" id="1U3-Pb-9Kq"/>
+                <constraint firstAttribute="trailing" secondItem="ZsX-eV-r79" secondAttribute="trailing" constant="8" id="HX8-Pb-908"/>
                 <constraint firstItem="mcg-Hg-5D7" firstAttribute="top" secondItem="Iir-wS-cAP" secondAttribute="bottom" constant="-7" id="IqA-zB-bQR"/>
                 <constraint firstItem="JpZ-Ty-cPK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MqT-9f-8B3"/>
                 <constraint firstItem="Iir-wS-cAP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="36" id="Rba-xE-h1U"/>
@@ -77,7 +78,9 @@
                 <constraint firstAttribute="bottom" secondItem="JpZ-Ty-cPK" secondAttribute="bottom" constant="148" id="ViA-2o-caX"/>
                 <constraint firstItem="Iir-wS-cAP" firstAttribute="top" secondItem="JpZ-Ty-cPK" secondAttribute="bottom" constant="13" id="ZkN-Co-FKl"/>
                 <constraint firstItem="JpZ-Ty-cPK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dJh-lU-MaZ"/>
+                <constraint firstAttribute="bottom" secondItem="ZsX-eV-r79" secondAttribute="bottom" constant="18" id="ecY-nM-f1W"/>
                 <constraint firstItem="mcg-Hg-5D7" firstAttribute="leading" secondItem="Iir-wS-cAP" secondAttribute="leading" id="uoG-Sk-yL7"/>
+                <constraint firstItem="ZsX-eV-r79" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="vNf-qI-1rH"/>
             </constraints>
         </view>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

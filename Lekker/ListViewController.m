@@ -73,6 +73,7 @@
     
     NSString *newComment = object[@"Comment"];
     cell.lekkerComment.text = newComment;
+    [cell.lekkerComment setTextColor:[UIColor whiteColor]];
     
     NSString *newCategory = object[@"category"];
     cell.category.text = newCategory;
