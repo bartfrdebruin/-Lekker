@@ -214,7 +214,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 - (IBAction)takePicture:(id)sender {
     
     self.imagePicker = [[UIImagePickerController alloc] init];
-    
+
     // If the device has a camera, take a picture, otherwise,
     // just pick from photo library
     
@@ -223,6 +223,37 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     } else {
         self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
+//
+//    if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+//        CGRect f = self.imagePicker.view.bounds;
+//        f.size.height = self.imagePicker.navigationBar.bounds.size.height;
+//        CGFloat barHeight = (f.size.height - f.size.width) / 2;
+//        UIGraphicsBeginImageContext(f.size);
+//        [[UIColor colorWithWhite:0 alpha:5] set];
+//        UIRectFillUsingBlendMode(CGRectMake(0, 0, f.size.width, barHeight), kCGBlendModeNormal);
+//        UIRectFillUsingBlendMode(CGRectMake(0, f.size.height - barHeight, f.size.width, barHeight), kCGBlendModeNormal);
+//        UIImage *overlayImage = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsEndImageContext();
+//        
+//        UIImageView *overlayIV = [[UIImageView alloc] initWithFrame:f];
+//        overlayIV.image = overlayImage;
+//        [self.imagePicker.cameraOverlayView addSubview:overlayIV];
+//        
+//        CGSize imageSize = image.size;
+//        CGFloat width = imageSize.width;
+//        CGFloat height = imageSize.height;
+//        if (width != height) {
+//            CGFloat newDimension = MIN(width, height);
+//            CGFloat widthOffset = (width - newDimension) / 2;
+//            CGFloat heightOffset = (height - newDimension) / 2;
+//            UIGraphicsBeginImageContextWithOptions(CGSizeMake(newDimension, newDimension), NO, 0.);
+//            [image drawAtPoint:CGPointMake(-widthOffset, -heightOffset)
+//                     blendMode:kCGBlendModeCopy
+//                         alpha:1.];
+//            image = UIGraphicsGetImageFromCurrentImageContext();
+//            UIGraphicsEndImageContext();
+//        }
+//    }
     
     self.imagePicker.mediaTypes = @[(NSString*)kUTTypeImage];
     
@@ -236,8 +267,9 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
    
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
     AddLekkerViewController *addLekkerViewController = [[AddLekkerViewController alloc]init];
     
     addLekkerViewController.photo = image;
