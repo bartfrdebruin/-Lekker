@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
             <connections>
                 <outlet property="categoryLabel" destination="mcg-Hg-5D7" id="cRh-7T-D8i"/>
-                <outlet property="commentLabel" destination="c0Y-Qd-lLm" id="HQc-sv-xd5"/>
+                <outlet property="commentLabel" destination="ZsX-eV-r79" id="xcA-zA-qzn"/>
                 <outlet property="lekkerImage" destination="bX1-yk-rk9" id="8cV-i7-15U"/>
                 <outlet property="scrollView" destination="JpZ-Ty-cPK" id="QDx-T6-KH6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -37,7 +37,7 @@
                     </constraints>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#Lekker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iir-wS-cAP">
-                    <rect key="frame" x="36" y="481" width="73" height="23"/>
+                    <rect key="frame" x="36" y="465" width="73" height="23"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="73" id="WHU-Wm-lP0"/>
@@ -46,8 +46,8 @@
                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcg-Hg-5D7">
-                    <rect key="frame" x="36" y="497" width="187" height="31"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcg-Hg-5D7">
+                    <rect key="frame" x="36" y="481" width="187" height="31"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="187" id="8Zm-DP-FuU"/>
@@ -57,28 +57,25 @@
                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0Y-Qd-lLm">
-                    <rect key="frame" x="36" y="536" width="556" height="23"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="#Lekker Label" translatesAutoresizingMaskIntoConstraints="NO" id="ZsX-eV-r79">
+                    <rect key="frame" x="30" y="514" width="562" height="73"/>
                     <animations/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.13979055000000001" green="0.44825800929999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="mcg-Hg-5D7" secondAttribute="bottom" constant="80" id="1U3-Pb-9Kq"/>
-                <constraint firstItem="c0Y-Qd-lLm" firstAttribute="leading" secondItem="Iir-wS-cAP" secondAttribute="trailing" constant="-73" id="A0N-PV-j0d"/>
+                <constraint firstAttribute="bottom" secondItem="mcg-Hg-5D7" secondAttribute="bottom" constant="88" id="1U3-Pb-9Kq"/>
                 <constraint firstItem="mcg-Hg-5D7" firstAttribute="top" secondItem="Iir-wS-cAP" secondAttribute="bottom" constant="-7" id="IqA-zB-bQR"/>
                 <constraint firstItem="JpZ-Ty-cPK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MqT-9f-8B3"/>
-                <constraint firstItem="Iir-wS-cAP" firstAttribute="baseline" secondItem="c0Y-Qd-lLm" secondAttribute="baseline" constant="-54" id="OK6-3s-Ugm"/>
                 <constraint firstItem="Iir-wS-cAP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="36" id="Rba-xE-h1U"/>
                 <constraint firstAttribute="trailing" secondItem="JpZ-Ty-cPK" secondAttribute="trailing" constant="-1" id="Tfw-Lr-yGH"/>
                 <constraint firstAttribute="bottom" secondItem="JpZ-Ty-cPK" secondAttribute="bottom" constant="148" id="ViA-2o-caX"/>
                 <constraint firstItem="JpZ-Ty-cPK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dJh-lU-MaZ"/>
-                <constraint firstItem="c0Y-Qd-lLm" firstAttribute="centerX" secondItem="JpZ-Ty-cPK" secondAttribute="centerX" constant="13.5" id="jId-Uz-RJN"/>
-                <constraint firstItem="c0Y-Qd-lLm" firstAttribute="top" secondItem="Iir-wS-cAP" secondAttribute="top" constant="55" id="kNV-py-a6h"/>
                 <constraint firstItem="mcg-Hg-5D7" firstAttribute="leading" secondItem="Iir-wS-cAP" secondAttribute="leading" id="uoG-Sk-yL7"/>
             </constraints>
         </view>

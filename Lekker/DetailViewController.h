@@ -15,7 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *lekkerImage;
 
-@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+@property (weak, nonatomic) IBOutlet UITextView *commentLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 
