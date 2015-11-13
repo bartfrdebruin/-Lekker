@@ -23,9 +23,15 @@
     UINavigationItem *detailNavigation = self.navigationItem;
     detailNavigation.title = @"#Lekker Details";
     
-    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target: self action:@selector(goToList:)];
-    
-    detailNavigation.rightBarButtonItem = list;
+//    UIImage *iconImage = [UIImage imageNamed:@"blue menu icon.png"];
+//    
+//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+//    
+//    [button setBackgroundImage:iconImage forState:UIControlStateNormal];
+//    
+//    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithImage:iconImage style:UIBarButtonItemStylePlain target:self action:@selector(goToList:)];
+//    
+//    detailNavigation.rightBarButtonItem = list;
     
     PFFile *imageFile = self.detailViewObject [@"imageFile"];
     

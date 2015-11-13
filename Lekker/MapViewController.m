@@ -76,8 +76,6 @@
     
     UIImage *iconImage = [UIImage imageNamed:@"blue menu icon.png"];
     
-    
-    
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     
     [button setBackgroundImage:iconImage forState:UIControlStateNormal];
