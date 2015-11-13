@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController">
             <connections>
                 <outlet property="cameraButton" destination="8qR-xg-pCk" id="7Dr-GI-Aot"/>
+                <outlet property="categoryTitle" destination="FXa-cO-ZWP" id="Bxg-0P-RKj"/>
                 <outlet property="mapView" destination="18t-dL-c3h" id="JLl-ix-RF6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,6 +34,9 @@
                             </connections>
                         </barButtonItem>
                     </items>
+                    <connections>
+                        <outlet property="delegate" destination="FXa-cO-ZWP" id="CFa-Rs-szv"/>
+                    </connections>
                 </toolbar>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="18t-dL-c3h">
                     <rect key="frame" x="-8" y="-16" width="617" height="572"/>

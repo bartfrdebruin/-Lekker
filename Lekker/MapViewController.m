@@ -166,7 +166,6 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
 
 - (void)addCategorizedAnnotations {
     
-    
     [self.mapView removeAnnotations:self.allAnnotations];
     
     for (LekkerAnnotations *lekkerAnnotation in self.allAnnotations) {
@@ -179,7 +178,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
             
             [self.mapView addAnnotation: lekkerAnnotation];
         }
-         
+        
     }
 }
 
@@ -199,28 +198,19 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
                                                                self.chosenAnnotation = @"All Categories";
                                                                [self addCategorizedAnnotations];
                                                                
-//                                                               [self annotationForCategory:self.category image:self.category annotation: self.category];
+                                                               self.categoryTitle.title = @"All Categories";
+
+                                                               
                                                            }];
     
     UIAlertAction *artsAndCulture = [UIAlertAction actionWithTitle:@"Arts & Culture" style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction * action) {
                                                                
                                                                self.chosenAnnotation = @"Arts & Culture";
-                                                               
-//                                                               for (LekkerAnnotations *lekkerAnno in self.allAnnotations) {
-////
-//                                                                   if ([lekkerObject.category isEqualToString:@"Arts & Culture"]) {
-////
-////                                                                       [self.mapView addAnnotation:lekkerAnnotation];
-//////                                                                   } else {
-//////                                                                    [self.mapView addAnnotation:lekkerAnnotation];
-//////
-//////                                                                   }
-////                                                               }
-//                                                               
-//                                                             // doesnt exist, but make it exist:   self.chosenAnnotation = value of category
                                                                [self addCategorizedAnnotations];
                                                                
+                                                               self.categoryTitle.title = @"Arts & Culture";
+
                                                            }];
     
     UIAlertAction *foodAndDrinks = [UIAlertAction actionWithTitle:@"Food & Drinks" style:UIAlertActionStyleDefault
@@ -229,6 +219,8 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
                                                               self.chosenAnnotation = @"Food & Drinks";
                                                               [self addCategorizedAnnotations];
                                                               
+                                                              self.categoryTitle.title = @"Food & Drinks";
+
                                                               
                                                           }];
     
@@ -238,6 +230,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
                                                               self.chosenAnnotation = @"Random #Lekkers";
                                                               [self addCategorizedAnnotations];
                                                               
+                                                              self.categoryTitle.title = @"Random #Lekkers";
                                                               
                                                           }];
     

@@ -33,6 +33,7 @@
 @property (nonatomic, strong) NSString *chosenAnnotation;
 @property (nonatomic, strong) PFObject *lekkerObject;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *categoryTitle;
 
 
 @end
