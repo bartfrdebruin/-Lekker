@@ -90,8 +90,12 @@
             
             [self.allAnnotations addObject:lekkerAnnotation];
             
+            [self.mapView addAnnotation:lekkerAnnotation];
+
+       
+            }
 //            [self.mapView addAnnotation:lekkerAnnotation];
-        };
+        
     }];
 }
 
@@ -123,7 +127,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
         
         LekkerAnnotations *lekkerAnno = (LekkerAnnotations *)annotation;
         
-        NSString *category = lekkerAnno.lekkerObject [@"category"];
+        NSString *category = lekkerAnno.lekkerObject[@"category"];
         
         MKAnnotationView *lekkerAnnotationView = [self annotationForCategory:category image:[UIImage imageNamed:category] annotation:lekkerAnno];
         
@@ -159,9 +163,31 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     
     }
 
+
+- (void)addCategorizedAnnotations {
+    
+    
+    [self.mapView removeAnnotations:self.allAnnotations];
+    
+    for (LekkerAnnotations *lekkerAnnotation in self.allAnnotations) {
+        
+        if ([self.chosenAnnotation isEqualToString:@"All Categories"]) {
+            
+            [self.mapView addAnnotation: lekkerAnnotation];
+            
+        } else if ([self.chosenAnnotation isEqualToString:lekkerAnnotation.lekkerObject [@"category"]]) {
+            
+            [self.mapView addAnnotation: lekkerAnnotation];
+        }
+         
+    }
+}
+
+
 #pragma mark Update Categories
 
 - (IBAction)categoryChooser:(id)sender {
+    
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Categories"
                                                                    message:@"Update your categories!"
@@ -170,33 +196,49 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     UIAlertAction *allCategories = [UIAlertAction actionWithTitle:@"All Categories" style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction * action) {
                                                                
+                                                               self.chosenAnnotation = @"All Categories";
+                                                               [self addCategorizedAnnotations];
+                                                               
 //                                                               [self annotationForCategory:self.category image:self.category annotation: self.category];
                                                            }];
     
     UIAlertAction *artsAndCulture = [UIAlertAction actionWithTitle:@"Arts & Culture" style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction * action) {
                                                                
-                                                               for (LekkerAnnotations *lekkerAnno in self.allAnnotations) {
-                                                                   
-//                                                                   if ([category isEqualToString:@"Arts & Culture"]) {
-//                                                                       
-//                                                                       [self.mapView addAnnotation:lekkerAnnotation];
-//                                                                   } else {
-//                                                                    [self.mapView addAnnotation:lekkerAnnotation];
-//
-//                                                                   }
-                                                               }
+                                                               self.chosenAnnotation = @"Arts & Culture";
+                                                               
+//                                                               for (LekkerAnnotations *lekkerAnno in self.allAnnotations) {
+////
+//                                                                   if ([lekkerObject.category isEqualToString:@"Arts & Culture"]) {
+////
+////                                                                       [self.mapView addAnnotation:lekkerAnnotation];
+//////                                                                   } else {
+//////                                                                    [self.mapView addAnnotation:lekkerAnnotation];
+//////
+//////                                                                   }
+////                                                               }
+//                                                               
+//                                                             // doesnt exist, but make it exist:   self.chosenAnnotation = value of category
+                                                               [self addCategorizedAnnotations];
                                                                
                                                            }];
     
     UIAlertAction *foodAndDrinks = [UIAlertAction actionWithTitle:@"Food & Drinks" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               
+                                                              self.chosenAnnotation = @"Food & Drinks";
+                                                              [self addCategorizedAnnotations];
+                                                              
                                                               
                                                           }];
     
     UIAlertAction *randomLekkers = [UIAlertAction actionWithTitle:@"Random #Lekkers" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
+                                                              
+                                                              self.chosenAnnotation = @"Random #Lekkers";
+                                                              [self addCategorizedAnnotations];
+                                                              
+                                                              
                                                           }];
     
     [alert addAction:allCategories];

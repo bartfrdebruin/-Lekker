@@ -30,5 +30,9 @@
 @property (nonatomic, strong) PFImageView *image;
 @property (nonatomic, strong) LekkerAnnotations *annotation;
 @property (nonatomic, strong) NSMutableArray *allAnnotations;
+@property (nonatomic, strong) NSString *chosenAnnotation;
+@property (nonatomic, strong) PFObject *lekkerObject;
+
+
 
 @end
