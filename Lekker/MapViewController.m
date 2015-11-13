@@ -80,14 +80,22 @@
     
     PFQuery *queriesForAnnotation = [PFQuery queryWithClassName:@"Lekker"];
     
+    self.allAnnotations = [[NSMutableArray alloc] init];
+    
     [queriesForAnnotation findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         
         for (PFObject *object in objects) {
             
             LekkerAnnotations *lekkerAnnotation = [[LekkerAnnotations alloc] initWithObject:object];
             
+            [self.allAnnotations addObject:lekkerAnnotation];
+            
             [self.mapView addAnnotation:lekkerAnnotation];
-        };
+
+       
+            }
+//            [self.mapView addAnnotation:lekkerAnnotation];
+        
     }];
 }
 
@@ -119,7 +127,7 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
         
         LekkerAnnotations *lekkerAnno = (LekkerAnnotations *)annotation;
         
-        NSString *category = lekkerAnno.lekkerObject [@"category"];
+        NSString *category = lekkerAnno.lekkerObject[@"category"];
         
         MKAnnotationView *lekkerAnnotationView = [self annotationForCategory:category image:[UIImage imageNamed:category] annotation:lekkerAnno];
         
@@ -155,9 +163,30 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     
     }
 
+
+- (void)addCategorizedAnnotations {
+    
+    [self.mapView removeAnnotations:self.allAnnotations];
+    
+    for (LekkerAnnotations *lekkerAnnotation in self.allAnnotations) {
+        
+        if ([self.chosenAnnotation isEqualToString:@"All Categories"]) {
+            
+            [self.mapView addAnnotation: lekkerAnnotation];
+            
+        } else if ([self.chosenAnnotation isEqualToString:lekkerAnnotation.lekkerObject [@"category"]]) {
+            
+            [self.mapView addAnnotation: lekkerAnnotation];
+        }
+        
+    }
+}
+
+
 #pragma mark Update Categories
 
 - (IBAction)categoryChooser:(id)sender {
+    
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Categories"
                                                                    message:@"Update your categories!"
@@ -166,24 +195,43 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     UIAlertAction *allCategories = [UIAlertAction actionWithTitle:@"All Categories" style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction * action) {
                                                                
-                                                               [self annotationForCategory:self.category image:self.category annotation: self.category];
+                                                               self.chosenAnnotation = @"All Categories";
+                                                               [self addCategorizedAnnotations];
+                                                               
+                                                               self.categoryTitle.title = @"All Categories";
+
+                                                               
                                                            }];
     
     UIAlertAction *artsAndCulture = [UIAlertAction actionWithTitle:@"Arts & Culture" style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction * action) {
                                                                
+                                                               self.chosenAnnotation = @"Arts & Culture";
+                                                               [self addCategorizedAnnotations];
                                                                
-                                                               
+                                                               self.categoryTitle.title = @"Arts & Culture";
+
                                                            }];
     
     UIAlertAction *foodAndDrinks = [UIAlertAction actionWithTitle:@"Food & Drinks" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               
+                                                              self.chosenAnnotation = @"Food & Drinks";
+                                                              [self addCategorizedAnnotations];
+                                                              
+                                                              self.categoryTitle.title = @"Food & Drinks";
+
                                                               
                                                           }];
     
     UIAlertAction *randomLekkers = [UIAlertAction actionWithTitle:@"Random #Lekkers" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
+                                                              
+                                                              self.chosenAnnotation = @"Random #Lekkers";
+                                                              [self addCategorizedAnnotations];
+                                                              
+                                                              self.categoryTitle.title = @"Random #Lekkers";
+                                                              
                                                           }];
     
     [alert addAction:allCategories];
