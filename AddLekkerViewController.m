@@ -144,11 +144,18 @@
                                                                       [lekker setObject:action.title forKey:@"category"];
                                                                       [self saveLekker:lekker];
                                                                   }];
-            
+        
+            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDestructive
+                                                              handler:^(UIAlertAction * alert) {
+                                                                 
+                                                                  
+                                                              }];
+        
             [alert addAction:artsAndCulture];
             [alert addAction:foodAndDrinks];
             [alert addAction:randomLekkers];
-            
+            [alert addAction:cancel];
+        
             [self presentViewController:alert animated:NO completion:nil];
         
     }];
