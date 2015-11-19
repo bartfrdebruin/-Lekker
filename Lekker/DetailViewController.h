@@ -13,11 +13,8 @@
 @interface DetailViewController : UIViewController <UINavigationControllerDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
 @property (weak, nonatomic) IBOutlet UIImageView *lekkerImage;
-
 @property (weak, nonatomic) IBOutlet UITextView *commentLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 
 @property (strong, nonatomic) PFObject *detailViewObject;
