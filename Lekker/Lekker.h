@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 
+
+// look into PFSubclassing protocol
 @interface Lekker : PFObject
 
 @property (strong, nonatomic) PFFile *imageFile;

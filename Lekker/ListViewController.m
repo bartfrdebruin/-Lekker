@@ -10,46 +10,21 @@
 #import "LekkerCell.h"
 #import "DetailViewController.h"
 
-@interface ListViewController ()
+static CGFloat kRowHeight = 120;
+
+@interface ListViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) PFGeoPoint *userLocation;
 
 @end
 
 @implementation ListViewController
 
-#pragma mark TableView
-
-//- (instancetype)initWithStyle:(UITableViewStyle)style {
-//    self = [super initWithStyle:style];
-//    if (self) { // This table displays items in the Todo class
-//        self.parseClassName = @"Lekker";
-//        self.pullToRefreshEnabled = YES;
-//        self.paginationEnabled = YES;
-//        self.objectsPerPage = 25;
-//    }
-//    return self;
-//}
+#pragma mark - TableView
 
 - (PFQuery *)queryForTable
 {
- 
-//    {
-//        if (!self.userLocation) {
-//            return nil;
-//        }
-//        // User's location
-//        PFGeoPoint *userGeoPoint = self.userLocation;
-//        // Create a query for places
-//        PFQuery *query = [PFQuery queryWithClassName:@"Lekker"];
-//        // Interested in locations near user.
-//        [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
-//        // Limit what could be a lot of points.
-//        query.limit = 10;
-//
-//        return query;
-//    }
-    
     PFQuery *query = [PFQuery queryWithClassName:@"Lekker"];
-    
     [query orderByDescending:@"createdAt"];
     
     return query;
@@ -64,6 +39,14 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"LekkerCell" owner:nil options:nil] objectAtIndex:0];
     }
     
+    
+    [self configureCell:cell object:object];
+    
+    return cell;
+}
+
+- (void)configureCell:(LekkerCell *)cell object:(PFObject *)object
+{
     PFFile *thumbnail = [object objectForKey:@"imageFile"];
     
     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
@@ -78,17 +61,17 @@
     NSString *newCategory = object[@"category"];
     cell.category.text = newCategory;
     
-//Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!! right???
     
-    return cell;
+    //Need to put category image view here, too, once we figure this out, so it can display the right color!!! AAAAAAAHHHHHHHHH!!!!! right???}
 }
-
+     
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 120;
+    return kRowHeight;
 }
 
-#pragma mark ViewDidLoad
+
+#pragma mark - ViewDidLoad
 
 - (void)viewDidLoad {
     

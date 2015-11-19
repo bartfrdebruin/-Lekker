@@ -10,8 +10,8 @@
 
 @implementation Lekker
 
-@synthesize imageFile;
-@synthesize lekkerComment;
-@synthesize category;
+@dynamic imageFile;
+@dynamic lekkerComment;
+@dynamic category;
 
 @end
