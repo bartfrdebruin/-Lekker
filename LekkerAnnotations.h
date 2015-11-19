@@ -14,8 +14,8 @@
 
 @property (nonatomic, strong) PFObject *lekkerObject;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
-@property (nonatomic) NSString *title;
-@property (nonatomic) NSString *subtitle;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, strong) UIImage *imageFile;
 
 - (id)initWithObject:(PFObject *)object;

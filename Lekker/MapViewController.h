@@ -14,7 +14,7 @@
 #import <ParseUI/ParseUI.h>
 #import "LekkerAnnotations.h"
 
-@interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate, MKAnnotation>  {
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate>  {
     
     CLLocationManager *locationManager;
 }

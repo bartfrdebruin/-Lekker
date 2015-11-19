@@ -53,8 +53,6 @@
         
         // Tell our manager to start looking for its location immediately
         [locationManager startUpdatingLocation];
-        
-        CLLocation *location = [locationManager location];
     }
     return self;
 }
@@ -157,7 +155,6 @@ didUpdateUserLocation:(MKUserLocation * _Nonnull)userLocation {
     annotation.subtitle = annotation.lekkerObject [@"category"];
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
     annotationForMap.rightCalloutAccessoryView = rightButton;
     
     PFImageView *annotationPin = [[PFImageView alloc] initWithFrame: CGRectMake(0, 0, 50, 100)];
