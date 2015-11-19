@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WelcomeViewController : UIViewController <UINavigationControllerDelegate>
-
-- (IBAction)goButton:(id)sender;
+@interface WelcomeViewController : UIViewController
 
 @end
