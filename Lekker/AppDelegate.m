@@ -24,9 +24,12 @@
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];
     
+    NSDictionary *LoginDictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Keys" ofType:@"plist"]];
+    NSString *applicationId = [LoginDictionary objectForKey:@"parseApplicationId"];
+    NSString *clientKey = [LoginDictionary objectForKey:@"parseClientKey"];
     // Initialize Parse.
-    [Parse setApplicationId:@"1ymSMB1ghp1MTVs37FuWybP1ycLdrfG8qMdJaT8m"
-                  clientKey:@"1M3kf0riYjzHVjXMoBxwvgKwcw3cpywUmVHcIM4r"];
+    [Parse setApplicationId:applicationId
+                  clientKey:clientKey];
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
