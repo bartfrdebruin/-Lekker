@@ -74,13 +74,12 @@
     UINavigationItem *mapNavigation = self.navigationItem;
     mapNavigation.title = @"#Lekker";
     
-    UIImage *iconImage = [UIImage imageNamed:@"blue menu icon.png"];
+//    UIImage *iconImage = [UIImage imageNamed:@"blue menu icon.png"];
+//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+//    [button setBackgroundImage:iconImage forState:UIControlStateNormal];
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    
-    [button setBackgroundImage:iconImage forState:UIControlStateNormal];
-    
-    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithImage:iconImage style:UIBarButtonItemStylePlain target:self action:@selector(goToList:)];
+    // Added the correct list reference button. 
+    UIBarButtonItem *list = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target:self action:@selector(goToList:)];
     
     mapNavigation.rightBarButtonItem = list;
     
@@ -97,8 +96,6 @@
             [self.allAnnotations addObject:lekkerAnnotation];
             
             [self.mapView addAnnotation:lekkerAnnotation];
-
-       
             }
 //            [self.mapView addAnnotation:lekkerAnnotation];
         
